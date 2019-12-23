@@ -18,20 +18,20 @@
 # SOFTWARE.
 # ===================================================================
 
-"""Cryptosgraphic protocols
+"""CryProAESgraphic protocols
 
-Implements various Cryptosgraphic protocols.  (Don't expect to find
+Implements various CryProAESgraphic protocols.  (Don't expect to find
 network protocols here.)
 
-Cryptos.Protocol.AllOrNothing
+CryProAES.Protocol.AllOrNothing
  Transforms a message into a set of message blocks, such that the blocks
  can be recombined to get the message back.
 
-Cryptos.Protocol.Chaffing
+CryProAES.Protocol.Chaffing
  Takes a set of authenticated message blocks (the wheat) and adds a number
  of randomly generated blocks (the chaff).
 
-Cryptos.Protocol.KDF
+CryProAES.Protocol.KDF
  A collection of standard key derivation functions.
 
 :undocumented: __revision__

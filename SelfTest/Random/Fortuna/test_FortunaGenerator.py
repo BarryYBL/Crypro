@@ -22,14 +22,14 @@
 # SOFTWARE.
 # ===================================================================
 
-"""Self-tests for Cryptos.Random.Fortuna.FortunaGenerator"""
+"""Self-tests for CryProAES.Random.Fortuna.FortunaGenerator"""
 
 __revision__ = "$Id$"
 
 import sys
 if sys.version_info[0] == 2 and sys.version_info[1] == 1:
-    from Cryptos.Util.py21compat import *
-from Cryptos.Util.py3compat import *
+    from CryProAES.Util.py21compat import *
+from CryProAES.Util.py3compat import *
 
 import unittest
 from binascii import b2a_hex
@@ -37,7 +37,7 @@ from binascii import b2a_hex
 class FortunaGeneratorTests(unittest.TestCase):
     def setUp(self):
         global FortunaGenerator
-        from Cryptos.Random.Fortuna import FortunaGenerator
+        from CryProAES.Random.Fortuna import FortunaGenerator
 
     def test_generator(self):
         """FortunaGenerator.AESGenerator"""
@@ -73,7 +73,7 @@ class FortunaGeneratorTests(unittest.TestCase):
         self.assertRaises(AssertionError, fg._pseudo_random_data, 2**20+1)
 
 def get_tests(config={}):
-    from Cryptos.SelfTest.st_common import list_test_cases
+    from CryProAES.SelfTest.st_common import list_test_cases
     return list_test_cases(FortunaGeneratorTests)
 
 if __name__ == '__main__':

@@ -22,15 +22,15 @@
 # SOFTWARE.
 # ===================================================================
 
-"""A Cryptosgraphically strong version of Python's standard "random" module."""
+"""A CryProAESgraphically strong version of Python's standard "random" module."""
 
 __revision__ = "$Id$"
 __all__ = ['StrongRandom', 'getrandbits', 'randrange', 'randint', 'choice', 'shuffle', 'sample']
 
-from Cryptos import Random
+from CryProAES import Random
 import sys
 if sys.version_info[0] == 2 and sys.version_info[1] == 1:
-    from Cryptos.Util.py21compat import *
+    from CryProAES.Util.py21compat import *
 
 class StrongRandom(object):
     def __init__(self, rng=None, randfunc=None):
@@ -137,6 +137,6 @@ shuffle = _r.shuffle
 sample = _r.sample
 
 # These are at the bottom to avoid problems with recursive imports
-from Cryptos.Util.number import ceil_div, bytes_to_long, long_to_bytes, size
+from CryProAES.Util.number import ceil_div, bytes_to_long, long_to_bytes, size
 
 # vim:set ts=4 sw=4 sts=4 expandtab:

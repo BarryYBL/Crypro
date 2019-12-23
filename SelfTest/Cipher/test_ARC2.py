@@ -22,14 +22,14 @@
 # SOFTWARE.
 # ===================================================================
 
-"""Self-test suite for Cryptos.Cipher.ARC2"""
+"""Self-test suite for CryProAES.Cipher.ARC2"""
 
 __revision__ = "$Id$"
 
 from .common import dict     # For compatibility with Python 2.1 and 2.2
 
 import unittest
-from Cryptos.Util.py3compat import *
+from CryProAES.Util.py3compat import *
 
 # This is a list of (plaintext, ciphertext, key[, description[, extra_params]]) tuples.
 test_data = [
@@ -58,7 +58,7 @@ test_data = [
         '88bca90e90875a7f0f79c384627bafb216f80a6f85920584c42fceb0be255daf1e',
         "RFC2268-8", dict(effective_keylen=129)),
 
-    # Test vectors from PyCryptos 2.0.1's testdata.py
+    # Test vectors from PyCryProAES 2.0.1's testdata.py
     # 1024-bit effective key length
     ('0000000000000000', '624fb3e887419e48', '5068696c6970476c617373',
         'PCTv201-0'),
@@ -95,11 +95,11 @@ test_data = [
 ]
 
 class BufferOverflowTest(unittest.TestCase):
-    # Test a buffer overflow found in older versions of PyCryptos
+    # Test a buffer overflow found in older versions of PyCryProAES
 
     def setUp(self):
         global ARC2
-        from Cryptos.Cipher import ARC2
+        from CryProAES.Cipher import ARC2
 
     def runTest(self):
         """ARC2 with keylength > 128"""
@@ -108,7 +108,7 @@ class BufferOverflowTest(unittest.TestCase):
         self.assertRaises(ValueError, ARC2.new, key, mode)
 
 def get_tests(config={}):
-    from Cryptos.Cipher import ARC2
+    from CryProAES.Cipher import ARC2
     from .common import make_block_tests
 
     tests = make_block_tests(ARC2, "ARC2", test_data)

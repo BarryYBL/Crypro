@@ -22,13 +22,13 @@
 # SOFTWARE.
 # ===================================================================
 
-"""Self-test suite for Cryptos.Cipher.XOR"""
+"""Self-test suite for CryProAES.Cipher.XOR"""
 
 import unittest
 
 __revision__ = "$Id$"
 
-from Cryptos.Util.py3compat import *
+from CryProAES.Util.py3compat import *
 
 # This is a list of (plaintext, ciphertext, key) tuples.
 test_data = [
@@ -54,13 +54,13 @@ class TruncationSelfTest(unittest.TestCase):
 
     def runTest(self):
         """33-byte key (should raise ValueError under current implementation)"""
-        # Cryptos.Cipher.XOR previously truncated its inputs at 32 bytes.  Now
+        # CryProAES.Cipher.XOR previously truncated its inputs at 32 bytes.  Now
         # it should raise a ValueError if the length is too long.
         self.assertRaises(ValueError, XOR.new, "x"*33)
 
 def get_tests(config={}):
     global XOR
-    from Cryptos.Cipher import XOR
+    from CryProAES.Cipher import XOR
     from .common import make_stream_tests
     return make_stream_tests(XOR, "XOR", test_data) + [TruncationSelfTest()]
 

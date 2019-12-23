@@ -22,7 +22,7 @@
 # SOFTWARE.
 # ===================================================================
 
-"""RSA public-key Cryptosgraphy algorithm (signature and encryption).
+"""RSA public-key CryProAESgraphy algorithm (signature and encryption).
 
 RSA_ is the most widespread and used public key algorithm. Its security is
 based on the difficulty of factoring large integers. The algorithm has
@@ -32,7 +32,7 @@ secure for new designs.
 The algorithm can be used for both confidentiality (encryption) and
 authentication (digital signature). It is worth noting that signing and
 decryption are significantly slower than verification and encryption.
-The Cryptosgrahic strength is primarily linked to the length of the modulus *n*.
+The CryProAESgrahic strength is primarily linked to the length of the modulus *n*.
 In 2012, a sufficient length is deemed to be 2048 bits. For more information,
 see the most recent ECRYPT_ report.
 
@@ -42,7 +42,7 @@ bytes if *n* is 2048 bit long).
 This module provides facilities for generating fresh, new RSA keys, constructing
 them from known components, exporting them, and importing them.
 
-    >>> from Cryptos.PublicKey import RSA
+    >>> from CryProAES.PublicKey import RSA
     >>>
     >>> key = RSA.generate(2048)
     >>> f = open('mykey.pem','w')
@@ -53,9 +53,9 @@ them from known components, exporting them, and importing them.
     >>> key = RSA.importKey(f.read())
 
 Even though you may choose to  directly use the methods of an RSA key object
-to perform the primitive Cryptosgraphic operations (e.g. `_RSAobj.encrypt`),
+to perform the primitive CryProAESgraphic operations (e.g. `_RSAobj.encrypt`),
 it is recommended to use one of the standardized schemes instead (like
-`Cryptos.Cipher.PKCS1_v1_5` or `Cryptos.Signature.PKCS1_v1_5`).
+`CryProAES.Cipher.PKCS1_v1_5` or `CryProAES.Signature.PKCS1_v1_5`).
 
 .. _RSA: http://en.wikipedia.org/wiki/RSA_%28algorithm%29
 .. _ECRYPT: http://www.ecrypt.eu.org/documents/D.SPA.17.pdf
@@ -69,24 +69,24 @@ __all__ = ['generate', 'construct', 'error', 'importKey', 'RSAImplementation', '
 
 import sys
 if sys.version_info[0] == 2 and sys.version_info[1] == 1:
-    from Cryptos.Util.py21compat import *
-from Cryptos.Util.py3compat import *
-#from Cryptos.Util.python_compat import *
-from Cryptos.Util.number import getRandomRange, bytes_to_long, long_to_bytes
+    from CryProAES.Util.py21compat import *
+from CryProAES.Util.py3compat import *
+#from CryProAES.Util.python_compat import *
+from CryProAES.Util.number import getRandomRange, bytes_to_long, long_to_bytes
 
-from Cryptos.PublicKey import _RSA, _slowmath, pubkey
-from Cryptos import Random
+from CryProAES.PublicKey import _RSA, _slowmath, pubkey
+from CryProAES import Random
 
-from Cryptos.Util.asn1 import DerObject, DerSequence, DerNull
+from CryProAES.Util.asn1 import DerObject, DerSequence, DerNull
 import binascii
 import struct
 
-from Cryptos.Util.number import inverse
+from CryProAES.Util.number import inverse
 
-from Cryptos.Util.number import inverse
+from CryProAES.Util.number import inverse
 
 try:
-    from Cryptos.PublicKey import _fastmath
+    from CryProAES.PublicKey import _fastmath
 except ImportError:
     _fastmath = None
 
@@ -138,10 +138,10 @@ class _RSAobj(pubkey.pubkey):
 
         :attention: this function performs the plain, primitive RSA encryption
          (*textbook*). In real applications, you always need to use proper
-         Cryptosgraphic padding, and you should not directly encrypt data with
+         CryProAESgraphic padding, and you should not directly encrypt data with
          this method. Failure to do so may lead to security vulnerabilities.
          It is recommended to use modules
-         `Cryptos.Cipher.PKCS1_OAEP` or `Cryptos.Cipher.PKCS1_v1_5` instead.
+         `CryProAES.Cipher.PKCS1_OAEP` or `CryProAES.Cipher.PKCS1_v1_5` instead.
 
         :Return: A tuple with two items. The first item is the ciphertext
          of the same type as the plaintext (string or long). The second item
@@ -156,10 +156,10 @@ class _RSAobj(pubkey.pubkey):
 
         :attention: this function performs the plain, primitive RSA decryption
          (*textbook*). In real applications, you always need to use proper
-         Cryptosgraphic padding, and you should not directly decrypt data with
+         CryProAESgraphic padding, and you should not directly decrypt data with
          this method. Failure to do so may lead to security vulnerabilities.
          It is recommended to use modules
-         `Cryptos.Cipher.PKCS1_OAEP` or `Cryptos.Cipher.PKCS1_v1_5` instead.
+         `CryProAES.Cipher.PKCS1_OAEP` or `CryProAES.Cipher.PKCS1_v1_5` instead.
 
         :Parameter ciphertext: The piece of data to decrypt with RSA. It may
          not be numerically larger than the RSA module (**n**). If a tuple,
@@ -180,10 +180,10 @@ class _RSAobj(pubkey.pubkey):
 
         :attention: this function performs the plain, primitive RSA decryption
          (*textbook*). In real applications, you always need to use proper
-         Cryptosgraphic padding, and you should not directly sign data with
+         CryProAESgraphic padding, and you should not directly sign data with
          this method. Failure to do so may lead to security vulnerabilities.
          It is recommended to use modules
-         `Cryptos.Signature.PKCS1_PSS` or `Cryptos.Signature.PKCS1_v1_5` instead.
+         `CryProAES.Signature.PKCS1_PSS` or `CryProAES.Signature.PKCS1_v1_5` instead.
 
         :Parameter M: The piece of data to sign with RSA. It may
          not be numerically larger than the RSA module (**n**).
@@ -203,10 +203,10 @@ class _RSAobj(pubkey.pubkey):
 
         :attention: this function performs the plain, primitive RSA encryption
          (*textbook*). In real applications, you always need to use proper
-         Cryptosgraphic padding, and you should not directly verify data with
+         CryProAESgraphic padding, and you should not directly verify data with
          this method. Failure to do so may lead to security vulnerabilities.
          It is recommended to use modules
-         `Cryptos.Signature.PKCS1_PSS` or `Cryptos.Signature.PKCS1_v1_5` instead.
+         `CryProAES.Signature.PKCS1_PSS` or `CryProAES.Signature.PKCS1_v1_5` instead.
  
         :Parameter M: The expected message.
         :Type M: byte string or long
@@ -227,7 +227,7 @@ class _RSAobj(pubkey.pubkey):
         #(ciphertext,) = c
         (ciphertext,) = c[:1]  # HACK - We should use the previous line
                                # instead, but this is more compatible and we're
-                               # going to replace the Cryptos.PublicKey API soon
+                               # going to replace the CryProAES.PublicKey API soon
                                # anyway.
 
         # Blinded RSA decryption (to prevent timing attacks):
@@ -253,7 +253,7 @@ class _RSAobj(pubkey.pubkey):
         #(s,) = sig
         (s,) = sig[:1]  # HACK - We should use the previous line instead, but
                         # this is more compatible and we're going to replace
-                        # the Cryptos.PublicKey API soon anyway.
+                        # the CryProAES.PublicKey API soon anyway.
         return self.key._verify(m, s)
 
     def has_private(self):
@@ -379,13 +379,13 @@ class _RSAobj(pubkey.pubkey):
                 objenc = None
                 if passphrase and keyType.endswith('PRIVATE'):
                     # We only support 3DES for encryption
-                    import Cryptos.Hash.MD5
-                    from Cryptos.Cipher import DES3
-                    from Cryptos.Protocol.KDF import PBKDF1
+                    import CryProAES.Hash.MD5
+                    from CryProAES.Cipher import DES3
+                    from CryProAES.Protocol.KDF import PBKDF1
                     salt = self._randfunc(8)
-                    key =  PBKDF1(passphrase, salt, 16, 1, Cryptos.Hash.MD5)
-                    key += PBKDF1(key+passphrase, salt, 8, 1, Cryptos.Hash.MD5)
-                    objenc = DES3.new(key, Cryptos.Cipher.DES3.MODE_CBC, salt)
+                    key =  PBKDF1(passphrase, salt, 16, 1, CryProAES.Hash.MD5)
+                    key += PBKDF1(key+passphrase, salt, 8, 1, CryProAES.Hash.MD5)
+                    objenc = DES3.new(key, CryProAES.Cipher.DES3.MODE_CBC, salt)
                     pem += b('Proc-Type: 4,ENCRYPTED\n')
                     pem += b('DEK-Info: DES-EDE3-CBC,') + binascii.b2a_hex(salt).upper() + b('\n\n')
                 
@@ -406,7 +406,7 @@ class RSAImplementation(object):
     """
     An RSA key factory.
 
-    This class is only internally used to implement the methods of the `Cryptos.PublicKey.RSA` module.
+    This class is only internally used to implement the methods of the `CryProAES.PublicKey.RSA` module.
 
     :sort: __init__,generate,construct,importKey
     :undocumented: _g*, _i*
@@ -471,7 +471,7 @@ class RSAImplementation(object):
                             a single integer N and return a string of random data
                             N bytes long.
                             If not specified, a new one will be instantiated
-                            from ``Cryptos.Random``.
+                            from ``CryProAES.Random``.
 
          progress_func : callable
                             Optional function that will be called with a short string
@@ -486,8 +486,8 @@ class RSAImplementation(object):
                             The default value 65537 (= ``0b10000000000000001`` ) is a safe
                             choice: other common values are 5, 7, 17, and 257.
 
-        :attention: You should always use a Cryptosgraphically secure random number generator,
-            such as the one defined in the ``Cryptos.Random`` module; **don't** just use the
+        :attention: You should always use a CryProAESgraphically secure random number generator,
+            such as the one defined in the ``CryProAES.Random`` module; **don't** just use the
             current time and the ``random`` module.
 
         :attention: Exponent 3 is also widely used, but it requires very special care when padding
@@ -641,18 +641,18 @@ class RSAImplementation(object):
                         raise ValueError("PEM encryption format not supported.")
                     algo, salt = DEK[1].split(b(','))
                     salt = binascii.a2b_hex(salt)
-                    import Cryptos.Hash.MD5
-                    from Cryptos.Cipher import DES, DES3
-                    from Cryptos.Protocol.KDF import PBKDF1
+                    import CryProAES.Hash.MD5
+                    from CryProAES.Cipher import DES, DES3
+                    from CryProAES.Protocol.KDF import PBKDF1
                     if algo==b("DES-CBC"):
                         # This is EVP_BytesToKey in OpenSSL
-                        key = PBKDF1(passphrase, salt, 8, 1, Cryptos.Hash.MD5)
-                        keyobj = DES.new(key, Cryptos.Cipher.DES.MODE_CBC, salt)
+                        key = PBKDF1(passphrase, salt, 8, 1, CryProAES.Hash.MD5)
+                        keyobj = DES.new(key, CryProAES.Cipher.DES.MODE_CBC, salt)
                     elif algo==b("DES-EDE3-CBC"):
                         # Note that EVP_BytesToKey is note exactly the same as PBKDF1
-                        key =  PBKDF1(passphrase, salt, 16, 1, Cryptos.Hash.MD5)
-                        key += PBKDF1(key+passphrase, salt, 8, 1, Cryptos.Hash.MD5)
-                        keyobj = DES3.new(key, Cryptos.Cipher.DES3.MODE_CBC, salt)
+                        key =  PBKDF1(passphrase, salt, 16, 1, CryProAES.Hash.MD5)
+                        key += PBKDF1(key+passphrase, salt, 8, 1, CryProAES.Hash.MD5)
+                        keyobj = DES3.new(key, CryProAES.Cipher.DES3.MODE_CBC, salt)
                     else:
                         raise ValueError("Unsupport PEM encryption algorithm.")
                     lines = lines[2:]

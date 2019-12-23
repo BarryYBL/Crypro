@@ -1,67 +1,67 @@
-# Cryptos
+# CryProAES
 Simple symmetric GPG file encryption and decryption
 
 ## About
-Cryptos provides a simple interface to symmetric Gnu Privacy Guard (gpg) encryption and decryption for one or more files on Unix and Linux platforms.  It runs on top of gpg and requires a gpg install on your system.  Encryption is performed with the AES256 cipher algorithm.
+CryProAES provides a simple interface to symmetric Gnu Privacy Guard (gpg) encryption and decryption for one or more files on Unix and Linux platforms.  It runs on top of gpg and requires a gpg install on your system.  Encryption is performed with the AES256 cipher algorithm.
 
-Encryption benchmarks vs. default gpg encryption are available [here](http://chrissimpkins.github.io/Cryptos/benchmarks.html) with additional details for [text](http://chrissimpkins.github.io/Cryptos/text-benchmarks.html), [pdf](http://chrissimpkins.github.io/Cryptos/pdf-benchmarks.html), [mp3](http://chrissimpkins.github.io/Cryptos/mp3-benchmarks.html), and [png](http://chrissimpkins.github.io/Cryptos/png-benchmarks.html) mime types.
+Encryption benchmarks vs. default gpg encryption are available [here](http://chrissimpkins.github.io/CryProAES/benchmarks.html) with additional details for [text](http://chrissimpkins.github.io/CryProAES/text-benchmarks.html), [pdf](http://chrissimpkins.github.io/CryProAES/pdf-benchmarks.html), [mp3](http://chrissimpkins.github.io/CryProAES/mp3-benchmarks.html), and [png](http://chrissimpkins.github.io/CryProAES/png-benchmarks.html) mime types.
 
-Cryptos provides a number of options including automated tar archives of multiple files prior to encryption, portable ASCII armored encryption formatting, and SHA256 hash digest generation for your encrypted files.
+CryProAES provides a number of options including automated tar archives of multiple files prior to encryption, portable ASCII armored encryption formatting, and SHA256 hash digest generation for your encrypted files.
 
 ## Documentation
 
-Detailed documentation is available [here](http://chrissimpkins.github.io/Cryptos/index.html).
+Detailed documentation is available [here](http://chrissimpkins.github.io/CryProAES/index.html).
 
 ## Quickstart
 
 #### Encrypt a File
 ```
-$ Cryptos sometext.txt
+$ CryProAES sometext.txt
 ```
 
 #### Encrypt with Portable ASCII Armored Format
 ```
-$ Cryptos --armor sometext.txt
+$ CryProAES --armor sometext.txt
 ```
 
 #### Encrypt Multiple Files with Same Passphrase
 ```
-$ Cryptos sometext.txt anotherimage.jpg
+$ CryProAES sometext.txt anotherimage.jpg
 ```
 
 #### Encrypt Multiple Files with Wildcard Expansion
 ```
-$ Cryptos *.txt
+$ CryProAES *.txt
 ```
 
 #### Encrypt and Generate SHA256 Hash Digest of the Encrypted File
 ```
-$ Cryptos --hash sometext.txt
+$ CryProAES --hash sometext.txt
 ```
 
 #### Encrypt All Top Level Files in Multiple Directories with Same Passphrase
 ```
-$ Cryptos imagedir privatedir
+$ CryProAES imagedir privatedir
 ```
 
 #### Pack Multiple Files in a Tar Archive, Then Encrypt the Archive
 ```
-$ Cryptos --tar privatedir
+$ CryProAES --tar privatedir
 ```
 
 #### Decrypt a File
 ```
-$ deCryptos sometext.txt.crypt
+$ deCryProAES sometext.txt.crypt
 ```
 
 #### Decrypt All Encrypted Files in Top Level of Directory
 ```
-$ deCryptos privatedir
+$ deCryProAES privatedir
 ```
 
 #### Decrypt Text to Standard Output Stream
 ```
-$ deCryptos --stdout sometext.txt.gpg
+$ deCryProAES --stdout sometext.txt.gpg
 ```
 
 
@@ -83,14 +83,14 @@ Please refer to the detailed documentation on the Gnu Privacy Guard and Mac GPG 
 #### Linux Users
 If gpg is not installed on your Linux distro, you can use your package manager to install it or compile and install it from the [source](https://www.gnupg.org/download/index.html).
 
-### 2) Install Cryptos
-You can install Cryptos with [pip](https://pypi.python.org/pypi/pip/):
+### 2) Install CryProAES
+You can install CryProAES with [pip](https://pypi.python.org/pypi/pip/):
 
 ```
-pip install Cryptos
+pip install CryProAES
 ```
 
-or download the [Cryptos source](https://github.com/chrissimpkins/Cryptos/archive/master.zip), unpack it, navigate to the top level directory, and install with the command:
+or download the [CryProAES source](https://github.com/chrissimpkins/CryProAES/archive/master.zip), unpack it, navigate to the top level directory, and install with the command:
 
 ```
 python setup.py install
@@ -98,7 +98,7 @@ python setup.py install
 
 ## Options
 
-### Cryptos Options
+### CryProAES Options
 
 #### `--armor | -a`
 
@@ -120,7 +120,7 @@ Favor encryption speed over reduced file size
 
 Create tar archives from directories of files, then encrypt
 
-### deCryptos Options
+### deCryProAES Options
 
 #### `--nountar`
 
@@ -146,7 +146,7 @@ View the usage documentation
 
 #### `--version | -v`
 
-View the Cryptos version number
+View the CryProAES version number
 
 ## Project Contributors
 

@@ -31,18 +31,18 @@ The most straightforward way to fulfil the uniqueness property is
 to start with an initial, random *counter block* value, and increment it as
 the next block is processed.
 
-The block ciphers from `Cryptos.Cipher` (when configured in *MODE_CTR* mode)
+The block ciphers from `CryProAES.Cipher` (when configured in *MODE_CTR* mode)
 invoke a callable object (the *counter* parameter) to get the next *counter block*.
 Unfortunately, the Python calling protocol leads to major performance degradations.
 
 The counter functions instantiated by this module will be invoked directly
-by the ciphers in `Cryptos.Cipher`. The fact that the Python layer is bypassed
+by the ciphers in `CryProAES.Cipher`. The fact that the Python layer is bypassed
 lead to more efficient (and faster) execution of CTR cipher modes.
 
 An example of usage is the following:
 
-    >>> from Cryptos.Cipher import AES
-    >>> from Cryptos.Util import Counter
+    >>> from CryProAES.Cipher import AES
+    >>> from CryProAES.Util import Counter
     >>>
     >>> pt = b'\x00'*1000000
     >>> ctr = Counter.new(128)
@@ -53,10 +53,10 @@ An example of usage is the following:
 """
 import sys
 if sys.version_info[0] == 2 and sys.version_info[1] == 1:
-    from Cryptos.Util.py21compat import *
-from Cryptos.Util.py3compat import *
+    from CryProAES.Util.py21compat import *
+from CryProAES.Util.py3compat import *
 
-from Cryptos.Util import _counter
+from CryProAES.Util import _counter
 import struct
 
 # Factory function
@@ -89,7 +89,7 @@ def new(nbits, prefix=b(""), suffix=b(""), initial_value=1, overflow=0, little_e
         as the counter wraps around. If False (default), the counter will
         simply restart from zero.
       disable_shortcut : boolean
-        If True, do not make ciphers from `Cryptos.Cipher` bypass the Python
+        If True, do not make ciphers from `CryProAES.Cipher` bypass the Python
         layer when invoking the counter block function.
         If False (default), bypass the Python layer.
     :Returns:

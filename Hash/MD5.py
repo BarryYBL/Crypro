@@ -18,11 +18,11 @@
 # SOFTWARE.
 # ===================================================================
 
-"""MD5 Cryptosgraphic hash algorithm.
+"""MD5 CryProAESgraphic hash algorithm.
 
 MD5 is specified in RFC1321_ and produces the 128 bit digest of a message.
 
-    >>> from Cryptos.Hash import MD5
+    >>> from CryProAES.Hash import MD5
     >>>
     >>> h = MD5.new()
     >>> h.update(b'Hello')
@@ -39,8 +39,8 @@ _revision__ = "$Id$"
 
 __all__ = ['new', 'digest_size', 'MD5Hash' ]
 
-from Cryptos.Util.py3compat import *
-from Cryptos.Hash.hashalgo import HashAlgo
+from CryProAES.Util.py3compat import *
+from CryProAES.Hash.hashalgo import HashAlgo
 
 try:
     # The md5 module is deprecated in Python 2.6, so use hashlib when possible.

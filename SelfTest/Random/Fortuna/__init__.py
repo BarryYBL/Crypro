@@ -22,7 +22,7 @@
 # SOFTWARE.
 # ===================================================================
 
-"""Self-test for the Cryptos.Random.Fortuna package"""
+"""Self-test for the CryProAES.Random.Fortuna package"""
 
 __revision__ = "$Id$"
 
@@ -30,9 +30,9 @@ import os
 
 def get_tests(config={}):
     tests = []
-    from Cryptos.SelfTest.Random.Fortuna import test_FortunaAccumulator; tests += test_FortunaAccumulator.get_tests(config=config)
-    from Cryptos.SelfTest.Random.Fortuna import test_FortunaGenerator;   tests += test_FortunaGenerator.get_tests(config=config)
-    from Cryptos.SelfTest.Random.Fortuna import test_SHAd256;            tests += test_SHAd256.get_tests(config=config)
+    from CryProAES.SelfTest.Random.Fortuna import test_FortunaAccumulator; tests += test_FortunaAccumulator.get_tests(config=config)
+    from CryProAES.SelfTest.Random.Fortuna import test_FortunaGenerator;   tests += test_FortunaGenerator.get_tests(config=config)
+    from CryProAES.SelfTest.Random.Fortuna import test_SHAd256;            tests += test_SHAd256.get_tests(config=config)
     return tests
 
 if __name__ == '__main__':

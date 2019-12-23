@@ -26,15 +26,15 @@ by NIST_ . It has a fixed data block size of 8 bytes.
 Its keys are 64 bits long, even though 8 bits were used for integrity (now they
 are ignored) and do not contribute to securty.
 
-DES is Cryptosgraphically secure, but its key length is too short by nowadays
+DES is CryProAESgraphically secure, but its key length is too short by nowadays
 standards and it could be brute forced with some effort.
 
 DES should not be used for new designs. Use `AES`.
 
 As an example, encryption can be done as follows:
 
-    >>> from Cryptos.Cipher import DES3
-    >>> from Cryptos import Random
+    >>> from CryProAES.Cipher import DES3
+    >>> from CryProAES import Random
     >>>
     >>> key = b'Sixteen byte key'
     >>> iv = Random.new().read(DES3.block_size)
@@ -50,8 +50,8 @@ As an example, encryption can be done as follows:
 
 __revision__ = "$Id$"
 
-from Cryptos.Cipher import blockalgo
-from Cryptos.Cipher import _DES
+from CryProAES.Cipher import blockalgo
+from CryProAES.Cipher import _DES
 
 class DESCipher(blockalgo.BlockAlgo):
     """DES cipher object"""
@@ -88,7 +88,7 @@ def new(key, *args, **kwargs):
       counter : callable
         (*Only* `MODE_CTR`). A stateful function that returns the next
         *counter block*, which is a byte string of `block_size` bytes.
-        For better performance, use `Cryptos.Util.Counter`.
+        For better performance, use `CryProAES.Util.Counter`.
       segment_size : integer
         (*Only* `MODE_CFB`).The number of bits the plaintext and ciphertext
         are segmented in.

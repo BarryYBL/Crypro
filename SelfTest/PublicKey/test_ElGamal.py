@@ -20,16 +20,16 @@
 # SOFTWARE.
 # ===================================================================
 
-"""Self-test suite for Cryptos.PublicKey.ElGamal"""
+"""Self-test suite for CryProAES.PublicKey.ElGamal"""
 
 __revision__ = "$Id$"
 
 import unittest
-from Cryptos.SelfTest.st_common import list_test_cases, a2b_hex, b2a_hex
-from Cryptos import Random
-from Cryptos.PublicKey import ElGamal
-from Cryptos.Util.number import *
-from Cryptos.Util.py3compat import *
+from CryProAES.SelfTest.st_common import list_test_cases, a2b_hex, b2a_hex
+from CryProAES import Random
+from CryProAES.PublicKey import ElGamal
+from CryProAES.Util.number import *
+from CryProAES.Util.py3compat import *
 
 class ElGamalTest(unittest.TestCase):
 

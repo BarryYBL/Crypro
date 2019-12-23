@@ -22,7 +22,7 @@
 # SOFTWARE.
 # ===================================================================
 
-"""Self-test for Cryptos.Random.OSRNG package"""
+"""Self-test for CryProAES.Random.OSRNG package"""
 
 __revision__ = "$Id$"
 
@@ -31,13 +31,13 @@ import os
 def get_tests(config={}):
     tests = []
     if os.name == 'nt':
-        from Cryptos.SelfTest.Random.OSRNG import test_nt;        tests += test_nt.get_tests(config=config)
-        from Cryptos.SelfTest.Random.OSRNG import test_winrandom; tests += test_winrandom.get_tests(config=config)
+        from CryProAES.SelfTest.Random.OSRNG import test_nt;        tests += test_nt.get_tests(config=config)
+        from CryProAES.SelfTest.Random.OSRNG import test_winrandom; tests += test_winrandom.get_tests(config=config)
     elif os.name == 'posix':
-        from Cryptos.SelfTest.Random.OSRNG import test_posix;     tests += test_posix.get_tests(config=config)
+        from CryProAES.SelfTest.Random.OSRNG import test_posix;     tests += test_posix.get_tests(config=config)
     if hasattr(os, 'urandom'):
-        from Cryptos.SelfTest.Random.OSRNG import test_fallback;      tests += test_fallback.get_tests(config=config)
-    from Cryptos.SelfTest.Random.OSRNG import test_generic;       tests += test_generic.get_tests(config=config)
+        from CryProAES.SelfTest.Random.OSRNG import test_fallback;      tests += test_fallback.get_tests(config=config)
+    from CryProAES.SelfTest.Random.OSRNG import test_generic;       tests += test_generic.get_tests(config=config)
     return tests
 
 if __name__ == '__main__':

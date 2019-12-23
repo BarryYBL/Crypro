@@ -22,7 +22,7 @@
 # SOFTWARE.
 # ===================================================================
 
-"""Self-test suite for Cryptos.Random.OSRNG.fallback"""
+"""Self-test suite for CryProAES.Random.OSRNG.fallback"""
 
 __revision__ = "$Id$"
 
@@ -30,10 +30,10 @@ import unittest
 
 class SimpleTest(unittest.TestCase):
     def runTest(self):
-        """Cryptos.Random.OSRNG.fallback.new()"""
+        """CryProAES.Random.OSRNG.fallback.new()"""
         # Import the OSRNG.nt module and try to use it
-        import Cryptos.Random.OSRNG.fallback
-        randobj = Cryptos.Random.OSRNG.fallback.new()
+        import CryProAES.Random.OSRNG.fallback
+        randobj = CryProAES.Random.OSRNG.fallback.new()
         x = randobj.read(16)
         y = randobj.read(16)
         self.assertNotEqual(x, y)

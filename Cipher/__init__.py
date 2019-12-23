@@ -39,16 +39,16 @@ standard and has undergone a fair bit of examination.
 ========================    =======   ========================
 Module name                 Type      Description
 ========================    =======   ========================
-`Cryptos.Cipher.AES`         Block     Advanced Encryption Standard
-`Cryptos.Cipher.ARC2`        Block     Alleged RC2
-`Cryptos.Cipher.ARC4`        Stream    Alleged RC4
-`Cryptos.Cipher.Blowfish`    Block     Blowfish
-`Cryptos.Cipher.CAST`        Block     CAST
-`Cryptos.Cipher.DES`         Block     The Data Encryption Standard.
+`CryProAES.Cipher.AES`         Block     Advanced Encryption Standard
+`CryProAES.Cipher.ARC2`        Block     Alleged RC2
+`CryProAES.Cipher.ARC4`        Stream    Alleged RC4
+`CryProAES.Cipher.Blowfish`    Block     Blowfish
+`CryProAES.Cipher.CAST`        Block     CAST
+`CryProAES.Cipher.DES`         Block     The Data Encryption Standard.
                                       Very commonly used in the past,
                                       but today its 56-bit keys are too small.
-`Cryptos.Cipher.DES3`        Block     Triple DES.
-`Cryptos.Cipher.XOR`         Stream    The simple XOR cipher.
+`CryProAES.Cipher.DES3`        Block     Triple DES.
+`CryProAES.Cipher.XOR`         Stream    The simple XOR cipher.
 ========================    =======   ========================
 
 
@@ -64,8 +64,8 @@ the decryption key is called ``private``.
 ==========================    =======================
 Module name                   Description
 ==========================    =======================
-`Cryptos.Cipher.PKCS1_v1_5`    PKCS#1 v1.5 encryption, based on RSA key pairs
-`Cryptos.Cipher.PKCS1_OAEP`    PKCS#1 OAEP encryption, based on RSA key pairs
+`CryProAES.Cipher.PKCS1_v1_5`    PKCS#1 v1.5 encryption, based on RSA key pairs
+`CryProAES.Cipher.PKCS1_OAEP`    PKCS#1 OAEP encryption, based on RSA key pairs
 ==========================    =======================
 
 :undocumented: __revision__, __package__, _AES, _ARC2, _ARC4, _Blowfish

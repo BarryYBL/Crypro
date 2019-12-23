@@ -33,7 +33,7 @@ more than 30 years.
 
 The group is actually a sub-group over the integers modulo *p*, with *p* prime.
 The sub-group order is *q*, which is prime too; it always holds that *(p-1)* is a multiple of *q*.
-The Cryptosgraphic strength is linked to the magnitude of *p* and *q*.
+The CryProAESgraphic strength is linked to the magnitude of *p* and *q*.
 The signer holds a value *x* (*0<x<q-1*) as private key, and its public
 key (*y* where *y=g^x mod p*) is distributed.
 
@@ -57,9 +57,9 @@ This module provides facilities for generating new DSA keys and for constructing
 them from known components. DSA keys allows you to perform basic signing and
 verification.
 
-    >>> from Cryptos.Random import random
-    >>> from Cryptos.PublicKey import DSA
-    >>> from Cryptos.Hash import SHA
+    >>> from CryProAES.Random import random
+    >>> from CryProAES.PublicKey import DSA
+    >>> from CryProAES.Hash import SHA
     >>>
     >>> message = "Hello"
     >>> key = DSA.generate(1024)
@@ -83,13 +83,13 @@ __all__ = ['generate', 'construct', 'error', 'DSAImplementation', '_DSAobj']
 
 import sys
 if sys.version_info[0] == 2 and sys.version_info[1] == 1:
-    from Cryptos.Util.py21compat import *
+    from CryProAES.Util.py21compat import *
 
-from Cryptos.PublicKey import _DSA, _slowmath, pubkey
-from Cryptos import Random
+from CryProAES.PublicKey import _DSA, _slowmath, pubkey
+from CryProAES import Random
 
 try:
-    from Cryptos.PublicKey import _fastmath
+    from CryProAES.PublicKey import _fastmath
 except ImportError:
     _fastmath = None
 
@@ -146,7 +146,7 @@ class _DSAobj(pubkey.pubkey):
         :attention: The number *K* shall not be reused for any other
          operation and shall be discarded immediately.
 
-        :attention: M must be a digest Cryptosgraphic hash, otherwise
+        :attention: M must be a digest CryProAESgraphic hash, otherwise
          an attacker may mount an existential forgery attack.
 
         :Return: A tuple with 2 longs.
@@ -241,7 +241,7 @@ class DSAImplementation(object):
     A DSA key factory.
 
     This class is only internally used to implement the methods of the
-    `Cryptos.PublicKey.DSA` module.
+    `CryProAES.PublicKey.DSA` module.
     """
  
     def __init__(self, **kwargs):
@@ -307,15 +307,15 @@ class DSAImplementation(object):
                             a single integer N and return a string of random data
                             N bytes long.
                             If not specified, a new one will be instantiated
-                            from ``Cryptos.Random``.
+                            from ``CryProAES.Random``.
          progress_func : callable
                             Optional function that will be called with a short string
                             containing the key parameter currently being generated;
                             it's useful for interactive applications where a user is
                             waiting for a key to be generated.
 
-        :attention: You should always use a Cryptosgraphically secure random number generator,
-            such as the one defined in the ``Cryptos.Random`` module; **don't** just use the
+        :attention: You should always use a CryProAESgraphically secure random number generator,
+            such as the one defined in the ``CryProAES.Random`` module; **don't** just use the
             current time and the ``random`` module.
 
         :Return: A DSA key object (`_DSAobj`).

@@ -30,8 +30,8 @@ encryption.
 
 As an example, encryption can be done as follows:
 
-    >>> from Cryptos.Cipher import AES
-    >>> from Cryptos import Random
+    >>> from CryProAES.Cipher import AES
+    >>> from CryProAES import Random
     >>>
     >>> key = b'Sixteen byte key'
     >>> iv = Random.new().read(AES.block_size)
@@ -46,8 +46,8 @@ As an example, encryption can be done as follows:
 
 __revision__ = "$Id$"
 
-from Cryptos.Cipher import blockalgo
-from Cryptos.Cipher import _AES
+from CryProAES.Cipher import blockalgo
+from CryProAES.Cipher import _AES
 
 class AESCipher (blockalgo.BlockAlgo):
     """AES cipher object"""
@@ -84,7 +84,7 @@ def new(key, *args, **kwargs):
       counter : callable
         (*Only* `MODE_CTR`). A stateful function that returns the next
         *counter block*, which is a byte string of `block_size` bytes.
-        For better performance, use `Cryptos.Util.Counter`.
+        For better performance, use `CryProAES.Util.Counter`.
       segment_size : integer
         (*Only* `MODE_CFB`).The number of bits the plaintext and ciphertext
         are segmented in.

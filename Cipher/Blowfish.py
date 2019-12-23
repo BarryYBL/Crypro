@@ -31,8 +31,8 @@ to be big enough to withstand a brute force attack (e.g. at least 16 bytes).
 
 As an example, encryption can be done as follows:
 
-    >>> from Cryptos.Cipher import Blowfish
-    >>> from Cryptos import Random
+    >>> from CryProAES.Cipher import Blowfish
+    >>> from CryProAES import Random
     >>> from struct import pack
     >>>
     >>> bs = Blowfish.block_size
@@ -52,8 +52,8 @@ As an example, encryption can be done as follows:
 
 __revision__ = "$Id$"
 
-from Cryptos.Cipher import blockalgo
-from Cryptos.Cipher import _Blowfish
+from CryProAES.Cipher import blockalgo
+from CryProAES.Cipher import _Blowfish
 
 class BlowfishCipher (blockalgo.BlockAlgo):
     """Blowfish cipher object"""
@@ -90,7 +90,7 @@ def new(key, *args, **kwargs):
       counter : callable
         (*Only* `MODE_CTR`). A stateful function that returns the next
         *counter block*, which is a byte string of `block_size` bytes.
-        For better performance, use `Cryptos.Util.Counter`.
+        For better performance, use `CryProAES.Util.Counter`.
       segment_size : integer
         (*Only* `MODE_CFB`).The number of bits the plaintext and ciphertext
         are segmented in.

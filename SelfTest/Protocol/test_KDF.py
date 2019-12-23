@@ -25,10 +25,10 @@ __revision__ = "$Id$"
 import unittest
 from binascii import unhexlify
 
-from Cryptos.SelfTest.st_common import list_test_cases
-from Cryptos.Hash import SHA as SHA1,HMAC
+from CryProAES.SelfTest.st_common import list_test_cases
+from CryProAES.Hash import SHA as SHA1,HMAC
 
-from Cryptos.Protocol.KDF import *
+from CryProAES.Protocol.KDF import *
 
 def t2b(t): return unhexlify(b(t))
 
@@ -42,7 +42,7 @@ class PBKDF1_Tests(unittest.TestCase):
     #       Item #3: iterations to use
     #       Item #4: expected result (encoded in hex)
     _testData = (
-            # From http://www.di-mgt.com.au/CryptosKDFs.html#examplespbkdf
+            # From http://www.di-mgt.com.au/CryProAESKDFs.html#examplespbkdf
             ("password","78578E5A5D63CB06",16,1000,"DC19847E05C64D2FAF10EBFB4A3D2A20"),
     )
     
@@ -61,7 +61,7 @@ class PBKDF2_Tests(unittest.TestCase):
     #       Item #3: iterations to use
     #       Item #4: expected result (encoded in hex)
     _testData = (
-            # From http://www.di-mgt.com.au/CryptosKDFs.html#examplespbkdf
+            # From http://www.di-mgt.com.au/CryProAESKDFs.html#examplespbkdf
             ("password","78578E5A5D63CB06",24,2048,"BFDE6BE94DF7E11DD409BCE20A0255EC327CB936FFE93643"),
             # From RFC 6050
             ("password","73616c74", 20, 1,          "0c60c80f961f0e71f3a9b524af6012062fe037a6"),

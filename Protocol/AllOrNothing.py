@@ -1,7 +1,7 @@
 #
 #  AllOrNothing.py : all-or-nothing package transformations
 #
-# Part of the Python Cryptosgraphy Toolkit
+# Part of the Python CryProAESgraphy Toolkit
 #
 # Written by Andrew M. Kuchling and others
 #
@@ -46,8 +46,8 @@ __revision__ = "$Id$"
 
 import operator
 import sys
-from Cryptos.Util.number import bytes_to_long, long_to_bytes
-from Cryptos.Util.py3compat import *
+from CryProAES.Util.number import bytes_to_long, long_to_bytes
+from CryProAES.Util.py3compat import *
 from functools import reduce
 
 def isInt(x):
@@ -66,7 +66,7 @@ class AllOrNothing:
         _inventkey(key_size):
             Returns a randomly generated key.  Subclasses can use this to
             implement better random key generating algorithms.  The default
-            algorithm is probably not very Cryptosgraphically secure.
+            algorithm is probably not very CryProAESgraphically secure.
 
     """
 
@@ -231,7 +231,7 @@ class AllOrNothing:
 
     def _inventkey(self, key_size):
         # Return key_size random bytes
-        from Cryptos import Random
+        from CryProAES import Random
         return Random.new().read(key_size)
 
     def __newcipher(self, key):
@@ -295,7 +295,7 @@ Where:
             aslong = 1
 
     # ugly hack to force __import__ to give us the end-path module
-    module = __import__('Cryptos.Cipher.'+ciphermodule, None, None, ['new'])
+    module = __import__('CryProAES.Cipher.'+ciphermodule, None, None, ['new'])
 
     x = AllOrNothing(module)
     print('Original text:\n==========')

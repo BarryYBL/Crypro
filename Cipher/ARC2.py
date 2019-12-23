@@ -32,18 +32,18 @@ The company eventually published its full specification in RFC2268_.
 
 RC2 has a fixed data block size of 8 bytes. Length of its keys can vary from
 8 to 128 bits. One particular property of RC2 is that the actual
-Cryptosgraphic strength of the key (*effective key length*) can be reduced 
+CryProAESgraphic strength of the key (*effective key length*) can be reduced
 via a parameter.
 
-Even though RC2 is not Cryptosgraphically broken, it has not been analyzed as
+Even though RC2 is not CryProAESgraphically broken, it has not been analyzed as
 thoroughly as AES, which is also faster than RC2.
 
 New designs should not use RC2.
 
 As an example, encryption can be done as follows:
 
-    >>> from Cryptos.Cipher import ARC2
-    >>> from Cryptos import Random
+    >>> from CryProAES.Cipher import ARC2
+    >>> from CryProAES import Random
     >>>
     >>> key = b'Sixteen byte key'
     >>> iv = Random.new().read(ARC2.block_size)
@@ -58,8 +58,8 @@ As an example, encryption can be done as follows:
 
 __revision__ = "$Id$"
 
-from Cryptos.Cipher import blockalgo
-from Cryptos.Cipher import _ARC2
+from CryProAES.Cipher import blockalgo
+from CryProAES.Cipher import _ARC2
 
 class RC2Cipher (blockalgo.BlockAlgo):
     """RC2 cipher object"""
@@ -96,13 +96,13 @@ def new(key, *args, **kwargs):
       counter : callable
         (*Only* `MODE_CTR`). A stateful function that returns the next
         *counter block*, which is a byte string of `block_size` bytes.
-        For better performance, use `Cryptos.Util.Counter`.
+        For better performance, use `CryProAES.Util.Counter`.
       segment_size : integer
         (*Only* `MODE_CFB`).The number of bits the plaintext and ciphertext
         are segmented in.
         It must be a multiple of 8. If 0 or not specified, it will be assumed to be 8.
       effective_keylen : integer
-        Maximum Cryptosgraphic strength of the key, in bits.
+        Maximum CryProAESgraphic strength of the key, in bits.
         It can vary from 0 to 1024. The default value is 1024.
 
     :Return: an `RC2Cipher` object

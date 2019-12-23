@@ -28,11 +28,11 @@ __revision__ = "$Id$"
 
 def get_tests(config={}):
     tests = []
-    from Cryptos.SelfTest.Random import Fortuna;             tests += Fortuna.get_tests(config=config)
-    from Cryptos.SelfTest.Random import OSRNG;               tests += OSRNG.get_tests(config=config)
-    from Cryptos.SelfTest.Random import test_random;         tests += test_random.get_tests(config=config)
-    from Cryptos.SelfTest.Random import test_rpoolcompat;    tests += test_rpoolcompat.get_tests(config=config)
-    from Cryptos.SelfTest.Random import test__UserFriendlyRNG; tests += test__UserFriendlyRNG.get_tests(config=config)
+    from CryProAES.SelfTest.Random import Fortuna;             tests += Fortuna.get_tests(config=config)
+    from CryProAES.SelfTest.Random import OSRNG;               tests += OSRNG.get_tests(config=config)
+    from CryProAES.SelfTest.Random import test_random;         tests += test_random.get_tests(config=config)
+    from CryProAES.SelfTest.Random import test_rpoolcompat;    tests += test_rpoolcompat.get_tests(config=config)
+    from CryProAES.SelfTest.Random import test__UserFriendlyRNG; tests += test__UserFriendlyRNG.get_tests(config=config)
     return tests
 
 if __name__ == '__main__':

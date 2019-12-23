@@ -1,7 +1,7 @@
 #
 #  Chaffing.py : chaffing & winnowing support
 #
-# Part of the Python Cryptosgraphy Toolkit
+# Part of the Python CryProAESgraphy Toolkit
 #
 # Written by Andrew M. Kuchling, Barry A. Warsaw, and others
 #
@@ -69,7 +69,7 @@ http://theory.lcs.mit.edu/~rivest/chaffing.txt
 
 __revision__ = "$Id$"
 
-from Cryptos.Util.number import bytes_to_long
+from CryProAES.Util.number import bytes_to_long
 
 class Chaff:
     """Class implementing the chaff adding algorithm.
@@ -80,7 +80,7 @@ class Chaff:
                 Returns a randomly generated number with a byte-length equal
                 to size.  Subclasses can use this to implement better random
                 data and MAC generating algorithms.  The default algorithm is
-                probably not very Cryptosgraphically secure.  It is most
+                probably not very CryProAESgraphically secure.  It is most
                 important that the chaff data does not contain any patterns
                 that can be used to discern it from wheat data without running
                 the MAC.
@@ -169,7 +169,7 @@ class Chaff:
         return chaffedblocks
 
     def _randnum(self, size):
-        from Cryptos import Random
+        from CryProAES import Random
         return Random.new().read(size)
 
 
@@ -196,7 +196,7 @@ likely to effect their Safety and Happiness.
 
     # now get MACs for all the text blocks.  The key is obvious...
     print('Calculating MACs...')
-    from Cryptos.Hash import HMAC, SHA
+    from CryProAES.Hash import HMAC, SHA
     key = 'Jefferson'
     macs = [HMAC.new(key, block, digestmod=SHA).digest()
             for block in blocks]
