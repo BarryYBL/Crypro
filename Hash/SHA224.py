@@ -18,9 +18,9 @@
 # SOFTWARE.
 # ===================================================================
 
-"""SHA-224 cryptographic hash algorithm.
+"""SHA-224 Cryptographic hash algorithm.
 
-SHA-224 belongs to the SHA-2_ family of cryptographic hashes.
+SHA-224 belongs to the SHA-2_ family of Cryptographic hashes.
 It produces the 224 bit digest of a message.
 
     >>> from Crypto.Hash import SHA224

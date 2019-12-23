@@ -20,7 +20,7 @@
 
 """Cryptographic protocols
 
-Implements various cryptographic protocols.  (Don't expect to find
+Implements various Cryptographic protocols.  (Don't expect to find
 network protocols here.)
 
 Crypto.Protocol.AllOrNothing

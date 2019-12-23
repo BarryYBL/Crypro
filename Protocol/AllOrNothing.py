@@ -66,7 +66,7 @@ class AllOrNothing:
         _inventkey(key_size):
             Returns a randomly generated key.  Subclasses can use this to
             implement better random key generating algorithms.  The default
-            algorithm is probably not very cryptographically secure.
+            algorithm is probably not very Cryptographically secure.
 
     """
 

@@ -38,7 +38,7 @@ to encrypt multiple messages with the same long-term key, a distinct
 independent nonce must be created for each message, and a short-term key must
 be derived from the combination of the long-term key and the nonce.
 Due to the weak key scheduling algorithm of RC2, the combination must be carried
-out with a complex function (e.g. a cryptographic hash) and not by simply
+out with a complex function (e.g. a Cryptographic hash) and not by simply
 concatenating key and nonce.
 
 New designs should not use ARC4. A good alternative is AES
@@ -107,7 +107,7 @@ def new(key, *args, **kwargs):
       key : byte string
         The secret key to use in the symmetric cipher.
         It can have any length, with a minimum of 40 bytes.
-        Its cryptograpic strength is always capped to 2048 bits (256 bytes).
+        Its Cryptograpic strength is always capped to 2048 bits (256 bytes).
 
     :Return: an `ARC4Cipher` object
     """

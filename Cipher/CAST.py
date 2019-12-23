@@ -26,7 +26,7 @@ CAST-128_ (or CAST5) is a symmetric block cipher specified in RFC2144_.
 It has a fixed data block size of 8 bytes. Its key can vary in length
 from 40 to 128 bits.
 
-CAST is deemed to be cryptographically secure, but its usage is not widespread.
+CAST is deemed to be Cryptographically secure, but its usage is not widespread.
 Keys of sufficient length should be used to prevent brute force attacks
 (128 bits are recommended).
 

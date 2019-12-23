@@ -33,10 +33,10 @@ import warnings
 class RandomPool:
     """Deprecated.  Use Random.new() instead.
 
-    See http://www.pycrypto.org/randpool-broken
+    See http://www.pyCrypto.org/randpool-broken
     """
     def __init__(self, numbytes = 160, cipher=None, hash=None, file=None):
-        warnings.warn("This application uses RandomPool, which is BROKEN in older releases.  See http://www.pycrypto.org/randpool-broken",
+        warnings.warn("This application uses RandomPool, which is BROKEN in older releases.  See http://www.pyCrypto.org/randpool-broken",
             RandomPool_DeprecationWarning)
         self.__rng = Crypto.Random.new()
         self.bytes = numbytes

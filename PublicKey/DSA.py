@@ -33,7 +33,7 @@ more than 30 years.
 
 The group is actually a sub-group over the integers modulo *p*, with *p* prime.
 The sub-group order is *q*, which is prime too; it always holds that *(p-1)* is a multiple of *q*.
-The cryptographic strength is linked to the magnitude of *p* and *q*.
+The Cryptographic strength is linked to the magnitude of *p* and *q*.
 The signer holds a value *x* (*0<x<q-1*) as private key, and its public
 key (*y* where *y=g^x mod p*) is distributed.
 
@@ -146,7 +146,7 @@ class _DSAobj(pubkey.pubkey):
         :attention: The number *K* shall not be reused for any other
          operation and shall be discarded immediately.
 
-        :attention: M must be a digest cryptographic hash, otherwise
+        :attention: M must be a digest Cryptographic hash, otherwise
          an attacker may mount an existential forgery attack.
 
         :Return: A tuple with 2 longs.
@@ -314,7 +314,7 @@ class DSAImplementation(object):
                             it's useful for interactive applications where a user is
                             waiting for a key to be generated.
 
-        :attention: You should always use a cryptographically secure random number generator,
+        :attention: You should always use a Cryptographically secure random number generator,
             such as the one defined in the ``Crypto.Random`` module; **don't** just use the
             current time and the ``random`` module.
 

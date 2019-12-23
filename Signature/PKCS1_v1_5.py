@@ -156,7 +156,7 @@ class PKCS115_SigScheme:
         # Step 4
         # By comparing the full encodings (as opposed to checking each
         # of its components one at a time) we avoid attacks to the padding
-        # scheme like Bleichenbacher's (see http://www.mail-archive.com/cryptography@metzdowd.com/msg06537).
+        # scheme like Bleichenbacher's (see http://www.mail-archive.com/Cryptography@metzdowd.com/msg06537).
         # 
         return em1==em2
     

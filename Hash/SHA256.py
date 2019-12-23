@@ -18,9 +18,9 @@
 # SOFTWARE.
 # ===================================================================
 
-"""SHA-256 cryptographic hash algorithm.
+"""SHA-256 Cryptographic hash algorithm.
 
-SHA-256 belongs to the SHA-2_ family of cryptographic hashes.
+SHA-256 belongs to the SHA-2_ family of Cryptographic hashes.
 It produces the 256 bit digest of a message.
 
     >>> from Crypto.Hash import SHA256

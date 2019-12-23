@@ -21,7 +21,7 @@
 from binascii import hexlify
 
 class HashAlgo:
-    """A generic class for an abstract cryptographic hash algorithm.
+    """A generic class for an abstract Cryptographic hash algorithm.
     
     :undocumented: block_size
     """

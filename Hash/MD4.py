@@ -18,7 +18,7 @@
 # SOFTWARE.
 # ===================================================================
 
-"""MD4 cryptographic hash algorithm.
+"""MD4 Cryptographic hash algorithm.
 
 MD4 is specified in RFC1320_ and produces the 128 bit digest of a message.
 

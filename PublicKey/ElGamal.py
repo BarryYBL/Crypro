@@ -66,7 +66,7 @@ Security
 Both DLP and CDH problem are believed to be difficult, and they have been proved
 such (and therefore secure) for more than 30 years.
 
-The cryptographic strength is linked to the magnitude of *p*.
+The Cryptographic strength is linked to the magnitude of *p*.
 In 2012, a sufficient size for *p* is deemed to be 2048 bits.
 For more information, see the most recent ECRYPT_ report.
 
@@ -136,7 +136,7 @@ def generate(bits, randfunc, progress_func=None):
             it's useful for interactive applications where a user is
             waiting for a key to be generated.
 
-    :attention: You should always use a cryptographically secure random number generator,
+    :attention: You should always use a Cryptographically secure random number generator,
         such as the one defined in the ``Crypto.Random`` module; **don't** just use the
         current time and the ``random`` module.
 
@@ -303,7 +303,7 @@ class ElGamalobj(pubkey):
         :attention: The number *K* shall not be reused for any other
          operation and shall be discarded immediately.
 
-        :attention: M must be be a cryptographic hash, otherwise an
+        :attention: M must be be a Cryptographic hash, otherwise an
          attacker may mount an existential forgery attack.
 
         :Return: A tuple with 2 longs.

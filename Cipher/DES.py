@@ -26,7 +26,7 @@ by NIST_ . It has a fixed data block size of 8 bytes.
 Its keys are 64 bits long, even though 8 bits were used for integrity (now they
 are ignored) and do not contribute to securty.
 
-DES is cryptographically secure, but its key length is too short by nowadays
+DES is Cryptographically secure, but its key length is too short by nowadays
 standards and it could be brute forced with some effort.
 
 DES should not be used for new designs. Use `AES`.

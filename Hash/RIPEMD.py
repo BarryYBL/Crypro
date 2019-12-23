@@ -18,7 +18,7 @@
 # SOFTWARE.
 # ===================================================================
 
-"""RIPEMD-160 cryptographic hash algorithm.
+"""RIPEMD-160 Cryptographic hash algorithm.
 
 RIPEMD-160_ produces the 160 bit digest of a message.
 

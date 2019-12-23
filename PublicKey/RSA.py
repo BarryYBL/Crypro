@@ -22,7 +22,7 @@
 # SOFTWARE.
 # ===================================================================
 
-"""RSA public-key cryptography algorithm (signature and encryption).
+"""RSA public-key Cryptography algorithm (signature and encryption).
 
 RSA_ is the most widespread and used public key algorithm. Its security is
 based on the difficulty of factoring large integers. The algorithm has
@@ -32,7 +32,7 @@ secure for new designs.
 The algorithm can be used for both confidentiality (encryption) and
 authentication (digital signature). It is worth noting that signing and
 decryption are significantly slower than verification and encryption.
-The cryptograhic strength is primarily linked to the length of the modulus *n*.
+The Cryptograhic strength is primarily linked to the length of the modulus *n*.
 In 2012, a sufficient length is deemed to be 2048 bits. For more information,
 see the most recent ECRYPT_ report.
 
@@ -53,7 +53,7 @@ them from known components, exporting them, and importing them.
     >>> key = RSA.importKey(f.read())
 
 Even though you may choose to  directly use the methods of an RSA key object
-to perform the primitive cryptographic operations (e.g. `_RSAobj.encrypt`),
+to perform the primitive Cryptographic operations (e.g. `_RSAobj.encrypt`),
 it is recommended to use one of the standardized schemes instead (like
 `Crypto.Cipher.PKCS1_v1_5` or `Crypto.Signature.PKCS1_v1_5`).
 
@@ -138,7 +138,7 @@ class _RSAobj(pubkey.pubkey):
 
         :attention: this function performs the plain, primitive RSA encryption
          (*textbook*). In real applications, you always need to use proper
-         cryptographic padding, and you should not directly encrypt data with
+         Cryptographic padding, and you should not directly encrypt data with
          this method. Failure to do so may lead to security vulnerabilities.
          It is recommended to use modules
          `Crypto.Cipher.PKCS1_OAEP` or `Crypto.Cipher.PKCS1_v1_5` instead.
@@ -156,7 +156,7 @@ class _RSAobj(pubkey.pubkey):
 
         :attention: this function performs the plain, primitive RSA decryption
          (*textbook*). In real applications, you always need to use proper
-         cryptographic padding, and you should not directly decrypt data with
+         Cryptographic padding, and you should not directly decrypt data with
          this method. Failure to do so may lead to security vulnerabilities.
          It is recommended to use modules
          `Crypto.Cipher.PKCS1_OAEP` or `Crypto.Cipher.PKCS1_v1_5` instead.
@@ -180,7 +180,7 @@ class _RSAobj(pubkey.pubkey):
 
         :attention: this function performs the plain, primitive RSA decryption
          (*textbook*). In real applications, you always need to use proper
-         cryptographic padding, and you should not directly sign data with
+         Cryptographic padding, and you should not directly sign data with
          this method. Failure to do so may lead to security vulnerabilities.
          It is recommended to use modules
          `Crypto.Signature.PKCS1_PSS` or `Crypto.Signature.PKCS1_v1_5` instead.
@@ -203,7 +203,7 @@ class _RSAobj(pubkey.pubkey):
 
         :attention: this function performs the plain, primitive RSA encryption
          (*textbook*). In real applications, you always need to use proper
-         cryptographic padding, and you should not directly verify data with
+         Cryptographic padding, and you should not directly verify data with
          this method. Failure to do so may lead to security vulnerabilities.
          It is recommended to use modules
          `Crypto.Signature.PKCS1_PSS` or `Crypto.Signature.PKCS1_v1_5` instead.
@@ -486,7 +486,7 @@ class RSAImplementation(object):
                             The default value 65537 (= ``0b10000000000000001`` ) is a safe
                             choice: other common values are 5, 7, 17, and 257.
 
-        :attention: You should always use a cryptographically secure random number generator,
+        :attention: You should always use a Cryptographically secure random number generator,
             such as the one defined in the ``Crypto.Random`` module; **don't** just use the
             current time and the ``random`` module.
 

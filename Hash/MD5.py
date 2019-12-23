@@ -18,7 +18,7 @@
 # SOFTWARE.
 # ===================================================================
 
-"""MD5 cryptographic hash algorithm.
+"""MD5 Cryptographic hash algorithm.
 
 MD5 is specified in RFC1321_ and produces the 128 bit digest of a message.
 

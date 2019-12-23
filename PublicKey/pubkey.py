@@ -150,7 +150,7 @@ integers, MPZ objects, or whatever."""
         else: return blindedmessage
 
     def unblind(self, M, B):
-        """Unblind a message after cryptographic processing.
+        """Unblind a message after Cryptographic processing.
         
         :Parameter M: The encoded message to unblind.
         :Type M: byte string or long
@@ -171,7 +171,7 @@ integers, MPZ objects, or whatever."""
     # signature-only algorithms.  They both return Boolean values
     # recording whether this key's algorithm can sign and encrypt.
     def can_sign (self):
-        """Tell if the algorithm can deal with cryptographic signatures.
+        """Tell if the algorithm can deal with Cryptographic signatures.
 
         This property concerns the *algorithm*, not the key itself.
         It may happen that this particular key object hasn't got

@@ -61,7 +61,7 @@ MODE_CBC = 2
 #: This *IV* is a data block to be transmitted to the receiver.
 #: The *IV* can be made public, but it should be picked randomly.
 #: Reusing the same *IV* for encryptions done with the same key lead to
-#: catastrophic cryptographic failures.
+#: catastrophic Cryptographic failures.
 #:
 #: See `NIST SP800-38A`_ , Section 6.3 .
 #:
@@ -79,7 +79,7 @@ MODE_PGP = 4
 #: The *IV* can be made public, but it should be picked randomly.
 #:
 #: Reusing the same *IV* for encryptions done with the same key lead to
-#: catastrophic cryptograhic failures.
+#: catastrophic Cryptograhic failures.
 #:
 #: See `NIST SP800-38A`_ , Section 6.4 .
 #:
@@ -102,7 +102,7 @@ MODE_OFB = 5
 #: the block size.
 #: 
 #: Reusing the same *initial counter block* for encryptions done with the same
-#: key lead to catastrophic cryptograhic failures.
+#: key lead to catastrophic Cryptograhic failures.
 #:
 #: See `NIST SP800-38A`_ , Section 6.5 (for the mode) and Appendix B (for how
 #: to manage the *initial counter block*).

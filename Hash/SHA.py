@@ -18,7 +18,7 @@
 # SOFTWARE.
 # ===================================================================
 
-"""SHA-1 cryptographic hash algorithm.
+"""SHA-1 Cryptographic hash algorithm.
 
 SHA-1_ produces the 160 bit digest of a message.
 

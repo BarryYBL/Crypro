@@ -22,7 +22,7 @@
 # SOFTWARE.
 # ===================================================================
 
-"""A cryptographically strong version of Python's standard "random" module."""
+"""A Cryptographically strong version of Python's standard "random" module."""
 
 __revision__ = "$Id$"
 __all__ = ['StrongRandom', 'getrandbits', 'randrange', 'randint', 'choice', 'shuffle', 'sample']

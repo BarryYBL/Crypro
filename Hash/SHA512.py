@@ -18,9 +18,9 @@
 # SOFTWARE.
 # ===================================================================
 
-"""SHA-512 cryptographic hash algorithm.
+"""SHA-512 Cryptographic hash algorithm.
 
-SHA-512 belongs to the SHA-2_ family of cryptographic hashes.
+SHA-512 belongs to the SHA-2_ family of Cryptographic hashes.
 It produces the 512 bit digest of a message.
 
     >>> from Crypto.Hash import SHA512

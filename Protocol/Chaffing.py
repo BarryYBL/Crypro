@@ -80,7 +80,7 @@ class Chaff:
                 Returns a randomly generated number with a byte-length equal
                 to size.  Subclasses can use this to implement better random
                 data and MAC generating algorithms.  The default algorithm is
-                probably not very cryptographically secure.  It is most
+                probably not very Cryptographically secure.  It is most
                 important that the chaff data does not contain any patterns
                 that can be used to discern it from wheat data without running
                 the MAC.

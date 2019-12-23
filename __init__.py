@@ -20,7 +20,7 @@
 
 """Python Cryptography Toolkit
 
-A collection of cryptographic modules implementing various algorithms
+A collection of Cryptographic modules implementing various algorithms
 and protocols.
 
 Subpackages:

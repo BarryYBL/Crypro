@@ -32,10 +32,10 @@ The company eventually published its full specification in RFC2268_.
 
 RC2 has a fixed data block size of 8 bytes. Length of its keys can vary from
 8 to 128 bits. One particular property of RC2 is that the actual
-cryptographic strength of the key (*effective key length*) can be reduced 
+Cryptographic strength of the key (*effective key length*) can be reduced 
 via a parameter.
 
-Even though RC2 is not cryptographically broken, it has not been analyzed as
+Even though RC2 is not Cryptographically broken, it has not been analyzed as
 thoroughly as AES, which is also faster than RC2.
 
 New designs should not use RC2.
@@ -102,7 +102,7 @@ def new(key, *args, **kwargs):
         are segmented in.
         It must be a multiple of 8. If 0 or not specified, it will be assumed to be 8.
       effective_keylen : integer
-        Maximum cryptographic strength of the key, in bits.
+        Maximum Cryptographic strength of the key, in bits.
         It can vary from 0 to 1024. The default value is 1024.
 
     :Return: an `RC2Cipher` object

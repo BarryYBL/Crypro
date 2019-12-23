@@ -18,9 +18,9 @@
 # SOFTWARE.
 # ===================================================================
 
-"""SHA-384 cryptographic hash algorithm.
+"""SHA-384 Cryptographic hash algorithm.
 
-SHA-384 belongs to the SHA-2_ family of cryptographic hashes.
+SHA-384 belongs to the SHA-2_ family of Cryptographic hashes.
 It produces the 384 bit digest of a message.
 
     >>> from Crypto.Hash import SHA384

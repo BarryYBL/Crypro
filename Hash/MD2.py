@@ -18,7 +18,7 @@
 # SOFTWARE.
 # ===================================================================
 
-"""MD2 cryptographic hash algorithm.
+"""MD2 Cryptographic hash algorithm.
 
 MD2 is specified in RFC1319_ and it produces the 128 bit digest of a message.
 

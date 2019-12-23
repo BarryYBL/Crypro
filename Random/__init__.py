@@ -29,7 +29,7 @@ from Crypto.Random import OSRNG
 from Crypto.Random import _UserFriendlyRNG
 
 def new(*args, **kwargs):
-    """Return a file-like object that outputs cryptographically random bytes."""
+    """Return a file-like object that outputs Cryptographically random bytes."""
     return _UserFriendlyRNG.new(*args, **kwargs)
 
 def atfork():
@@ -37,7 +37,7 @@ def atfork():
     _UserFriendlyRNG.reinit()
 
 def get_random_bytes(n):
-    """Return the specified number of cryptographically-strong random bytes."""
+    """Return the specified number of Cryptographically-strong random bytes."""
     return _UserFriendlyRNG.get_random_bytes(n)
 
 # vim:set ts=4 sw=4 sts=4 expandtab:

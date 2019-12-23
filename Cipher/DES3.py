@@ -39,7 +39,7 @@ The 128 bit key is split into *K1* and *K2*, whereas *K1=K3*.
 It is important that all subkeys are different, otherwise TDES would degrade to
 single `DES`.
 
-TDES is cryptographically secure, even though it is neither as secure nor as fast
+TDES is Cryptographically secure, even though it is neither as secure nor as fast
 as `AES`.
 
 As an example, encryption can be done as follows:
