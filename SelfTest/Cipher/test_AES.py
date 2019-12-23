@@ -22,12 +22,12 @@
 # SOFTWARE.
 # ===================================================================
 
-"""Self-test suite for Crypto.Cipher.AES"""
+"""Self-test suite for Cryptos.Cipher.AES"""
 
 __revision__ = "$Id$"
 
 from .common import dict     # For compatibility with Python 2.1 and 2.2
-from Crypto.Util.py3compat import *
+from Cryptos.Util.py3compat import *
 from binascii import hexlify
 
 # This is a list of (plaintext, ciphertext, key[, description[, params]]) tuples.
@@ -1255,7 +1255,7 @@ test_data = [
      'NIST 800-38A, F.2.1, CBC and AES-256',
      dict(mode='CBC', iv='000102030405060708090a0b0c0d0e0f')),
 
-    # Skip CFB-1 since it is not supported by PyCrypto
+    # Skip CFB-1 since it is not supported by PyCryptos
 
     ('6bc1bee22e409f96e93d7e117393172aae2d','3b79424c9c0dd436bace9e0ed4586a4f32b9',
      '2b7e151628aed2a6abf7158809cf4f3c',
@@ -1421,7 +1421,7 @@ test_data = [
 ]
 
 def get_tests(config={}):
-    from Crypto.Cipher import AES
+    from Cryptos.Cipher import AES
     from .common import make_block_tests
     return make_block_tests(AES, "AES", test_data)
 

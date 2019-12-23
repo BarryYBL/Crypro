@@ -18,12 +18,12 @@
 # SOFTWARE.
 # ===================================================================
 
-"""SHA-512 Cryptographic hash algorithm.
+"""SHA-512 Cryptosgraphic hash algorithm.
 
-SHA-512 belongs to the SHA-2_ family of Cryptographic hashes.
+SHA-512 belongs to the SHA-2_ family of Cryptosgraphic hashes.
 It produces the 512 bit digest of a message.
 
-    >>> from Crypto.Hash import SHA512
+    >>> from Cryptos.Hash import SHA512
     >>>
     >>> h = SHA512.new()
     >>> h.update(b'Hello')
@@ -38,15 +38,15 @@ _revision__ = "$Id$"
 
 __all__ = ['new', 'digest_size', 'SHA512Hash' ]
 
-from Crypto.Util.py3compat import *
-from Crypto.Hash.hashalgo import HashAlgo
+from Cryptos.Util.py3compat import *
+from Cryptos.Hash.hashalgo import HashAlgo
 
 try:
     import hashlib
     hashFactory = hashlib.sha512
 
 except ImportError:
-    from Crypto.Hash import _SHA512
+    from Cryptos.Hash import _SHA512
     hashFactory = _SHA512
 
 class SHA512Hash(HashAlgo):

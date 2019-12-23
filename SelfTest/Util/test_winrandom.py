@@ -22,7 +22,7 @@
 # SOFTWARE.
 # ===================================================================
 
-"""Self-test suite for Crypto.Util.winrandom"""
+"""Self-test suite for Cryptos.Util.winrandom"""
 
 __revision__ = "$Id$"
 
@@ -32,7 +32,7 @@ class WinRandomImportTest(unittest.TestCase):
     def runTest(self):
         """winrandom: simple test"""
         # Import the winrandom module and try to use it
-        from Crypto.Util import winrandom
+        from Cryptos.Util import winrandom
         randobj = winrandom.new()
         x = randobj.get_bytes(16)
         y = randobj.get_bytes(16)

@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 #
-#  SelfTest/Util/test_Counter: Self-test for the Crypto.Util.Counter module
+#  SelfTest/Util/test_Counter: Self-test for the Cryptos.Util.Counter module
 #
 # Written in 2009 by Dwayne C. Litzenberger <dlitz@dlitz.net>
 #
@@ -22,21 +22,21 @@
 # SOFTWARE.
 # ===================================================================
 
-"""Self-tests for Crypto.Util.Counter"""
+"""Self-tests for Cryptos.Util.Counter"""
 
 __revision__ = "$Id$"
 
 import sys
 if sys.version_info[0] == 2 and sys.version_info[1] == 1:
-    from Crypto.Util.py21compat import *
-from Crypto.Util.py3compat import *
+    from Cryptos.Util.py21compat import *
+from Cryptos.Util.py3compat import *
 
 import unittest
 
 class CounterTests(unittest.TestCase):
     def setUp(self):
         global Counter
-        from Crypto.Util import Counter
+        from Cryptos.Util import Counter
 
     def test_BE_shortcut(self):
         """Big endian, shortcut enabled"""
@@ -155,7 +155,7 @@ class CounterTests(unittest.TestCase):
         self.assertEqual(1, c.carry)
 
 def get_tests(config={}):
-    from Crypto.SelfTest.st_common import list_test_cases
+    from Cryptos.SelfTest.st_common import list_test_cases
     return list_test_cases(CounterTests)
 
 if __name__ == '__main__':

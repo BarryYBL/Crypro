@@ -28,8 +28,8 @@ This scheme is more properly called ``RSAES-OAEP``.
 
 As an example, a sender may encrypt a message in this way:
 
-        >>> from Crypto.Cipher import PKCS1_OAEP
-        >>> from Crypto.PublicKey import RSA
+        >>> from Cryptos.Cipher import PKCS1_OAEP
+        >>> from Cryptos.PublicKey import RSA
         >>>
         >>> message = 'To be encrypted'
         >>> key = RSA.importKey(open('pubkey.der').read())
@@ -54,13 +54,13 @@ the RSA key:
 __revision__ = "$Id$"
 __all__ = [ 'new', 'PKCS1OAEP_Cipher' ]
 
-import Crypto.Signature.PKCS1_PSS
-import Crypto.Hash.SHA
+import Cryptos.Signature.PKCS1_PSS
+import Cryptos.Hash.SHA
 
-from Crypto.Util.py3compat import *
-import Crypto.Util.number
-from   Crypto.Util.number import ceil_div
-from   Crypto.Util.strxor import strxor
+from Cryptos.Util.py3compat import *
+import Cryptos.Util.number
+from   Cryptos.Util.number import ceil_div
+from   Cryptos.Util.strxor import strxor
 
 class PKCS1OAEP_Cipher:
     """This cipher can perform PKCS#1 v1.5 OAEP encryption or decryption."""
@@ -73,9 +73,9 @@ class PKCS1OAEP_Cipher:
           If a private half is given, both encryption and decryption are possible.
           If a public half is given, only encryption is possible.
          hashAlgo : hash object
-                The hash function to use. This can be a module under `Crypto.Hash`
+                The hash function to use. This can be a module under `Cryptos.Hash`
                 or an existing hash object created from any of such modules. If not specified,
-                `Crypto.Hash.SHA` (that is, SHA-1) is used.
+                `Cryptos.Hash.SHA` (that is, SHA-1) is used.
          mgfunc : callable
                 A mask generation function that accepts two parameters: a string to
                 use as seed, and the lenth of the mask to generate, in bytes.
@@ -93,12 +93,12 @@ class PKCS1OAEP_Cipher:
         if hashAlgo:
             self._hashObj = hashAlgo
         else:
-            self._hashObj = Crypto.Hash.SHA
+            self._hashObj = Cryptos.Hash.SHA
 
         if mgfunc:
             self._mgf = mgfunc
         else:
-            self._mgf = lambda x,y: Crypto.Signature.PKCS1_PSS.MGF1(x,y,self._hashObj)
+            self._mgf = lambda x,y: Cryptos.Signature.PKCS1_PSS.MGF1(x,y,self._hashObj)
 
         self._label = label
 
@@ -133,7 +133,7 @@ class PKCS1OAEP_Cipher:
         randFunc = self._key._randfunc
     
         # See 7.1.1 in RFC3447
-        modBits = Crypto.Util.number.size(self._key.n)
+        modBits = Cryptos.Util.number.size(self._key.n)
         k = ceil_div(modBits,8) # Convert from bits to bytes
         hLen = self._hashObj.digest_size
         mLen = len(message)
@@ -186,7 +186,7 @@ class PKCS1OAEP_Cipher:
         # TODO: Verify the key is RSA
     
         # See 7.1.2 in RFC3447
-        modBits = Crypto.Util.number.size(self._key.n)
+        modBits = Cryptos.Util.number.size(self._key.n)
         k = ceil_div(modBits,8) # Convert from bits to bytes
         hLen = self._hashObj.digest_size
     
@@ -233,12 +233,12 @@ def new(key, hashAlgo=None, mgfunc=None, label=b('')):
 
     :Parameters:
      key : RSA key object
-      The key to use to encrypt or decrypt the message. This is a `Crypto.PublicKey.RSA` object.
+      The key to use to encrypt or decrypt the message. This is a `Cryptos.PublicKey.RSA` object.
       Decryption is only possible if *key* is a private RSA key.
      hashAlgo : hash object
-      The hash function to use. This can be a module under `Crypto.Hash`
+      The hash function to use. This can be a module under `Cryptos.Hash`
       or an existing hash object created from any of such modules. If not specified,
-      `Crypto.Hash.SHA` (that is, SHA-1) is used.
+      `Cryptos.Hash.SHA` (that is, SHA-1) is used.
      mgfunc : callable
       A mask generation function that accepts two parameters: a string to
       use as seed, and the lenth of the mask to generate, in bytes.

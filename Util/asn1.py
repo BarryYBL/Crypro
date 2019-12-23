@@ -20,9 +20,9 @@
 # SOFTWARE.
 # ===================================================================
 
-from Crypto.Util.number import long_to_bytes, bytes_to_long
+from Cryptos.Util.number import long_to_bytes, bytes_to_long
 import sys
-from Crypto.Util.py3compat import *
+from Cryptos.Util.py3compat import *
 
 __all__ = [ 'DerObject', 'DerInteger', 'DerOctetString', 'DerNull', 'DerSequence', 'DerObjectId' ]
 

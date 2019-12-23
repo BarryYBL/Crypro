@@ -22,11 +22,11 @@
 # SOFTWARE.
 # ===================================================================
 
-#"""Self-test suite for Crypto.Hash.RIPEMD"""
+#"""Self-test suite for Cryptos.Hash.RIPEMD"""
 
 __revision__ = "$Id$"
 
-from Crypto.Util.py3compat import *
+from Cryptos.Util.py3compat import *
 
 # This is a list of (expected_result, input[, description]) tuples.
 test_data = [
@@ -59,7 +59,7 @@ test_data = [
 ]
 
 def get_tests(config={}):
-    from Crypto.Hash import RIPEMD
+    from Cryptos.Hash import RIPEMD
     from .common import make_hash_tests
     return make_hash_tests(RIPEMD, "RIPEMD", test_data,
         digest_size=20,

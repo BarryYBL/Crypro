@@ -22,11 +22,11 @@
 # SOFTWARE.
 # ===================================================================
 
-"""Self-test suite for Crypto.Hash.SHA"""
+"""Self-test suite for Cryptos.Hash.SHA"""
 
 __revision__ = "$Id$"
 
-from Crypto.Util.py3compat import *
+from Cryptos.Util.py3compat import *
 
 # Test vectors from various sources
 # This is a list of (expected_result, input[, description]) tuples.
@@ -50,7 +50,7 @@ test_data = [
 ]
 
 def get_tests(config={}):
-    from Crypto.Hash import SHA
+    from Cryptos.Hash import SHA
     from .common import make_hash_tests
     return make_hash_tests(SHA, "SHA", test_data,
         digest_size=20,

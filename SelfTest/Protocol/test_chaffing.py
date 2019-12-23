@@ -1,7 +1,7 @@
 #
-# Test script for Crypto.Protocol.Chaffing
+# Test script for Cryptos.Protocol.Chaffing
 #
-# Part of the Python Cryptography Toolkit
+# Part of the Python Cryptosgraphy Toolkit
 #
 # Written by Andrew Kuchling and others
 #
@@ -26,7 +26,7 @@
 __revision__ = "$Id$"
 
 import unittest
-from Crypto.Protocol import Chaffing
+from Cryptos.Protocol import Chaffing
 
 text = """\
 When in the Course of human events, it becomes necessary for one people to

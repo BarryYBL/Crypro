@@ -26,14 +26,14 @@ __revision__ = "$Id$"
 
 import sys
 if sys.version_info[0] is 2 and  sys.version_info[1] is 1:
-    from Crypto.Util.py21compat import *
-from Crypto.Util.py3compat import *
+    from Cryptos.Util.py21compat import *
+from Cryptos.Util.py3compat import *
 
 import struct
 
-from Crypto.Util.number import ceil_shift, exact_log2, exact_div
-from Crypto.Util import Counter
-from Crypto.Cipher import AES
+from Cryptos.Util.number import ceil_shift, exact_log2, exact_div
+from Cryptos.Util import Counter
+from Cryptos.Cipher import AES
 
 from . import SHAd256
 

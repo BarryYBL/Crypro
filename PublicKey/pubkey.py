@@ -1,7 +1,7 @@
 #
 #   pubkey.py : Internal functions for public key operations
 #
-#  Part of the Python Cryptography Toolkit
+#  Part of the Python Cryptosgraphy Toolkit
 #
 #  Written by Andrew Kuchling, Paul Swartz, and others
 #
@@ -27,7 +27,7 @@
 __revision__ = "$Id$"
 
 import types, warnings
-from Crypto.Util.number import *
+from Cryptos.Util.number import *
 
 # Basic public key class
 class pubkey:
@@ -150,7 +150,7 @@ integers, MPZ objects, or whatever."""
         else: return blindedmessage
 
     def unblind(self, M, B):
-        """Unblind a message after Cryptographic processing.
+        """Unblind a message after Cryptosgraphic processing.
         
         :Parameter M: The encoded message to unblind.
         :Type M: byte string or long
@@ -171,7 +171,7 @@ integers, MPZ objects, or whatever."""
     # signature-only algorithms.  They both return Boolean values
     # recording whether this key's algorithm can sign and encrypt.
     def can_sign (self):
-        """Tell if the algorithm can deal with Cryptographic signatures.
+        """Tell if the algorithm can deal with Cryptosgraphic signatures.
 
         This property concerns the *algorithm*, not the key itself.
         It may happen that this particular key object hasn't got

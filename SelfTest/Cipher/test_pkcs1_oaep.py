@@ -26,13 +26,13 @@ __revision__ = "$Id$"
 
 import unittest
 
-from Crypto.SelfTest.st_common import list_test_cases, a2b_hex, b2a_hex
+from Cryptos.SelfTest.st_common import list_test_cases, a2b_hex, b2a_hex
 
-from Crypto.Util.py3compat import *
-from Crypto.PublicKey import RSA
-from Crypto.Cipher import PKCS1_OAEP as PKCS
-from Crypto.Hash import MD2,MD5,SHA as SHA1,SHA256,RIPEMD
-from Crypto import Random
+from Cryptos.Util.py3compat import *
+from Cryptos.PublicKey import RSA
+from Cryptos.Cipher import PKCS1_OAEP as PKCS
+from Cryptos.Hash import MD2,MD5,SHA as SHA1,SHA256,RIPEMD
+from Cryptos import Random
 
 def rws(t):
     """Remove white spaces, tabs, and new lines from a string"""

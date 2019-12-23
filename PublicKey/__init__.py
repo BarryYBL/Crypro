@@ -28,9 +28,9 @@ be used to sign messages, and some can *only* be used for signatures.
 ========================  =============================================
 Module                    Description
 ========================  =============================================
-Crypto.PublicKey.DSA      Digital Signature Algorithm (Signature only)
-Crypto.PublicKey.ElGamal  (Signing and encryption)
-Crypto.PublicKey.RSA      (Signing, encryption, and blinding)
+Cryptos.PublicKey.DSA      Digital Signature Algorithm (Signature only)
+Cryptos.PublicKey.ElGamal  (Signing and encryption)
+Cryptos.PublicKey.RSA      (Signing, encryption, and blinding)
 ========================  =============================================
 
 :undocumented: _DSA, _RSA, _fastmath, _slowmath, pubkey

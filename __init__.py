@@ -18,25 +18,25 @@
 # SOFTWARE.
 # ===================================================================
 
-"""Python Cryptography Toolkit
+"""Python Cryptosgraphy Toolkit
 
-A collection of Cryptographic modules implementing various algorithms
+A collection of Cryptosgraphic modules implementing various algorithms
 and protocols.
 
 Subpackages:
 
-Crypto.Cipher
+Cryptos.Cipher
  Secret-key (AES, DES, ARC4) and public-key encryption (RSA PKCS#1) algorithms
-Crypto.Hash
+Cryptos.Hash
  Hashing algorithms (MD5, SHA, HMAC)
-Crypto.Protocol
- Cryptographic protocols (Chaffing, all-or-nothing transform, key derivation
+Cryptos.Protocol
+ Cryptosgraphic protocols (Chaffing, all-or-nothing transform, key derivation
  functions). This package does not contain any network protocols.
-Crypto.PublicKey
+Cryptos.PublicKey
  Public-key encryption and signature algorithms (RSA, DSA)
-Crypto.Signature
+Cryptos.Signature
  Public-key signature algorithms (RSA PKCS#1) 
-Crypto.Util
+Cryptos.Util
  Various useful modules and functions (long-to-string conversion, random number
  generation, number theoretic functions)
 """

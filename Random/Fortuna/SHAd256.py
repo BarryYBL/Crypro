@@ -33,12 +33,12 @@ __all__ = ['new', 'digest_size']
 
 import sys
 if sys.version_info[0] == 2 and sys.version_info[1] == 1:
-    from Crypto.Util.py21compat import *
-from Crypto.Util.py3compat import *
+    from Cryptos.Util.py21compat import *
+from Cryptos.Util.py3compat import *
 
 from binascii import b2a_hex
 
-from Crypto.Hash import SHA256
+from Cryptos.Hash import SHA256
 
 assert SHA256.digest_size == 32
 

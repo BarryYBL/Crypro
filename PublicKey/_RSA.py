@@ -1,7 +1,7 @@
 #
 #   RSA.py : RSA encryption/decryption
 #
-#  Part of the Python Cryptography Toolkit
+#  Part of the Python Cryptosgraphy Toolkit
 #
 #  Written by Andrew Kuchling, Paul Swartz, and others
 #
@@ -26,8 +26,8 @@
 
 __revision__ = "$Id$"
 
-from Crypto.PublicKey import pubkey
-from Crypto.Util import number
+from Cryptos.PublicKey import pubkey
+from Cryptos.Util import number
 
 def generate_py(bits, randfunc, progress_func=None, e=65537):
     """generate(bits:int, randfunc:callable, progress_func:callable, e:int)

@@ -29,10 +29,10 @@ This scheme is more properly called ``RSASSA-PSS``.
 For example, a sender may authenticate a message using SHA-1 and PSS like
 this:
 
-    >>> from Crypto.Signature import PKCS1_PSS
-    >>> from Crypto.Hash import SHA
-    >>> from Crypto.PublicKey import RSA
-    >>> from Crypto import Random
+    >>> from Cryptos.Signature import PKCS1_PSS
+    >>> from Cryptos.Hash import SHA
+    >>> from Cryptos.PublicKey import RSA
+    >>> from Cryptos import Random
     >>>
     >>> message = 'To be signed'
     >>> key = RSA.importKey(open('privkey.der').read())
@@ -66,12 +66,12 @@ the RSA key:
 __revision__ = "$Id$"
 __all__ = [ 'new', 'PSS_SigScheme' ]
 
-from Crypto.Util.py3compat import *
+from Cryptos.Util.py3compat import *
 if sys.version_info[0] == 2 and sys.version_info[1] == 1:
-    from Crypto.Util.py21compat import *
-import Crypto.Util.number
-from Crypto.Util.number import ceil_shift, ceil_div, long_to_bytes
-from Crypto.Util.strxor import strxor
+    from Cryptos.Util.py21compat import *
+import Cryptos.Util.number
+from Cryptos.Util.number import ceil_shift, ceil_div, long_to_bytes
+from Cryptos.Util.strxor import strxor
 
 class PSS_SigScheme:
     """This signature scheme can perform PKCS#1 PSS RSA signature or verification."""
@@ -106,7 +106,7 @@ class PSS_SigScheme:
         :Parameters:
          mhash : hash object
                 The hash that was carried out over the message. This is an object
-                belonging to the `Crypto.Hash` module.
+                belonging to the `Cryptos.Hash` module.
    
         :Return: The PSS signature encoded as a string.
         :Raise ValueError:
@@ -133,7 +133,7 @@ class PSS_SigScheme:
         else:
              mgf  = lambda x,y: MGF1(x,y,mhash)
  
-        modBits = Crypto.Util.number.size(self._key.n)
+        modBits = Cryptos.Util.number.size(self._key.n)
     
         # See 8.1.1 in RFC3447
         k = ceil_div(modBits,8) # Convert from bits to bytes
@@ -157,7 +157,7 @@ class PSS_SigScheme:
         :Parameters:
          mhash : hash object
                 The hash that was carried out over the message. This is an object
-                belonging to the `Crypto.Hash` module.
+                belonging to the `Cryptos.Hash` module.
          S : string
                 The signature that needs to be validated.
     
@@ -175,7 +175,7 @@ class PSS_SigScheme:
         else:
             mgf  = lambda x,y: MGF1(x,y,mhash)
 
-        modBits = Crypto.Util.number.size(self._key.n)
+        modBits = Cryptos.Util.number.size(self._key.n)
     
         # See 8.1.2 in RFC3447
         k = ceil_div(modBits,8) # Convert from bits to bytes
@@ -340,7 +340,7 @@ def new(key, mgfunc=None, saltLen=None):
 
     :Parameters:
      key : RSA key object
-        The key to use to sign or verify the message. This is a `Crypto.PublicKey.RSA` object.
+        The key to use to sign or verify the message. This is a `Cryptos.PublicKey.RSA` object.
         Signing is only possible if *key* is a private RSA key.
      mgfunc : callable
         A mask generation function that accepts two parameters: a string to

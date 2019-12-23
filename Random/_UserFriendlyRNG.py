@@ -26,7 +26,7 @@ __revision__ = "$Id$"
 
 import sys
 if sys.version_info[0] == 2 and sys.version_info[1] == 1:
-    from Crypto.Util.py21compat import *
+    from Cryptos.Util.py21compat import *
 
 import os
 import threading
@@ -34,8 +34,8 @@ import struct
 import time
 from math import floor
 
-from Crypto.Random import OSRNG
-from Crypto.Random.Fortuna import FortunaAccumulator
+from Cryptos.Random import OSRNG
+from Cryptos.Random.Fortuna import FortunaAccumulator
 
 class _EntropySource(object):
     def __init__(self, accumulator, src_num):
@@ -91,7 +91,7 @@ class _UserFriendlyRNG(object):
         the operating system.
         """
 
-        # Save the pid (helps ensure that Crypto.Random.atfork() gets called)
+        # Save the pid (helps ensure that Cryptos.Random.atfork() gets called)
         self._pid = os.getpid()
 
         # Collect entropy from the operating system and feed it to
@@ -224,7 +224,7 @@ def reinit():
     _get_singleton().reinit()
 
 def get_random_bytes(n):
-    """Return the specified number of Cryptographically-strong random bytes."""
+    """Return the specified number of Cryptosgraphically-strong random bytes."""
     return _get_singleton().read(n)
 
 # vim:set ts=4 sw=4 sts=4 expandtab:

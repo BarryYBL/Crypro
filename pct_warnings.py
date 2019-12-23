@@ -1,6 +1,6 @@
 # -*- coding: ascii -*-
 #
-#  pct_warnings.py : PyCrypto warnings file
+#  pct_warnings.py : PyCryptos warnings file
 #
 # Written in 2008 by Dwayne C. Litzenberger <dlitz@dlitz.net>
 #
@@ -27,29 +27,29 @@
 # the user to specifically filter them.
 #
 
-class CryptoWarning(Warning):
-    """Base class for PyCrypto warnings"""
+class CryptosWarning(Warning):
+    """Base class for PyCryptos warnings"""
 
-class CryptoDeprecationWarning(DeprecationWarning, CryptoWarning):
-    """Base PyCrypto DeprecationWarning class"""
+class CryptosDeprecationWarning(DeprecationWarning, CryptosWarning):
+    """Base PyCryptos DeprecationWarning class"""
 
-class CryptoRuntimeWarning(RuntimeWarning, CryptoWarning):
-    """Base PyCrypto RuntimeWarning class"""
+class CryptosRuntimeWarning(RuntimeWarning, CryptosWarning):
+    """Base PyCryptos RuntimeWarning class"""
 
 #
 # Warnings that we might actually use
 #
 
-class RandomPool_DeprecationWarning(CryptoDeprecationWarning):
-    """Issued when Crypto.Util.randpool.RandomPool is instantiated."""
+class RandomPool_DeprecationWarning(CryptosDeprecationWarning):
+    """Issued when Cryptos.Util.randpool.RandomPool is instantiated."""
 
-class ClockRewindWarning(CryptoRuntimeWarning):
+class ClockRewindWarning(CryptosRuntimeWarning):
     """Warning for when the system clock moves backwards."""
 
-class GetRandomNumber_DeprecationWarning(CryptoDeprecationWarning):
-    """Issued when Crypto.Util.number.getRandomNumber is invoked."""
+class GetRandomNumber_DeprecationWarning(CryptosDeprecationWarning):
+    """Issued when Cryptos.Util.number.getRandomNumber is invoked."""
 
-class PowmInsecureWarning(CryptoRuntimeWarning):
+class PowmInsecureWarning(CryptosRuntimeWarning):
     """Warning for when _fastmath is built without mpz_powm_sec"""
 
 # By default, we want this warning to be shown every time we compensate for

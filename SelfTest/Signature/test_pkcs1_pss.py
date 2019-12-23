@@ -26,12 +26,12 @@ __revision__ = "$Id$"
 
 import unittest
 
-from Crypto.PublicKey import RSA
-from Crypto import Random
-from Crypto.SelfTest.st_common import list_test_cases, a2b_hex, b2a_hex
-from Crypto.Hash import *
-from Crypto.Signature import PKCS1_PSS as PKCS
-from Crypto.Util.py3compat import *
+from Cryptos.PublicKey import RSA
+from Cryptos import Random
+from Cryptos.SelfTest.st_common import list_test_cases, a2b_hex, b2a_hex
+from Cryptos.Hash import *
+from Cryptos.Signature import PKCS1_PSS as PKCS
+from Cryptos.Util.py3compat import *
 
 def isStr(s):
         t = ''

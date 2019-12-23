@@ -23,8 +23,8 @@
 
 import sys
 if sys.version_info[0] == 2 and sys.version_info[1] == 1:
-    from Crypto.Util.py21compat import *
-from Crypto.Util.py3compat import *
+    from Cryptos.Util.py21compat import *
+from Cryptos.Util.py3compat import *
 
 #: *Electronic Code Book (ECB)*.
 #: This is the simplest encryption mode. Each of the plaintext blocks
@@ -61,7 +61,7 @@ MODE_CBC = 2
 #: This *IV* is a data block to be transmitted to the receiver.
 #: The *IV* can be made public, but it should be picked randomly.
 #: Reusing the same *IV* for encryptions done with the same key lead to
-#: catastrophic Cryptographic failures.
+#: catastrophic Cryptosgraphic failures.
 #:
 #: See `NIST SP800-38A`_ , Section 6.3 .
 #:
@@ -79,7 +79,7 @@ MODE_PGP = 4
 #: The *IV* can be made public, but it should be picked randomly.
 #:
 #: Reusing the same *IV* for encryptions done with the same key lead to
-#: catastrophic Cryptograhic failures.
+#: catastrophic Cryptosgrahic failures.
 #:
 #: See `NIST SP800-38A`_ , Section 6.4 .
 #:
@@ -102,7 +102,7 @@ MODE_OFB = 5
 #: the block size.
 #: 
 #: Reusing the same *initial counter block* for encryptions done with the same
-#: key lead to catastrophic Cryptograhic failures.
+#: key lead to catastrophic Cryptosgrahic failures.
 #:
 #: See `NIST SP800-38A`_ , Section 6.5 (for the mode) and Appendix B (for how
 #: to manage the *initial counter block*).

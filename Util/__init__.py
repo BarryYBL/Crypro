@@ -21,13 +21,13 @@
 """Miscellaneous modules
 
 Contains useful modules that don't belong into any of the
-other Crypto.* subpackages.
+other Cryptos.* subpackages.
 
-Crypto.Util.number        Number-theoretic functions (primality testing, etc.)
-Crypto.Util.randpool      Random number generation
-Crypto.Util.RFC1751       Converts between 128-bit keys and human-readable
+Cryptos.Util.number        Number-theoretic functions (primality testing, etc.)
+Cryptos.Util.randpool      Random number generation
+Cryptos.Util.RFC1751       Converts between 128-bit keys and human-readable
                           strings of words.
-Crypto.Util.asn1          Minimal support for ASN.1 DER encoding
+Cryptos.Util.asn1          Minimal support for ASN.1 DER encoding
 
 """
 

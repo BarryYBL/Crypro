@@ -1,7 +1,7 @@
 #
-#  randpool.py : Cryptographically strong random number generation
+#  randpool.py : Cryptosgraphically strong random number generation
 #
-# Part of the Python Cryptography Toolkit
+# Part of the Python Cryptosgraphy Toolkit
 #
 # Written by Andrew M. Kuchling, Mark Moraes, and others
 #
@@ -26,19 +26,19 @@
 
 __revision__ = "$Id$"
 
-from Crypto.pct_warnings import RandomPool_DeprecationWarning
-import Crypto.Random
+from Cryptos.pct_warnings import RandomPool_DeprecationWarning
+import Cryptos.Random
 import warnings
 
 class RandomPool:
     """Deprecated.  Use Random.new() instead.
 
-    See http://www.pyCrypto.org/randpool-broken
+    See http://www.pyCryptos.org/randpool-broken
     """
     def __init__(self, numbytes = 160, cipher=None, hash=None, file=None):
-        warnings.warn("This application uses RandomPool, which is BROKEN in older releases.  See http://www.pyCrypto.org/randpool-broken",
+        warnings.warn("This application uses RandomPool, which is BROKEN in older releases.  See http://www.pyCryptos.org/randpool-broken",
             RandomPool_DeprecationWarning)
-        self.__rng = Crypto.Random.new()
+        self.__rng = Cryptos.Random.new()
         self.bytes = numbytes
         self.bits = self.bytes * 8
         self.entropy = self.bits

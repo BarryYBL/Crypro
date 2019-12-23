@@ -1,5 +1,5 @@
 #
-#  Util/winrandom.py : Stub for Crypto.Random.OSRNG.winrandom
+#  Util/winrandom.py : Stub for Cryptos.Random.OSRNG.winrandom
 #
 # Written in 2008 by Dwayne C. Litzenberger <dlitz@dlitz.net>
 #
@@ -23,6 +23,6 @@
 
 __revision__ = "$Id$"
 
-from Crypto.Random.OSRNG.winrandom import *
+from Cryptos.Random.OSRNG.winrandom import *
 
 # vim:set ts=4 sw=4 sts=4 expandtab:

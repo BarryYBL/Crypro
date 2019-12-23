@@ -22,7 +22,7 @@
 # SOFTWARE.
 # ===================================================================
 
-"""Self-test suite for Crypto.Hash.SHA224"""
+"""Self-test suite for Cryptos.Hash.SHA224"""
 
 __revision__ = "$Id$"
 
@@ -51,7 +51,7 @@ test_data = [
 ]
 
 def get_tests(config={}):
-    from Crypto.Hash import SHA224
+    from Cryptos.Hash import SHA224
     from .common import make_hash_tests
     return make_hash_tests(SHA224, "SHA224", test_data,
         digest_size=28,

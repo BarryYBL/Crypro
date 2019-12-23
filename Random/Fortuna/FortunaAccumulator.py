@@ -26,14 +26,14 @@ __revision__ = "$Id$"
 
 import sys
 if sys.version_info[0] == 2 and sys.version_info[1] == 1:
-    from Crypto.Util.py21compat import *
-from Crypto.Util.py3compat import *
+    from Cryptos.Util.py21compat import *
+from Cryptos.Util.py3compat import *
     
 from binascii import b2a_hex
 import time
 import warnings
 
-from Crypto.pct_warnings import ClockRewindWarning
+from Cryptos.pct_warnings import ClockRewindWarning
 from . import SHAd256
 
 from . import FortunaGenerator
@@ -74,7 +74,7 @@ class FortunaPool(object):
 def which_pools(r):
     """Return a list of pools indexes (in range(32)) that are to be included during reseed number r.
 
-    According to _Practical Cryptography_, chapter 10.5.2 "Pools":
+    According to _Practical Cryptosgraphy_, chapter 10.5.2 "Pools":
 
         "Pool P_i is included if 2**i is a divisor of r.  Thus P_0 is used
         every reseed, P_1 every other reseed, P_2 every fourth reseed, etc."
@@ -130,7 +130,7 @@ class FortunaAccumulator(object):
         # This is not part of the standard Fortuna definition, and using this
         # function frequently can weaken Fortuna's ability to resist a state
         # compromise extension attack, but we need this in order to properly
-        # implement Crypto.Random.atfork().  Otherwise, forked child processes
+        # implement Cryptos.Random.atfork().  Otherwise, forked child processes
         # might continue to use their parent's PRNG state for up to 100ms in
         # some cases. (e.g. CVE-2013-1445)
         self.last_reseed = None

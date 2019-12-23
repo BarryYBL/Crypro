@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 #
-#  SelfTest/Protocol/__init__.py: Self-tests for Crypto.Protocol
+#  SelfTest/Protocol/__init__.py: Self-tests for Cryptos.Protocol
 #
 # Written in 2008 by Dwayne C. Litzenberger <dlitz@dlitz.net>
 #
@@ -22,15 +22,15 @@
 # SOFTWARE.
 # ===================================================================
 
-"""Self-test for Crypto.Protocol"""
+"""Self-test for Cryptos.Protocol"""
 
 __revision__ = "$Id$"
 
 def get_tests(config={}):
     tests = []
-    from Crypto.SelfTest.Protocol import test_chaffing;       tests += test_chaffing.get_tests(config=config)
-    from Crypto.SelfTest.Protocol import test_rfc1751;        tests += test_rfc1751.get_tests(config=config)
-    from Crypto.SelfTest.Protocol import test_AllOrNothing;        tests += test_AllOrNothing.get_tests(config=config)
+    from Cryptos.SelfTest.Protocol import test_chaffing;       tests += test_chaffing.get_tests(config=config)
+    from Cryptos.SelfTest.Protocol import test_rfc1751;        tests += test_rfc1751.get_tests(config=config)
+    from Cryptos.SelfTest.Protocol import test_AllOrNothing;        tests += test_AllOrNothing.get_tests(config=config)
     return tests
 
 if __name__ == '__main__':

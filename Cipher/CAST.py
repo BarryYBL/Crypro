@@ -26,14 +26,14 @@ CAST-128_ (or CAST5) is a symmetric block cipher specified in RFC2144_.
 It has a fixed data block size of 8 bytes. Its key can vary in length
 from 40 to 128 bits.
 
-CAST is deemed to be Cryptographically secure, but its usage is not widespread.
+CAST is deemed to be Cryptosgraphically secure, but its usage is not widespread.
 Keys of sufficient length should be used to prevent brute force attacks
 (128 bits are recommended).
 
 As an example, encryption can be done as follows:
 
-    >>> from Crypto.Cipher import CAST
-    >>> from Crypto import Random
+    >>> from Cryptos.Cipher import CAST
+    >>> from Cryptos import Random
     >>>
     >>> key = b'Sixteen byte key'
     >>> iv = Random.new().read(CAST.block_size)
@@ -55,8 +55,8 @@ As an example, encryption can be done as follows:
 
 __revision__ = "$Id$"
 
-from Crypto.Cipher import blockalgo
-from Crypto.Cipher import _CAST
+from Cryptos.Cipher import blockalgo
+from Cryptos.Cipher import _CAST
 
 class CAST128Cipher(blockalgo.BlockAlgo):
     """CAST-128 cipher object"""
@@ -93,7 +93,7 @@ def new(key, *args, **kwargs):
       counter : callable
         (*Only* `MODE_CTR`). A stateful function that returns the next
         *counter block*, which is a byte string of `block_size` bytes.
-        For better performance, use `Crypto.Util.Counter`.
+        For better performance, use `Cryptos.Util.Counter`.
       segment_size : integer
         (*Only* `MODE_CFB`).The number of bits the plaintext and ciphertext
         are segmented in.

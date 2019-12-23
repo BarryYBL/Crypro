@@ -1,7 +1,7 @@
 #
 #   number.py : Number-theoretic functions
 #
-#  Part of the Python Cryptography Toolkit
+#  Part of the Python Cryptosgraphy Toolkit
 #
 #  Written by Andrew M. Kuchling, Barry A. Warsaw, and others
 #
@@ -26,15 +26,15 @@
 
 __revision__ = "$Id$"
 
-from Crypto.pct_warnings import GetRandomNumber_DeprecationWarning, PowmInsecureWarning
+from Cryptos.pct_warnings import GetRandomNumber_DeprecationWarning, PowmInsecureWarning
 from warnings import warn as _warn
 import math
 import sys
-from Crypto.Util.py3compat import *
+from Cryptos.Util.py3compat import *
 
 bignum = int
 try:
-    from Crypto.PublicKey import _fastmath
+    from Cryptos.PublicKey import _fastmath
 except ImportError:
     # For production, we are going to let import issues due to gmp/mpir shared
     # libraries not loading slide silently and use slowmath. If you'd rather
@@ -83,7 +83,7 @@ def size (N):
 
 def getRandomNumber(N, randfunc=None):
     """Deprecated.  Use getRandomInteger or getRandomNBitInteger instead."""
-    warnings.warn("Crypto.Util.number.getRandomNumber has confusing semantics"+
+    warnings.warn("Cryptos.Util.number.getRandomNumber has confusing semantics"+
     "and has been deprecated.  Use getRandomInteger or getRandomNBitInteger instead.",
         GetRandomNumber_DeprecationWarning)
     return getRandomNBitInteger(N, randfunc)
@@ -444,8 +444,8 @@ def _import_Random():
     # This is called in a function instead of at the module level in order to
     # avoid problems with recursive imports
     global Random, StrongRandom
-    from Crypto import Random
-    from Crypto.Random.random import StrongRandom
+    from Cryptos import Random
+    from Cryptos.Random.random import StrongRandom
 
 
 

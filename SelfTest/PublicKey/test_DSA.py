@@ -22,18 +22,18 @@
 # SOFTWARE.
 # ===================================================================
 
-"""Self-test suite for Crypto.PublicKey.DSA"""
+"""Self-test suite for Cryptos.PublicKey.DSA"""
 
 __revision__ = "$Id$"
 
 import sys
 import os
 if sys.version_info[0] == 2 and sys.version_info[1] == 1:
-    from Crypto.Util.py21compat import *
-from Crypto.Util.py3compat import *
+    from Cryptos.Util.py21compat import *
+from Cryptos.Util.py3compat import *
 
 import unittest
-from Crypto.SelfTest.st_common import list_test_cases, a2b_hex, b2a_hex
+from Cryptos.SelfTest.st_common import list_test_cases, a2b_hex, b2a_hex
 
 def _sws(s):
     """Remove whitespace from a text or byte string"""
@@ -74,9 +74,9 @@ class DSATest(unittest.TestCase):
 
     def setUp(self):
         global DSA, Random, bytes_to_long, size
-        from Crypto.PublicKey import DSA
-        from Crypto import Random
-        from Crypto.Util.number import bytes_to_long, inverse, size
+        from Cryptos.PublicKey import DSA
+        from Cryptos import Random
+        from Cryptos.Util.number import bytes_to_long, inverse, size
 
         self.dsa = DSA
 
@@ -222,7 +222,7 @@ def get_tests(config={}):
     tests = []
     tests += list_test_cases(DSATest)
     try:
-        from Crypto.PublicKey import _fastmath
+        from Cryptos.PublicKey import _fastmath
         tests += list_test_cases(DSAFastMathTest)
     except ImportError:
         from distutils.sysconfig import get_config_var

@@ -30,9 +30,9 @@ This scheme is more properly called ``RSASSA-PKCS1-v1_5``.
 For example, a sender may authenticate a message using SHA-1 like
 this:
 
-        >>> from Crypto.Signature import PKCS1_v1_5
-        >>> from Crypto.Hash import SHA
-        >>> from Crypto.PublicKey import RSA
+        >>> from Cryptos.Signature import PKCS1_v1_5
+        >>> from Cryptos.Hash import SHA
+        >>> from Cryptos.PublicKey import RSA
         >>>
         >>> message = 'To be signed'
         >>> key = RSA.importKey(open('privkey.der').read())
@@ -60,10 +60,10 @@ the RSA key:
 __revision__ = "$Id$"
 __all__ = [ 'new', 'PKCS115_SigScheme' ]
 
-import Crypto.Util.number
-from Crypto.Util.number import ceil_div
-from Crypto.Util.asn1 import DerSequence, DerNull, DerOctetString
-from Crypto.Util.py3compat import *
+import Cryptos.Util.number
+from Cryptos.Util.number import ceil_div
+from Cryptos.Util.asn1 import DerSequence, DerNull, DerOctetString
+from Cryptos.Util.py3compat import *
 
 class PKCS115_SigScheme:
     """This signature scheme can perform PKCS#1 v1.5 RSA signature or verification."""
@@ -91,7 +91,7 @@ class PKCS115_SigScheme:
         :Parameters:
          mhash : hash object
                 The hash that was carried out over the message. This is an object
-                belonging to the `Crypto.Hash` module.
+                belonging to the `Cryptos.Hash` module.
     
         :Return: The signature encoded as a string.
         :Raise ValueError:
@@ -103,7 +103,7 @@ class PKCS115_SigScheme:
         # TODO: Verify the key is RSA
     
         # See 8.2.1 in RFC3447
-        modBits = Crypto.Util.number.size(self._key.n)
+        modBits = Cryptos.Util.number.size(self._key.n)
         k = ceil_div(modBits,8) # Convert from bits to bytes
     
         # Step 1
@@ -126,7 +126,7 @@ class PKCS115_SigScheme:
         :Parameters:
          mhash : hash object
                 The hash that was carried out over the message. This is an object
-                belonging to the `Crypto.Hash` module.
+                belonging to the `Cryptos.Hash` module.
          S : string
                 The signature that needs to be validated.
     
@@ -135,7 +135,7 @@ class PKCS115_SigScheme:
         # TODO: Verify the key is RSA
     
         # See 8.2.2 in RFC3447
-        modBits = Crypto.Util.number.size(self._key.n)
+        modBits = Cryptos.Util.number.size(self._key.n)
         k = ceil_div(modBits,8) # Convert from bits to bytes
     
         # Step 1
@@ -156,7 +156,7 @@ class PKCS115_SigScheme:
         # Step 4
         # By comparing the full encodings (as opposed to checking each
         # of its components one at a time) we avoid attacks to the padding
-        # scheme like Bleichenbacher's (see http://www.mail-archive.com/Cryptography@metzdowd.com/msg06537).
+        # scheme like Bleichenbacher's (see http://www.mail-archive.com/Cryptosgraphy@metzdowd.com/msg06537).
         # 
         return em1==em2
     
@@ -228,7 +228,7 @@ def new(key):
 
     :Parameters:
      key : RSA key object
-      The key to use to sign or verify the message. This is a `Crypto.PublicKey.RSA` object.
+      The key to use to sign or verify the message. This is a `Cryptos.PublicKey.RSA` object.
       Signing is only possible if *key* is a private RSA key.
 
     """

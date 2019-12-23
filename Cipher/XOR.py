@@ -32,7 +32,7 @@ Do not use it for real applications!
 
 __revision__ = "$Id$"
 
-from Crypto.Cipher import _XOR
+from Cryptos.Cipher import _XOR
 
 class XORCipher:
     """XOR cipher object"""

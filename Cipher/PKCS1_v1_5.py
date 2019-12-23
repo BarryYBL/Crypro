@@ -30,9 +30,9 @@ This scheme is more properly called ``RSAES-PKCS1-v1_5``.
 
 As an example, a sender may encrypt a message in this way:
 
-        >>> from Crypto.Cipher import PKCS1_v1_5
-        >>> from Crypto.PublicKey import RSA
-        >>> from Crypto.Hash import SHA
+        >>> from Cryptos.Cipher import PKCS1_v1_5
+        >>> from Cryptos.PublicKey import RSA
+        >>> from Cryptos.Hash import SHA
         >>>
         >>> message = 'To be encrypted'
         >>> h = SHA.new(message)
@@ -44,8 +44,8 @@ As an example, a sender may encrypt a message in this way:
 At the receiver side, decryption can be done using the private part of
 the RSA key:
 
-        >>> From Crypto.Hash import SHA
-        >>> from Crypto import Random
+        >>> From Cryptos.Hash import SHA
+        >>> from Cryptos import Random
         >>>
         >>> key = RSA.importKey(open('privkey.der').read())
         >>>
@@ -70,9 +70,9 @@ the RSA key:
 __revision__ = "$Id$"
 __all__ = [ 'new', 'PKCS115_Cipher' ]
 
-from Crypto.Util.number import ceil_div
-from Crypto.Util.py3compat import *
-import Crypto.Util.number
+from Cryptos.Util.number import ceil_div
+from Cryptos.Util.py3compat import *
+import Cryptos.Util.number
 
 class PKCS115_Cipher:
     """This cipher can perform PKCS#1 v1.5 RSA encryption or decryption."""
@@ -100,7 +100,7 @@ class PKCS115_Cipher:
     
         This function is named ``RSAES-PKCS1-V1_5-ENCRYPT``, and is specified in
         section 7.2.1 of RFC3447.
-        For a complete example see `Crypto.Cipher.PKCS1_v1_5`.
+        For a complete example see `Cryptos.Cipher.PKCS1_v1_5`.
     
         :Parameters:
          message : byte string
@@ -119,7 +119,7 @@ class PKCS115_Cipher:
         randFunc = self._key._randfunc
     
         # See 7.2.1 in RFC3447
-        modBits = Crypto.Util.number.size(self._key.n)
+        modBits = Cryptos.Util.number.size(self._key.n)
         k = ceil_div(modBits,8) # Convert from bits to bytes
         mLen = len(message)
     
@@ -146,7 +146,7 @@ class PKCS115_Cipher:
     
         This function is named ``RSAES-PKCS1-V1_5-DECRYPT``, and is specified in
         section 7.2.2 of RFC3447.
-        For a complete example see `Crypto.Cipher.PKCS1_v1_5`.
+        For a complete example see `Cryptos.Cipher.PKCS1_v1_5`.
     
         :Parameters:
          ct : byte string
@@ -196,7 +196,7 @@ class PKCS115_Cipher:
         # TODO: Verify the key is RSA
     
         # See 7.2.1 in RFC3447
-        modBits = Crypto.Util.number.size(self._key.n)
+        modBits = Cryptos.Util.number.size(self._key.n)
         k = ceil_div(modBits,8) # Convert from bits to bytes
     
         # Step 1
@@ -218,7 +218,7 @@ def new(key):
 
     :Parameters:
      key : RSA key object
-      The key to use to encrypt or decrypt the message. This is a `Crypto.PublicKey.RSA` object.
+      The key to use to encrypt or decrypt the message. This is a `Cryptos.PublicKey.RSA` object.
       Decryption is only possible if *key* is a private RSA key.
 
     """

@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 # ------------------------------------------------------------------------------
-# deCrypto
+# deCryptos
 # Copyright 2015 Christopher Simpkins
 # MIT license
 # ------------------------------------------------------------------------------
@@ -29,24 +29,24 @@ def main():
     # Test that user entered at least one argument to the executable, print usage if not
     # ------------------------------------------------------------------------------------------
     if not c.command_suite_validates():
-        from Crypto.settings import usage as Crypto_usage
-        print(Crypto_usage)
+        from Cryptos.settings import usage as Cryptos_usage
+        print(Cryptos_usage)
         sys.exit(1)
     # ------------------------------------------------------------------------------------------
     # [ HELP, VERSION, USAGE LOGIC ]
     # Naked framework provides default help, usage, and version commands for all applications
-    #   --> settings for user messages are assigned in the lib/Crypto/settings.py file
+    #   --> settings for user messages are assigned in the lib/Cryptos/settings.py file
     # ------------------------------------------------------------------------------------------
-    if c.help():      # User requested Crypto help information
-        from Crypto.settings import help as Crypto_help
-        print(Crypto_help)
+    if c.help():      # User requested Cryptos help information
+        from Cryptos.settings import help as Cryptos_help
+        print(Cryptos_help)
         sys.exit(0)
-    elif c.usage():   # User requested Crypto usage information
-        from Crypto.settings import usage as Crypto_usage
-        print(Crypto_usage)
+    elif c.usage():   # User requested Cryptos usage information
+        from Cryptos.settings import usage as Cryptos_usage
+        print(Cryptos_usage)
         sys.exit(0)
-    elif c.version():  # User requested Crypto version information
-        from Crypto.settings import app_name, major_version, minor_version, patch_version
+    elif c.version():  # User requested Cryptos version information
+        from Cryptos.settings import app_name, major_version, minor_version, patch_version
         version_display_string = app_name + ' ' + major_version + '.' + minor_version + '.' + patch_version
         print(version_display_string)
         sys.exit(0)
@@ -156,7 +156,7 @@ def main():
                                 tmp_filename = decrypted_filename + '.tmp'
                                 if file_exists(tmp_filename):
                                     os.rename(tmp_filename, decrypted_filename)
-                        else:  # decryption successful but we are in stdout flag so do not include any other output from deCrypto
+                        else:  # decryption successful but we are in stdout flag so do not include any other output from deCryptos
                             pass
                     else:
                         system_command = "gpg --batch -o " + quote(decrypted_filename) + " --passphrase " + quote(passphrase) + " -d " + quote(encrypted_file)
@@ -223,7 +223,7 @@ def main():
             passphrase = ""
             passphrase_confirm = ""
 
-            # add a short pause to hinder brute force pexpect style password attacks with deCrypto
+            # add a short pause to hinder brute force pexpect style password attacks with deCryptos
             sleep(0.2)  # 200ms pause
 
         else:  # passphrases did not match
@@ -306,7 +306,7 @@ def main():
                     # overwrite user entered passphrases
                     passphrase = ""
                     passphrase_confirm = ""
-                    # add a short pause to hinder brute force pexpect style password attacks with deCrypto
+                    # add a short pause to hinder brute force pexpect style password attacks with deCryptos
                     sleep(0.2)  # 200ms pause
                     sys.exit(1)
             else:
@@ -355,7 +355,7 @@ def main():
                 passphrase = ""
                 passphrase_confirm = ""
 
-                # add a short pause to hinder brute force pexpect style password attacks with deCrypto
+                # add a short pause to hinder brute force pexpect style password attacks with deCryptos
                 sleep(0.2)  # 200ms pause
             else:
                 # overwrite user entered passphrases

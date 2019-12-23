@@ -4,7 +4,7 @@
 # ------------------------------------------------------------------------------
 # Application Name
 # ------------------------------------------------------------------------------
-app_name = 'Crypto'
+app_name = 'Cryptos'
 
 # ------------------------------------------------------------------------------
 # Version Number
@@ -24,30 +24,30 @@ debug = False
 usage = """
 Encrypt by explicit file path:
 ------------------------------
-  Crypto <options> [file path] <file path 2...>
+  Cryptos <options> [file path] <file path 2...>
 
 
 Encrypt all top level files in directory:
 -----------------------------------------
-  Crypto <options> [directory path] <directory path 2...>
+  Cryptos <options> [directory path] <directory path 2...>
   
   
 Create a tar archive from directory and encrypt the archive:
 -----------------------------------------------------------
-  Crypto --tar [directory path] <directory path 2...>
+  Cryptos --tar [directory path] <directory path 2...>
 
 
 Decrypt by explicit file path:
 ------------------------------
-  deCrypto <options> [file path] <file path 2...>
+  deCryptos <options> [file path] <file path 2...>
 
 
 Decrypt all top level encrypted files in directory:
 ---------------------------------------------------
-  deCrypto <options> [directory path] <directory path 2...>
+  deCryptos <options> [directory path] <directory path 2...>
 
 
-Enter `Crypto --help` or `deCrypto --help` to view the available options.
+Enter `Cryptos --help` or `deCryptos --help` to view the available options.
 
 """
 
@@ -56,25 +56,25 @@ Enter `Crypto --help` or `deCrypto --help` to view the available options.
 # ------------------------------------------------------------------------------
 help = """
 -------------------------------------------------
-Crypto
+Cryptos
 Simple symmetric GPG file encryption
 Copyright 2015 Christopher Simpkins
 MIT license
-Source: https://github.com/chrissimpkins/Crypto
-Docs: https://chrissimpkins.github.io/Crypto/
+Source: https://github.com/chrissimpkins/Cryptos
+Docs: https://chrissimpkins.github.io/Cryptos/
 -------------------------------------------------
 
 ABOUT
-Crypto provides a simple interface to symmetric Gnu Privacy Guard (gpg) encryption and decryption for one or more files.  gpg must be installed on your system in order to use the Crypto and deCrypto executables.
+Cryptos provides a simple interface to symmetric Gnu Privacy Guard (gpg) encryption and decryption for one or more files.  gpg must be installed on your system in order to use the Cryptos and deCryptos executables.
 
 USAGE
   ENCRYPTION
-    Crypto <options> [file path] <file path...>
-    Crypto <options> [directory path] <directory path...>
+    Cryptos <options> [file path] <file path...>
+    Cryptos <options> [directory path] <directory path...>
 
   DECRYPTION
-    deCrypto <options> [file path] <file path...>
-    deCrypto <options> [directory path] <directory path...>
+    deCryptos <options> [file path] <file path...>
+    deCryptos <options> [directory path] <directory path...>
 
 CRYPTO OPTIONS
    --armor | -a          Use a portable ASCII armored encryption format
@@ -89,16 +89,16 @@ DECRYPTO OPTIONS
    --stdout    | -s      Print file contents to the standard output stream
 
 OTHER OPTIONS
-   --help | -h           Display Crypto and deCrypto help
-   --usage               Display Crypto and deCrypto usage
+   --help | -h           Display Cryptos and deCryptos help
+   --usage               Display Cryptos and deCryptos usage
    --version | -v        Display version number
 
 DESCRIPTION
-Use one or more explicit file path arguments to encrypt or decrypt the file(s).  Crypto and deCrypto will attempt to encrypt or decrypt (respectively) any explicit filepaths that you include irrespective of the file type.  Encrypted files are generated on the path '<original_filepath>.crypt'.  The original file is not modified or removed by Crypto.
+Use one or more explicit file path arguments to encrypt or decrypt the file(s).  Cryptos and deCryptos will attempt to encrypt or decrypt (respectively) any explicit filepaths that you include irrespective of the file type.  Encrypted files are generated on the path '<original_filepath>.crypt'.  The original file is not modified or removed by Cryptos.
 
-Use one or more directory arguments with the Crypto executable to encrypt all files in the top level of each directory with the same passphrase. Previously encrypted files with a '.crypt' file type will not be generated again in a directory.  Remove them before you run the command if you intend to repeat encryption with a file.
+Use one or more directory arguments with the Cryptos executable to encrypt all files in the top level of each directory with the same passphrase. Previously encrypted files with a '.crypt' file type will not be generated again in a directory.  Remove them before you run the command if you intend to repeat encryption with a file.
 
-Use one or more directory arguments with deCrypto to decrypt all .crypt, .gpg, .asc, and .pgp files in the top level of each directory.  deCrypto automatically unpacks decrypted tar archives.
+Use one or more directory arguments with deCryptos to decrypt all .crypt, .gpg, .asc, and .pgp files in the top level of each directory.  deCryptos automatically unpacks decrypted tar archives.
 
 Encryption is performed with the AES256 cipher algorithm.  Decryption will take place with any cipher algorithm that your version of gpg supports.
 """

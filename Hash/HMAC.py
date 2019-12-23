@@ -6,7 +6,7 @@
 #
 # This file contains code from the Python 2.2 hmac.py module (the
 # "Original Code"), with modifications made after it was incorporated
-# into PyCrypto (the "Modifications").
+# into PyCryptos (the "Modifications").
 #
 # To the best of our knowledge, the Python Software Foundation is the
 # copyright holder of the Original Code, and has licensed it under the
@@ -34,7 +34,7 @@
 """HMAC (Hash-based Message Authentication Code) algorithm
 
 HMAC is a MAC defined in RFC2104_ and FIPS-198_ and constructed using
-a Cryptograpic hash algorithm.
+a Cryptosgrapic hash algorithm.
 It is usually named *HMAC-X*, where *X* is the hash algorithm; for
 instance *HMAC-SHA1* or *HMAC-MD5*.
 
@@ -45,7 +45,7 @@ The strength of an HMAC depends on:
 
 An example of possible usage is the following:
 
-    >>> from Crypto.Hash import HMAC
+    >>> from Cryptos.Hash import HMAC
     >>>
     >>> secret = b'Swordfish'
     >>> h = HMAC.new(secret)
@@ -63,8 +63,8 @@ __revision__ = "$Id$"
 
 __all__ = ['new', 'digest_size', 'HMAC' ]
 
-from Crypto.Util.strxor import strxor_c
-from Crypto.Util.py3compat import *
+from Cryptos.Util.strxor import strxor_c
+from Cryptos.Util.py3compat import *
 
 #: The size of the authentication tag produced by the MAC.
 #: It matches the digest size on the underlying
@@ -93,9 +93,9 @@ class HMAC:
             It is equivalent to an early call to `update()`. Optional.
         :Parameter digestmod:
             The hash algorithm the HMAC is based on.
-            Default is `Crypto.Hash.MD5`.
+            Default is `Cryptos.Hash.MD5`.
         :Type digestmod:
-            A hash module or object instantiated from `Crypto.Hash`
+            A hash module or object instantiated from `Cryptos.Hash`
         """
         if digestmod is None:
             from . import MD5
@@ -203,9 +203,9 @@ def new(key, msg = None, digestmod = None):
         It is equivalent to an early call to `HMAC.update()`.
         Optional.
     :Parameter digestmod:
-        The hash to use to implement the HMAC. Default is `Crypto.Hash.MD5`.
+        The hash to use to implement the HMAC. Default is `Cryptos.Hash.MD5`.
     :Type digestmod:
-        A hash module or instantiated object from `Crypto.Hash`
+        A hash module or instantiated object from `Cryptos.Hash`
     :Returns: An `HMAC` object
     """
     return HMAC(key, msg, digestmod)

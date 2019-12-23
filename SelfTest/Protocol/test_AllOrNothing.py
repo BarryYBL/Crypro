@@ -1,7 +1,7 @@
 #
-# Test script for Crypto.Protocol.AllOrNothing
+# Test script for Cryptos.Protocol.AllOrNothing
 #
-# Part of the Python Cryptography Toolkit
+# Part of the Python Cryptosgraphy Toolkit
 #
 # Written by Andrew Kuchling and others
 #
@@ -26,8 +26,8 @@
 __revision__ = "$Id$"
 
 import unittest
-from Crypto.Protocol import AllOrNothing
-from Crypto.Util.py3compat import *
+from Cryptos.Protocol import AllOrNothing
+from Cryptos.Util.py3compat import *
 
 text = b("""\
 When in the Course of human events, it becomes necessary for one people to
@@ -53,7 +53,7 @@ class AllOrNothingTest (unittest.TestCase):
     def runTest(self):
         "Simple test of AllOrNothing"
 
-        from Crypto.Cipher import AES
+        from Cryptos.Cipher import AES
         import base64
 
         # The current AllOrNothing will fail

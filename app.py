@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 # ------------------------------------------------------------------------------
-# Crypto
+# Cryptos
 # Copyright 2015 Christopher Simpkins
 # MIT license
 # ------------------------------------------------------------------------------
@@ -26,24 +26,24 @@ def main():
     # Test that user entered at least one argument to the executable, print usage if not
     # ------------------------------------------------------------------------------------------
     if not c.command_suite_validates():
-        from Crypto.settings import usage as Crypto_usage
-        print(Crypto_usage)
+        from Cryptos.settings import usage as Cryptos_usage
+        print(Cryptos_usage)
         sys.exit(1)
     # ------------------------------------------------------------------------------------------
     # [ HELP, VERSION, USAGE LOGIC ]
     # Naked framework provides default help, usage, and version commands for all applications
-    #   --> settings for user messages are assigned in the lib/Crypto/settings.py file
+    #   --> settings for user messages are assigned in the lib/Cryptos/settings.py file
     # ------------------------------------------------------------------------------------------
-    if c.help():      # User requested Crypto help information
-        from Crypto.settings import help as Crypto_help
-        print(Crypto_help)
+    if c.help():      # User requested Cryptos help information
+        from Cryptos.settings import help as Cryptos_help
+        print(Cryptos_help)
         sys.exit(0)
-    elif c.usage():   # User requested Crypto usage information
-        from Crypto.settings import usage as Crypto_usage
-        print(Crypto_usage)
+    elif c.usage():   # User requested Cryptos usage information
+        from Cryptos.settings import usage as Cryptos_usage
+        print(Cryptos_usage)
         sys.exit(0)
-    elif c.version():  # User requested Crypto version information
-        from Crypto.settings import app_name, major_version, minor_version, patch_version
+    elif c.version():  # User requested Cryptos version information
+        from Cryptos.settings import app_name, major_version, minor_version, patch_version
         version_display_string = app_name + ' ' + major_version + '.' + minor_version + '.' + patch_version
         print(version_display_string)
         sys.exit(0)
@@ -121,7 +121,7 @@ def main():
         # confirm that there are files to be encrypted, if not warn user
         if len(file_list) == 0:
             if contained_dot_file is True or contained_crypt_file is True:
-                stderr("There were no files identified for encryption.  Crypto does not encrypt dot files or previously encrypted '.crypt' files.")
+                stderr("There were no files identified for encryption.  Cryptos does not encrypt dot files or previously encrypted '.crypt' files.")
                 sys.exit(1)
             else:
                 stderr("Unable to identify files for encryption")
@@ -139,7 +139,7 @@ def main():
                 # create temporary tar-files
                 tar_list = []
                 if len(tar_directory_list) > 0:
-                    from Crypto.library import package
+                    from Cryptos.library import package
                     tar_list = package.generate_tar_files(tar_directory_list)
                     for t in tar_list:
                         if t not in file_list:  # check to confirm that the tar archive is in the list of files to encrypt
@@ -149,33 +149,33 @@ def main():
                             else:
                                 stderr("There was an error with the tar archive creation.  Please try again.", exit=1)
 
-                from Crypto.library.Cryptor import Cryptor
-                the_Cryptor = Cryptor(passphrase)
+                from Cryptos.library.Cryptosr import Cryptosr
+                the_Cryptosr = Cryptosr(passphrase)
 
                 # run encryption based upon any passed switches
                 if ascii_armored:
                     if max_compress:
-                        the_Cryptor.encrypt_files(file_list, force_nocompress=False, force_compress=True, armored=True, checksum=report_checksum)
+                        the_Cryptosr.encrypt_files(file_list, force_nocompress=False, force_compress=True, armored=True, checksum=report_checksum)
                     elif no_compress:
-                        the_Cryptor.encrypt_files(file_list, force_nocompress=True, force_compress=False, armored=True, checksum=report_checksum)
+                        the_Cryptosr.encrypt_files(file_list, force_nocompress=True, force_compress=False, armored=True, checksum=report_checksum)
                     else:
-                        the_Cryptor.encrypt_files(file_list, force_nocompress=False, force_compress=False, armored=True, checksum=report_checksum)
+                        the_Cryptosr.encrypt_files(file_list, force_nocompress=False, force_compress=False, armored=True, checksum=report_checksum)
                 else:
                     if max_compress:
-                        the_Cryptor.encrypt_files(file_list, force_nocompress=False, force_compress=True, armored=False, checksum=report_checksum)
+                        the_Cryptosr.encrypt_files(file_list, force_nocompress=False, force_compress=True, armored=False, checksum=report_checksum)
                     elif no_compress:
-                        the_Cryptor.encrypt_files(file_list, force_nocompress=True, force_compress=False, armored=False, checksum=report_checksum)
+                        the_Cryptosr.encrypt_files(file_list, force_nocompress=True, force_compress=False, armored=False, checksum=report_checksum)
                     else:
-                        the_Cryptor.encrypt_files(file_list, force_nocompress=False, force_compress=False, armored=False, checksum=report_checksum)
+                        the_Cryptosr.encrypt_files(file_list, force_nocompress=False, force_compress=False, armored=False, checksum=report_checksum)
 
                 # overwrite user entered passphrases
                 passphrase = ""
                 passphrase_confirm = ""
-                the_Cryptor.cleanup()
+                the_Cryptosr.cleanup()
 
                 # tmp tar file removal (generated with package.generate_tar_files function above)
                 if len(tar_list) > 0:
-                    from Crypto.library import package
+                    from Cryptos.library import package
                     package.remove_tar_files(tar_list)
             else:
                 # passphrases did not match, report to user and abort
@@ -202,10 +202,10 @@ def main():
             passphrase_confirm = getpass.getpass("Please enter your passphrase again: ")
 
             if passphrase == passphrase_confirm:
-                from Crypto.library.Cryptor import Cryptor
-                the_Cryptor = Cryptor(passphrase)
-                the_Cryptor.encrypt_file(path)
-                the_Cryptor.cleanup()
+                from Cryptos.library.Cryptosr import Cryptosr
+                the_Cryptosr = Cryptosr(passphrase)
+                the_Cryptosr.encrypt_file(path)
+                the_Cryptosr.cleanup()
             else:
                 stderr("The passphrases did not match.  Please enter your command again.")
                 sys.exit(1)
@@ -234,10 +234,10 @@ def main():
             passphrase_confirm = getpass.getpass("Please enter your passphrase again: ")
 
             if passphrase == passphrase_confirm:
-                from Crypto.library.Cryptor import Cryptor
-                the_Cryptor = Cryptor(passphrase)
-                the_Cryptor.encrypt_files(clean_directory_file_list_relpaths)  # encrypt the list of directory files
-                the_Cryptor.cleanup()
+                from Cryptos.library.Cryptosr import Cryptosr
+                the_Cryptosr = Cryptosr(passphrase)
+                the_Cryptosr.encrypt_files(clean_directory_file_list_relpaths)  # encrypt the list of directory files
+                the_Cryptosr.cleanup()
             else:
                 # passphrases do not match
                 # overwrite user entered passphrases
