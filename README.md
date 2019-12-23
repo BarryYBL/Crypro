@@ -148,15 +148,11 @@ View the usage documentation
 
 View the Crypto version number
 
-
-## Issues
-
-Please submit a [new issue report on the GitHub repository](https://github.com/chrissimpkins/Crypto/issueshttps://github.com/chrissimpkins/Crypto/issues) with a detailed overview of the problem that you are having.
-
-
 ## Project Contributors
 
-- [Christoph Russ](https://github.com/christophruss) (@christophruss)
+- [Barry](https://github.com/BarryYBL) 
 
----
-[MIT License](https://github.com/chrissimpkins/Crypto/blob/master/docs/LICENSE) | Built with the [Naked Framework](https://pypi.python.org/pypi/Naked)
+## Author contact information
+ QQ:3165856425
+ 
+ Email:YBL2652612315@126.com
