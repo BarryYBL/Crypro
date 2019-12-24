@@ -39,7 +39,7 @@ string produces another byte string, but the indexing operation produces an
 integer.  Data read from a file is of '''str'' type if the file was opened in
 text mode, or of ''bytes'' type otherwise.
 
-Since PyCryProAES aims at supporting both Python 2.x and 3.x, the following helper
+Since PyCryptoAES aims at supporting both Python 2.x and 3.x, the following helper
 functions are used to keep the rest of the library as independent as possible
 from the actual Python version.
 

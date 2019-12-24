@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 #
-#  SelfTest/Hash/common.py: Common code for CryProAES.SelfTest.Hash
+#  SelfTest/Hash/common.py: Common code for CryptoAES.SelfTest.Hash
 #
 # Written in 2008 by Dwayne C. Litzenberger <dlitz@dlitz.net>
 #
@@ -22,14 +22,14 @@
 # SOFTWARE.
 # ===================================================================
 
-"""Self-testing for PyCryProAES hash modules"""
+"""Self-testing for PyCryptoAES hash modules"""
 
 __revision__ = "$Id$"
 
 import sys
 import unittest
 import binascii
-from CryProAES.Util.py3compat import *
+from CryptoAES.Util.py3compat import *
 
 # For compatibility with Python 2.1 and Python 2.2
 if sys.hexversion < 0x02030000:

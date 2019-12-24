@@ -22,7 +22,7 @@
 # SOFTWARE.
 # ===================================================================
 
-"""Pure Python implementation of the RSA-related portions of CryProAES.PublicKey._fastmath."""
+"""Pure Python implementation of the RSA-related portions of CryptoAES.PublicKey._fastmath."""
 
 __revision__ = "$Id$"
 
@@ -31,8 +31,8 @@ __all__ = ['rsa_construct']
 import sys
 
 if sys.version_info[0] == 2 and sys.version_info[1] == 1:
-    from CryProAES.Util.py21compat import *
-from CryProAES.Util.number import size, inverse, GCD
+    from CryptoAES.Util.py21compat import *
+from CryptoAES.Util.number import size, inverse, GCD
 
 class error(Exception):
     pass
@@ -99,7 +99,7 @@ def rsa_construct(n, e, d=None, p=None, q=None, u=None):
     else:
         # Compute factors p and q from the private exponent d.
         # We assume that n has no more than two factors.
-        # See 8.2.2(i) in Handbook of Applied CryProAESgraphy.
+        # See 8.2.2(i) in Handbook of Applied CryptoAESgraphy.
         ktot = d*e-1
         # The quantity d*e-1 is a multiple of phi(n), even,
         # and can be represented as t*2^s.

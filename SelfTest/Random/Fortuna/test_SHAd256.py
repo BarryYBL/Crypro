@@ -22,10 +22,10 @@
 # SOFTWARE.
 # ===================================================================
 
-"""Self-test suite for CryProAES.Random.Fortuna.SHAd256"""
+"""Self-test suite for CryptoAES.Random.Fortuna.SHAd256"""
 
 __revision__ = "$Id$"
-from CryProAES.Util.py3compat import *
+from CryptoAES.Util.py3compat import *
 
 # This is a list of (expected_result, input[, description]) tuples.
 test_data = [
@@ -33,7 +33,7 @@ test_data = [
     # feeding some sample data into several plain SHA256 implementations
     # (including OpenSSL, the "sha256sum" tool, and this implementation).
     # This is a subset of the resulting test vectors.  The complete list can be
-    # found at: http://www.dlitz.net/CryProAES/shad256-test-vectors/
+    # found at: http://www.dlitz.net/CryptoAES/shad256-test-vectors/
     ('5df6e0e2761359d30a8275058e299fcc0381534545f55cf43e41983f5d4c9456',
         '', "'' (empty string)"),
     ('4f8b42c22dd3729b519ba6f68d2da7cc5b2d606d05daed5ad5128cc03e6c6358',
@@ -43,8 +43,8 @@ test_data = [
 ]
 
 def get_tests(config={}):
-    from CryProAES.Random.Fortuna import SHAd256
-    from CryProAES.SelfTest.Hash.common import make_hash_tests
+    from CryptoAES.Random.Fortuna import SHAd256
+    from CryptoAES.SelfTest.Hash.common import make_hash_tests
     return make_hash_tests(SHAd256, "SHAd256", test_data, 32)
 
 if __name__ == '__main__':

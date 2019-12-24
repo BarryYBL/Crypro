@@ -22,11 +22,11 @@
 # SOFTWARE.
 # ===================================================================
 
-"""Self-test suite for CryProAES.Hash.SHA"""
+"""Self-test suite for CryptoAES.Hash.SHA"""
 
 __revision__ = "$Id$"
 
-from CryProAES.Util.py3compat import *
+from CryptoAES.Util.py3compat import *
 
 # Test vectors from various sources
 # This is a list of (expected_result, input[, description]) tuples.
@@ -50,7 +50,7 @@ test_data = [
 ]
 
 def get_tests(config={}):
-    from CryProAES.Hash import SHA
+    from CryptoAES.Hash import SHA
     from .common import make_hash_tests
     return make_hash_tests(SHA, "SHA", test_data,
         digest_size=20,

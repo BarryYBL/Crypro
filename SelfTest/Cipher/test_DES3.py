@@ -22,12 +22,12 @@
 # SOFTWARE.
 # ===================================================================
 
-"""Self-test suite for CryProAES.Cipher.DES3"""
+"""Self-test suite for CryptoAES.Cipher.DES3"""
 
 __revision__ = "$Id$"
 
 from .common import dict     # For compatibility with Python 2.1 and 2.2
-from CryProAES.Util.py3compat import *
+from CryptoAES.Util.py3compat import *
 from binascii import hexlify
 
 # This is a list of (plaintext, ciphertext, key, description) tuples.
@@ -302,7 +302,7 @@ test_data = [
     (SP800_20_A2_PT, '869efd7f9f265a09', '0101010101010102'*3,
         'NIST SP800-20 A.2 #55'),
 
-    # "Two-key 3DES".  Test vector generated using PyCryProAES 2.0.1.
+    # "Two-key 3DES".  Test vector generated using PyCryptoAES 2.0.1.
     # This test is designed to test the DES3 API, not the correctness of the
     # output.
     ('21e81b7ade88a259', '5c577d4d9b20c0f8',
@@ -321,7 +321,7 @@ test_data = [
 ]
 
 def get_tests(config={}):
-    from CryProAES.Cipher import DES3
+    from CryptoAES.Cipher import DES3
     from .common import make_block_tests
     return make_block_tests(DES3, "DES3", test_data)
 

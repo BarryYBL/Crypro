@@ -18,11 +18,11 @@
 # SOFTWARE.
 # ===================================================================
 
-"""SHA-1 CryProAESgraphic hash algorithm.
+"""SHA-1 CryptoAESgraphic hash algorithm.
 
 SHA-1_ produces the 160 bit digest of a message.
 
-    >>> from CryProAES.Hash import SHA
+    >>> from CryptoAES.Hash import SHA
     >>>
     >>> h = SHA.new()
     >>> h.update(b'Hello')
@@ -39,8 +39,8 @@ _revision__ = "$Id$"
 
 __all__ = ['new', 'digest_size', 'SHA1Hash' ]
 
-from CryProAES.Util.py3compat import *
-from CryProAES.Hash.hashalgo import HashAlgo
+from CryptoAES.Util.py3compat import *
+from CryptoAES.Hash.hashalgo import HashAlgo
 
 try:
     # The sha module is deprecated in Python 2.6, so use hashlib when possible.

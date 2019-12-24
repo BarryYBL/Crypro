@@ -18,11 +18,11 @@
 # SOFTWARE.
 # ===================================================================
 
-"""MD2 CryProAESgraphic hash algorithm.
+"""MD2 CryptoAESgraphic hash algorithm.
 
 MD2 is specified in RFC1319_ and it produces the 128 bit digest of a message.
 
-    >>> from CryProAES.Hash import MD2
+    >>> from CryptoAES.Hash import MD2
     >>>
     >>> h = MD2.new()
     >>> h.update(b'Hello')
@@ -39,10 +39,10 @@ _revision__ = "$Id$"
 
 __all__ = ['new', 'digest_size', 'MD2Hash' ]
 
-from CryProAES.Util.py3compat import *
-from CryProAES.Hash.hashalgo import HashAlgo
+from CryptoAES.Util.py3compat import *
+from CryptoAES.Hash.hashalgo import HashAlgo
 
-import CryProAES.Hash._MD2 as _MD2
+import CryptoAES.Hash._MD2 as _MD2
 hashFactory = _MD2
 
 class MD2Hash(HashAlgo):

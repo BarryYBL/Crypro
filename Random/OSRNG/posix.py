@@ -30,7 +30,7 @@ import os
 import stat
 
 from .rng_base import BaseRNG
-from CryProAES.Util.py3compat import b
+from CryptoAES.Util.py3compat import b
 
 class DevURandomRNG(BaseRNG):
 

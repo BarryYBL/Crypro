@@ -22,11 +22,11 @@
 # SOFTWARE.
 # ===================================================================
 
-"""Self-test suite for CryProAES.Cipher.ARC4"""
+"""Self-test suite for CryptoAES.Cipher.ARC4"""
 
 __revision__ = "$Id$"
 
-from CryProAES.Util.py3compat import *
+from CryptoAES.Util.py3compat import *
 
 # This is a list of (plaintext, ciphertext, key[, description]) tuples.
 test_data = [
@@ -69,7 +69,7 @@ test_data = [
 ]
 
 def get_tests(config={}):
-    from CryProAES.Cipher import ARC4
+    from CryptoAES.Cipher import ARC4
     from .common import make_stream_tests
     return make_stream_tests(ARC4, "ARC4", test_data)
 

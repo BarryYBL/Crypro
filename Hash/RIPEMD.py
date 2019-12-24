@@ -18,11 +18,11 @@
 # SOFTWARE.
 # ===================================================================
 
-"""RIPEMD-160 CryProAESgraphic hash algorithm.
+"""RIPEMD-160 CryptoAESgraphic hash algorithm.
 
 RIPEMD-160_ produces the 160 bit digest of a message.
 
-    >>> from CryProAES.Hash import RIPEMD
+    >>> from CryptoAES.Hash import RIPEMD
     >>>
     >>> h = RIPEMD.new()
     >>> h.update(b'Hello')
@@ -42,10 +42,10 @@ _revision__ = "$Id$"
 
 __all__ = ['new', 'digest_size', 'RIPEMD160Hash' ]
 
-from CryProAES.Util.py3compat import *
-from CryProAES.Hash.hashalgo import HashAlgo
+from CryptoAES.Util.py3compat import *
+from CryptoAES.Hash.hashalgo import HashAlgo
 
-import CryProAES.Hash._RIPEMD160 as _RIPEMD160
+import CryptoAES.Hash._RIPEMD160 as _RIPEMD160
 hashFactory = _RIPEMD160
 
 class RIPEMD160Hash(HashAlgo):

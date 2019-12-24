@@ -22,12 +22,12 @@
 # SOFTWARE.
 # ===================================================================
 
-"""Self-test suite for CryProAES.Cipher.DES"""
+"""Self-test suite for CryptoAES.Cipher.DES"""
 
 __revision__ = "$Id$"
 
 from .common import dict     # For compatibility with Python 2.1 and 2.2
-from CryProAES.Util.py3compat import *
+from CryptoAES.Util.py3compat import *
 import unittest
 
 # This is a list of (plaintext, ciphertext, key, description) tuples.
@@ -310,7 +310,7 @@ class RonRivestTest(unittest.TestCase):
     errors described herein.
     """
     def runTest(self):
-        from CryProAES.Cipher import DES
+        from CryptoAES.Cipher import DES
         from binascii import b2a_hex
 
         X = []
@@ -327,7 +327,7 @@ class RonRivestTest(unittest.TestCase):
             b2a_hex(b('\x1B\x1A\x2D\xDB\x4C\x64\x24\x38')))
 
 def get_tests(config={}):
-    from CryProAES.Cipher import DES
+    from CryptoAES.Cipher import DES
     from .common import make_block_tests
     return make_block_tests(DES, "DES", test_data) + [RonRivestTest()]
 

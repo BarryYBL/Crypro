@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 #
-#  SelfTest/Util/test_number.py: Self-test for parts of the CryProAES.Util.number module
+#  SelfTest/Util/test_number.py: Self-test for parts of the CryptoAES.Util.number module
 #
 # Written in 2008 by Dwayne C. Litzenberger <dlitz@dlitz.net>
 #
@@ -22,13 +22,13 @@
 # SOFTWARE.
 # ===================================================================
 
-"""Self-tests for (some of) CryProAES.Util.number"""
+"""Self-tests for (some of) CryptoAES.Util.number"""
 
 __revision__ = "$Id$"
 
 import sys
 if sys.version_info[0] == 2 and sys.version_info[1] == 1:
-    from CryProAES.Util.py21compat import *
+    from CryptoAES.Util.py21compat import *
 
 import unittest
 
@@ -38,7 +38,7 @@ import unittest
 class MiscTests(unittest.TestCase):
     def setUp(self):
         global number, math
-        from CryProAES.Util import number
+        from CryptoAES.Util import number
         import math
 
     def test_ceil_shift(self):
@@ -254,7 +254,7 @@ class MiscTests(unittest.TestCase):
         """Util.number.isPrime"""
         self.assertEqual(number.isPrime(-3), False)     # Regression test: negative numbers should not be prime
         self.assertEqual(number.isPrime(-2), False)     # Regression test: negative numbers should not be prime
-        self.assertEqual(number.isPrime(1), False)      # Regression test: isPrime(1) caused some versions of PyCryProAES to crash.
+        self.assertEqual(number.isPrime(1), False)      # Regression test: isPrime(1) caused some versions of PyCryptoAES to crash.
         self.assertEqual(number.isPrime(2), True)
         self.assertEqual(number.isPrime(3), True)
         self.assertEqual(number.isPrime(4), False)
@@ -285,7 +285,7 @@ class MiscTests(unittest.TestCase):
         self.assertEqual(e, k.e)
 
 def get_tests(config={}):
-    from CryProAES.SelfTest.st_common import list_test_cases
+    from CryptoAES.SelfTest.st_common import list_test_cases
     return list_test_cases(MiscTests)
 
 if __name__ == '__main__':

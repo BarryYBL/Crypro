@@ -22,30 +22,30 @@
 # SOFTWARE.
 # ===================================================================
 
-"""Self-test suite for CryProAES.Hash.SHA256"""
+"""Self-test suite for CryptoAES.Hash.SHA256"""
 
 __revision__ = "$Id$"
 
 import unittest
-from CryProAES.Util.py3compat import *
+from CryptoAES.Util.py3compat import *
 
 class LargeSHA256Test(unittest.TestCase):
     def runTest(self):
         """SHA256: 512/520 MiB test"""
-        from CryProAES.Hash import SHA256
+        from CryptoAES.Hash import SHA256
         zeros = bchr(0x00) * (1024*1024)
 
         h = SHA256.new(zeros)
         for i in range(511):
             h.update(zeros)
 
-        # This test vector is from PyCryProAES's old testdata.py file.
+        # This test vector is from PyCryptoAES's old testdata.py file.
         self.assertEqual('9acca8e8c22201155389f65abbf6bc9723edc7384ead80503839f49dcc56d767', h.hexdigest()) # 512 MiB
 
         for i in range(8):
             h.update(zeros)
 
-        # This test vector is from PyCryProAES's old testdata.py file.
+        # This test vector is from PyCryptoAES's old testdata.py file.
         self.assertEqual('abf51ad954b246009dfe5a50ecd582fd5b8f1b8b27f30393853c3ef721e7fa6e', h.hexdigest()) # 520 MiB
 
 def get_tests(config={}):
@@ -65,7 +65,7 @@ def get_tests(config={}):
             'a' * 10**6,
              '"a" * 10**6'),
 
-        # Test for an old PyCryProAES bug.
+        # Test for an old PyCryptoAES bug.
         ('f7fd017a3c721ce7ff03f3552c0813adcc48b7f33f07e5e2ba71e23ea393d103',
             'This message is precisely 55 bytes long, to test a bug.',
             'Length = 55 (mod 64)'),
@@ -77,7 +77,7 @@ def get_tests(config={}):
          'Franz jagt im komplett verwahrlosten Taxi quer durch Bayern'),
     ]
 
-    from CryProAES.Hash import SHA256
+    from CryptoAES.Hash import SHA256
     from .common import make_hash_tests
     tests = make_hash_tests(SHA256, "SHA256", test_data,
         digest_size=32,

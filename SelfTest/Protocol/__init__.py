@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 #
-#  SelfTest/Protocol/__init__.py: Self-tests for CryProAES.Protocol
+#  SelfTest/Protocol/__init__.py: Self-tests for CryptoAES.Protocol
 #
 # Written in 2008 by Dwayne C. Litzenberger <dlitz@dlitz.net>
 #
@@ -22,15 +22,15 @@
 # SOFTWARE.
 # ===================================================================
 
-"""Self-test for CryProAES.Protocol"""
+"""Self-test for CryptoAES.Protocol"""
 
 __revision__ = "$Id$"
 
 def get_tests(config={}):
     tests = []
-    from CryProAES.SelfTest.Protocol import test_chaffing;       tests += test_chaffing.get_tests(config=config)
-    from CryProAES.SelfTest.Protocol import test_rfc1751;        tests += test_rfc1751.get_tests(config=config)
-    from CryProAES.SelfTest.Protocol import test_AllOrNothing;        tests += test_AllOrNothing.get_tests(config=config)
+    from CryptoAES.SelfTest.Protocol import test_chaffing;       tests += test_chaffing.get_tests(config=config)
+    from CryptoAES.SelfTest.Protocol import test_rfc1751;        tests += test_rfc1751.get_tests(config=config)
+    from CryptoAES.SelfTest.Protocol import test_AllOrNothing;        tests += test_AllOrNothing.get_tests(config=config)
     return tests
 
 if __name__ == '__main__':

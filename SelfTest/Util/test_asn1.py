@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 #
-#  SelfTest/Util/test_asn.py: Self-test for the CryProAES.Util.asn1 module
+#  SelfTest/Util/test_asn.py: Self-test for the CryptoAES.Util.asn1 module
 #
 # ===================================================================
 # The contents of this file are dedicated to the public domain.  To
@@ -20,15 +20,15 @@
 # SOFTWARE.
 # ===================================================================
 
-"""Self-tests for CryProAES.Util.asn1"""
+"""Self-tests for CryptoAES.Util.asn1"""
 
 __revision__ = "$Id$"
 
 import unittest
 import sys
 
-from CryProAES.Util.py3compat import *
-from CryProAES.Util.asn1 import DerSequence, DerObject
+from CryptoAES.Util.py3compat import *
+from CryptoAES.Util.asn1 import DerSequence, DerObject
 
 class DerObjectTests(unittest.TestCase):
 
@@ -280,7 +280,7 @@ class DerSequenceTests(unittest.TestCase):
 		self.assertRaises(ValueError, der.decode, b('\x30\x04\x02\x01\xFF'))
 
 def get_tests(config={}):
-    from CryProAES.SelfTest.st_common import list_test_cases
+    from CryptoAES.SelfTest.st_common import list_test_cases
     listTests = []
     listTests += list_test_cases(DerObjectTests)
     listTests += list_test_cases(DerSequenceTests)

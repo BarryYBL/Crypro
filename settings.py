@@ -4,7 +4,7 @@
 # ------------------------------------------------------------------------------
 # Application Name
 # ------------------------------------------------------------------------------
-app_name = 'CryProAES'
+app_name = 'CryptoAES'
 
 # ------------------------------------------------------------------------------
 # Version Number
@@ -24,30 +24,30 @@ debug = False
 usage = """
 Encrypt by explicit file path:
 ------------------------------
-  CryProAES <options> [file path] <file path 2...>
+  CryptoAES <options> [file path] <file path 2...>
 
 
 Encrypt all top level files in directory:
 -----------------------------------------
-  CryProAES <options> [directory path] <directory path 2...>
+  CryptoAES <options> [directory path] <directory path 2...>
   
   
 Create a tar archive from directory and encrypt the archive:
 -----------------------------------------------------------
-  CryProAES --tar [directory path] <directory path 2...>
+  CryptoAES --tar [directory path] <directory path 2...>
 
 
 Decrypt by explicit file path:
 ------------------------------
-  deCryProAES <options> [file path] <file path 2...>
+  deCryptoAES <options> [file path] <file path 2...>
 
 
 Decrypt all top level encrypted files in directory:
 ---------------------------------------------------
-  deCryProAES <options> [directory path] <directory path 2...>
+  deCryptoAES <options> [directory path] <directory path 2...>
 
 
-Enter `CryProAES --help` or `deCryProAES --help` to view the available options.
+Enter `CryptoAES --help` or `deCryptoAES --help` to view the available options.
 
 """
 
@@ -56,25 +56,25 @@ Enter `CryProAES --help` or `deCryProAES --help` to view the available options.
 # ------------------------------------------------------------------------------
 help = """
 -------------------------------------------------
-CryProAES
+CryptoAES
 Simple symmetric GPG file encryption
 Copyright 2015 Christopher Simpkins
 MIT license
-Source: https://github.com/chrissimpkins/CryProAES
-Docs: https://chrissimpkins.github.io/CryProAES/
+Source: https://github.com/chrissimpkins/CryptoAES
+Docs: https://chrissimpkins.github.io/CryptoAES/
 -------------------------------------------------
 
 ABOUT
-CryProAES provides a simple interface to symmetric Gnu Privacy Guard (gpg) encryption and decryption for one or more files.  gpg must be installed on your system in order to use the CryProAES and deCryProAES executables.
+CryptoAES provides a simple interface to symmetric Gnu Privacy Guard (gpg) encryption and decryption for one or more files.  gpg must be installed on your system in order to use the CryptoAES and deCryptoAES executables.
 
 USAGE
   ENCRYPTION
-    CryProAES <options> [file path] <file path...>
-    CryProAES <options> [directory path] <directory path...>
+    CryptoAES <options> [file path] <file path...>
+    CryptoAES <options> [directory path] <directory path...>
 
   DECRYPTION
-    deCryProAES <options> [file path] <file path...>
-    deCryProAES <options> [directory path] <directory path...>
+    deCryptoAES <options> [file path] <file path...>
+    deCryptoAES <options> [directory path] <directory path...>
 
 CRYPTO OPTIONS
    --armor | -a          Use a portable ASCII armored encryption format
@@ -89,16 +89,16 @@ DECRYPTO OPTIONS
    --stdout    | -s      Print file contents to the standard output stream
 
 OTHER OPTIONS
-   --help | -h           Display CryProAES and deCryProAES help
-   --usage               Display CryProAES and deCryProAES usage
+   --help | -h           Display CryptoAES and deCryptoAES help
+   --usage               Display CryptoAES and deCryptoAES usage
    --version | -v        Display version number
 
 DESCRIPTION
-Use one or more explicit file path arguments to encrypt or decrypt the file(s).  CryProAES and deCryProAES will attempt to encrypt or decrypt (respectively) any explicit filepaths that you include irrespective of the file type.  Encrypted files are generated on the path '<original_filepath>.crypt'.  The original file is not modified or removed by CryProAES.
+Use one or more explicit file path arguments to encrypt or decrypt the file(s).  CryptoAES and deCryptoAES will attempt to encrypt or decrypt (respectively) any explicit filepaths that you include irrespective of the file type.  Encrypted files are generated on the path '<original_filepath>.crypt'.  The original file is not modified or removed by CryptoAES.
 
-Use one or more directory arguments with the CryProAES executable to encrypt all files in the top level of each directory with the same passphrase. Previously encrypted files with a '.crypt' file type will not be generated again in a directory.  Remove them before you run the command if you intend to repeat encryption with a file.
+Use one or more directory arguments with the CryptoAES executable to encrypt all files in the top level of each directory with the same passphrase. Previously encrypted files with a '.crypt' file type will not be generated again in a directory.  Remove them before you run the command if you intend to repeat encryption with a file.
 
-Use one or more directory arguments with deCryProAES to decrypt all .crypt, .gpg, .asc, and .pgp files in the top level of each directory.  deCryProAES automatically unpacks decrypted tar archives.
+Use one or more directory arguments with deCryptoAES to decrypt all .crypt, .gpg, .asc, and .pgp files in the top level of each directory.  deCryptoAES automatically unpacks decrypted tar archives.
 
 Encryption is performed with the AES256 cipher algorithm.  Decryption will take place with any cipher algorithm that your version of gpg supports.
 """

@@ -22,18 +22,18 @@
 # SOFTWARE.
 # ===================================================================
 
-"""Self-test suite for CryProAES.PublicKey.DSA"""
+"""Self-test suite for CryptoAES.PublicKey.DSA"""
 
 __revision__ = "$Id$"
 
 import sys
 import os
 if sys.version_info[0] == 2 and sys.version_info[1] == 1:
-    from CryProAES.Util.py21compat import *
-from CryProAES.Util.py3compat import *
+    from CryptoAES.Util.py21compat import *
+from CryptoAES.Util.py3compat import *
 
 import unittest
-from CryProAES.SelfTest.st_common import list_test_cases, a2b_hex, b2a_hex
+from CryptoAES.SelfTest.st_common import list_test_cases, a2b_hex, b2a_hex
 
 def _sws(s):
     """Remove whitespace from a text or byte string"""
@@ -74,9 +74,9 @@ class DSATest(unittest.TestCase):
 
     def setUp(self):
         global DSA, Random, bytes_to_long, size
-        from CryProAES.PublicKey import DSA
-        from CryProAES import Random
-        from CryProAES.Util.number import bytes_to_long, inverse, size
+        from CryptoAES.PublicKey import DSA
+        from CryptoAES import Random
+        from CryptoAES.Util.number import bytes_to_long, inverse, size
 
         self.dsa = DSA
 
@@ -222,7 +222,7 @@ def get_tests(config={}):
     tests = []
     tests += list_test_cases(DSATest)
     try:
-        from CryProAES.PublicKey import _fastmath
+        from CryptoAES.PublicKey import _fastmath
         tests += list_test_cases(DSAFastMathTest)
     except ImportError:
         from distutils.sysconfig import get_config_var

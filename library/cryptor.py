@@ -8,12 +8,12 @@ from Naked.toolshed.system import file_size, stdout, stderr
 from shellescape import quote
 
 # ------------------------------------------------------------------------------
-# CryProAESr class
+# CryptoAESr class
 #   performs gpg encryption of one or more files
 # ------------------------------------------------------------------------------
 
 
-class CryProAESr(object):
+class CryptoAESr(object):
     """performs gpg encryption of one or more files"""
     def __init__(self, passphrase):
         self.command_default = "gpg -z 1 --batch --force-mdc --cipher-algo AES256 -o "
@@ -65,7 +65,7 @@ class CryProAESr(object):
             if response.exitcode == 0:
                 stdout(encrypted_outpath + " was generated from " + inpath)
                 if checksum:  # add a SHA256 hash digest of the encrypted file - requested by user --hash flag in command
-                    from CryProAES.library import hash
+                    from CryptoAES.library import hash
                     encrypted_file_hash = hash.generate_hash(encrypted_outpath)
                     if len(encrypted_file_hash) == 64:
                         stdout("SHA256 hash digest for " + encrypted_outpath + " :")
@@ -100,7 +100,7 @@ class CryProAESr(object):
     # ------------------------------------------------------------------------------
 
     def _create_outfilepath(self, inpath):
-        """private method that generates the CryProAES saved file path string with a .crypt file type"""
+        """private method that generates the CryptoAES saved file path string with a .crypt file type"""
         return inpath + '.crypt'
 
     def _is_compress_filetype(self, inpath):

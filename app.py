@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 # ------------------------------------------------------------------------------
-# CryProAES
+# CryptoAES
 # Copyright 2015 Christopher Simpkins
 # MIT license
 # ------------------------------------------------------------------------------
@@ -26,24 +26,24 @@ def main():
     # Test that user entered at least one argument to the executable, print usage if not
     # ------------------------------------------------------------------------------------------
     if not c.command_suite_validates():
-        from CryProAES.settings import usage as CryProAES_usage
-        print(CryProAES_usage)
+        from CryptoAES.settings import usage as CryptoAES_usage
+        print(CryptoAES_usage)
         sys.exit(1)
     # ------------------------------------------------------------------------------------------
     # [ HELP, VERSION, USAGE LOGIC ]
     # Naked framework provides default help, usage, and version commands for all applications
-    #   --> settings for user messages are assigned in the lib/CryProAES/settings.py file
+    #   --> settings for user messages are assigned in the lib/CryptoAES/settings.py file
     # ------------------------------------------------------------------------------------------
-    if c.help():      # User requested CryProAES help information
-        from CryProAES.settings import help as CryProAES_help
-        print(CryProAES_help)
+    if c.help():      # User requested CryptoAES help information
+        from CryptoAES.settings import help as CryptoAES_help
+        print(CryptoAES_help)
         sys.exit(0)
-    elif c.usage():   # User requested CryProAES usage information
-        from CryProAES.settings import usage as CryProAES_usage
-        print(CryProAES_usage)
+    elif c.usage():   # User requested CryptoAES usage information
+        from CryptoAES.settings import usage as CryptoAES_usage
+        print(CryptoAES_usage)
         sys.exit(0)
-    elif c.version():  # User requested CryProAES version information
-        from CryProAES.settings import app_name, major_version, minor_version, patch_version
+    elif c.version():  # User requested CryptoAES version information
+        from CryptoAES.settings import app_name, major_version, minor_version, patch_version
         version_display_string = app_name + ' ' + major_version + '.' + minor_version + '.' + patch_version
         print(version_display_string)
         sys.exit(0)
@@ -121,7 +121,7 @@ def main():
         # confirm that there are files to be encrypted, if not warn user
         if len(file_list) == 0:
             if contained_dot_file is True or contained_crypt_file is True:
-                stderr("There were no files identified for encryption.  CryProAES does not encrypt dot files or previously encrypted '.crypt' files.")
+                stderr("There were no files identified for encryption.  CryptoAES does not encrypt dot files or previously encrypted '.crypt' files.")
                 sys.exit(1)
             else:
                 stderr("Unable to identify files for encryption")
@@ -139,7 +139,7 @@ def main():
                 # create temporary tar-files
                 tar_list = []
                 if len(tar_directory_list) > 0:
-                    from CryProAES.library import package
+                    from CryptoAES.library import package
                     tar_list = package.generate_tar_files(tar_directory_list)
                     for t in tar_list:
                         if t not in file_list:  # check to confirm that the tar archive is in the list of files to encrypt
@@ -149,33 +149,33 @@ def main():
                             else:
                                 stderr("There was an error with the tar archive creation.  Please try again.", exit=1)
 
-                from CryProAES.library.CryProAESr import CryProAESr
-                the_CryProAESr = CryProAESr(passphrase)
+                from CryptoAES.library.CryptoAESr import CryptoAESr
+                the_CryptoAESr = CryptoAESr(passphrase)
 
                 # run encryption based upon any passed switches
                 if ascii_armored:
                     if max_compress:
-                        the_CryProAESr.encrypt_files(file_list, force_nocompress=False, force_compress=True, armored=True, checksum=report_checksum)
+                        the_CryptoAESr.encrypt_files(file_list, force_nocompress=False, force_compress=True, armored=True, checksum=report_checksum)
                     elif no_compress:
-                        the_CryProAESr.encrypt_files(file_list, force_nocompress=True, force_compress=False, armored=True, checksum=report_checksum)
+                        the_CryptoAESr.encrypt_files(file_list, force_nocompress=True, force_compress=False, armored=True, checksum=report_checksum)
                     else:
-                        the_CryProAESr.encrypt_files(file_list, force_nocompress=False, force_compress=False, armored=True, checksum=report_checksum)
+                        the_CryptoAESr.encrypt_files(file_list, force_nocompress=False, force_compress=False, armored=True, checksum=report_checksum)
                 else:
                     if max_compress:
-                        the_CryProAESr.encrypt_files(file_list, force_nocompress=False, force_compress=True, armored=False, checksum=report_checksum)
+                        the_CryptoAESr.encrypt_files(file_list, force_nocompress=False, force_compress=True, armored=False, checksum=report_checksum)
                     elif no_compress:
-                        the_CryProAESr.encrypt_files(file_list, force_nocompress=True, force_compress=False, armored=False, checksum=report_checksum)
+                        the_CryptoAESr.encrypt_files(file_list, force_nocompress=True, force_compress=False, armored=False, checksum=report_checksum)
                     else:
-                        the_CryProAESr.encrypt_files(file_list, force_nocompress=False, force_compress=False, armored=False, checksum=report_checksum)
+                        the_CryptoAESr.encrypt_files(file_list, force_nocompress=False, force_compress=False, armored=False, checksum=report_checksum)
 
                 # overwrite user entered passphrases
                 passphrase = ""
                 passphrase_confirm = ""
-                the_CryProAESr.cleanup()
+                the_CryptoAESr.cleanup()
 
                 # tmp tar file removal (generated with package.generate_tar_files function above)
                 if len(tar_list) > 0:
-                    from CryProAES.library import package
+                    from CryptoAES.library import package
                     package.remove_tar_files(tar_list)
             else:
                 # passphrases did not match, report to user and abort
@@ -202,10 +202,10 @@ def main():
             passphrase_confirm = getpass.getpass("Please enter your passphrase again: ")
 
             if passphrase == passphrase_confirm:
-                from CryProAES.library.CryProAESr import CryProAESr
-                the_CryProAESr = CryProAESr(passphrase)
-                the_CryProAESr.encrypt_file(path)
-                the_CryProAESr.cleanup()
+                from CryptoAES.library.CryptoAESr import CryptoAESr
+                the_CryptoAESr = CryptoAESr(passphrase)
+                the_CryptoAESr.encrypt_file(path)
+                the_CryptoAESr.cleanup()
             else:
                 stderr("The passphrases did not match.  Please enter your command again.")
                 sys.exit(1)
@@ -234,10 +234,10 @@ def main():
             passphrase_confirm = getpass.getpass("Please enter your passphrase again: ")
 
             if passphrase == passphrase_confirm:
-                from CryProAES.library.CryProAESr import CryProAESr
-                the_CryProAESr = CryProAESr(passphrase)
-                the_CryProAESr.encrypt_files(clean_directory_file_list_relpaths)  # encrypt the list of directory files
-                the_CryProAESr.cleanup()
+                from CryptoAES.library.CryptoAESr import CryptoAESr
+                the_CryptoAESr = CryptoAESr(passphrase)
+                the_CryptoAESr.encrypt_files(clean_directory_file_list_relpaths)  # encrypt the list of directory files
+                the_CryptoAESr.cleanup()
             else:
                 # passphrases do not match
                 # overwrite user entered passphrases

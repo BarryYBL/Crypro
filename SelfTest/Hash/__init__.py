@@ -28,17 +28,17 @@ __revision__ = "$Id$"
 
 def get_tests(config={}):
     tests = []
-    from CryProAES.SelfTest.Hash import test_HMAC;   tests += test_HMAC.get_tests(config=config)
-    from CryProAES.SelfTest.Hash import test_MD2;    tests += test_MD2.get_tests(config=config)
-    from CryProAES.SelfTest.Hash import test_MD4;    tests += test_MD4.get_tests(config=config)
-    from CryProAES.SelfTest.Hash import test_MD5;    tests += test_MD5.get_tests(config=config)
-    from CryProAES.SelfTest.Hash import test_RIPEMD; tests += test_RIPEMD.get_tests(config=config)
-    from CryProAES.SelfTest.Hash import test_SHA;    tests += test_SHA.get_tests(config=config)
-    from CryProAES.SelfTest.Hash import test_SHA256; tests += test_SHA256.get_tests(config=config)
+    from CryptoAES.SelfTest.Hash import test_HMAC;   tests += test_HMAC.get_tests(config=config)
+    from CryptoAES.SelfTest.Hash import test_MD2;    tests += test_MD2.get_tests(config=config)
+    from CryptoAES.SelfTest.Hash import test_MD4;    tests += test_MD4.get_tests(config=config)
+    from CryptoAES.SelfTest.Hash import test_MD5;    tests += test_MD5.get_tests(config=config)
+    from CryptoAES.SelfTest.Hash import test_RIPEMD; tests += test_RIPEMD.get_tests(config=config)
+    from CryptoAES.SelfTest.Hash import test_SHA;    tests += test_SHA.get_tests(config=config)
+    from CryptoAES.SelfTest.Hash import test_SHA256; tests += test_SHA256.get_tests(config=config)
     try:
-        from CryProAES.SelfTest.Hash import test_SHA224; tests += test_SHA224.get_tests(config=config)
-        from CryProAES.SelfTest.Hash import test_SHA384; tests += test_SHA384.get_tests(config=config)
-        from CryProAES.SelfTest.Hash import test_SHA512; tests += test_SHA512.get_tests(config=config)
+        from CryptoAES.SelfTest.Hash import test_SHA224; tests += test_SHA224.get_tests(config=config)
+        from CryptoAES.SelfTest.Hash import test_SHA384; tests += test_SHA384.get_tests(config=config)
+        from CryptoAES.SelfTest.Hash import test_SHA512; tests += test_SHA512.get_tests(config=config)
     except ImportError:
         import sys
         sys.stderr.write("SelfTest: warning: not testing SHA224/SHA384/SHA512 modules (not available)\n")

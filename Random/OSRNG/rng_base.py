@@ -25,7 +25,7 @@ __revision__ = "$Id$"
 
 import sys
 if sys.version_info[0] == 2 and sys.version_info[1] == 1:
-    from CryProAES.Util.py21compat import *
+    from CryptoAES.Util.py21compat import *
 
 class BaseRNG(object):
 

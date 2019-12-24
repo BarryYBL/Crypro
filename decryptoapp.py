@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 # ------------------------------------------------------------------------------
-# deCryProAES
+# deCryptoAES
 # Copyright 2015 Christopher Simpkins
 # MIT license
 # ------------------------------------------------------------------------------
@@ -29,24 +29,24 @@ def main():
     # Test that user entered at least one argument to the executable, print usage if not
     # ------------------------------------------------------------------------------------------
     if not c.command_suite_validates():
-        from CryProAES.settings import usage as CryProAES_usage
-        print(CryProAES_usage)
+        from CryptoAES.settings import usage as CryptoAES_usage
+        print(CryptoAES_usage)
         sys.exit(1)
     # ------------------------------------------------------------------------------------------
     # [ HELP, VERSION, USAGE LOGIC ]
     # Naked framework provides default help, usage, and version commands for all applications
-    #   --> settings for user messages are assigned in the lib/CryProAES/settings.py file
+    #   --> settings for user messages are assigned in the lib/CryptoAES/settings.py file
     # ------------------------------------------------------------------------------------------
-    if c.help():      # User requested CryProAES help information
-        from CryProAES.settings import help as CryProAES_help
-        print(CryProAES_help)
+    if c.help():      # User requested CryptoAES help information
+        from CryptoAES.settings import help as CryptoAES_help
+        print(CryptoAES_help)
         sys.exit(0)
-    elif c.usage():   # User requested CryProAES usage information
-        from CryProAES.settings import usage as CryProAES_usage
-        print(CryProAES_usage)
+    elif c.usage():   # User requested CryptoAES usage information
+        from CryptoAES.settings import usage as CryptoAES_usage
+        print(CryptoAES_usage)
         sys.exit(0)
-    elif c.version():  # User requested CryProAES version information
-        from CryProAES.settings import app_name, major_version, minor_version, patch_version
+    elif c.version():  # User requested CryptoAES version information
+        from CryptoAES.settings import app_name, major_version, minor_version, patch_version
         version_display_string = app_name + ' ' + major_version + '.' + minor_version + '.' + patch_version
         print(version_display_string)
         sys.exit(0)
@@ -156,7 +156,7 @@ def main():
                                 tmp_filename = decrypted_filename + '.tmp'
                                 if file_exists(tmp_filename):
                                     os.rename(tmp_filename, decrypted_filename)
-                        else:  # decryption successful but we are in stdout flag so do not include any other output from deCryProAES
+                        else:  # decryption successful but we are in stdout flag so do not include any other output from deCryptoAES
                             pass
                     else:
                         system_command = "gpg --batch -o " + quote(decrypted_filename) + " --passphrase " + quote(passphrase) + " -d " + quote(encrypted_file)
@@ -223,7 +223,7 @@ def main():
             passphrase = ""
             passphrase_confirm = ""
 
-            # add a short pause to hinder brute force pexpect style password attacks with deCryProAES
+            # add a short pause to hinder brute force pexpect style password attacks with deCryptoAES
             sleep(0.2)  # 200ms pause
 
         else:  # passphrases did not match
@@ -306,7 +306,7 @@ def main():
                     # overwrite user entered passphrases
                     passphrase = ""
                     passphrase_confirm = ""
-                    # add a short pause to hinder brute force pexpect style password attacks with deCryProAES
+                    # add a short pause to hinder brute force pexpect style password attacks with deCryptoAES
                     sleep(0.2)  # 200ms pause
                     sys.exit(1)
             else:
@@ -355,7 +355,7 @@ def main():
                 passphrase = ""
                 passphrase_confirm = ""
 
-                # add a short pause to hinder brute force pexpect style password attacks with deCryProAES
+                # add a short pause to hinder brute force pexpect style password attacks with deCryptoAES
                 sleep(0.2)  # 200ms pause
             else:
                 # overwrite user entered passphrases

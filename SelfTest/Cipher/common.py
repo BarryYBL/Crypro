@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 #
-#  SelfTest/Hash/common.py: Common code for CryProAES.SelfTest.Hash
+#  SelfTest/Hash/common.py: Common code for CryptoAES.SelfTest.Hash
 #
 # Written in 2008 by Dwayne C. Litzenberger <dlitz@dlitz.net>
 #
@@ -22,14 +22,14 @@
 # SOFTWARE.
 # ===================================================================
 
-"""Self-testing for PyCryProAES hash modules"""
+"""Self-testing for PyCryptoAES hash modules"""
 
 __revision__ = "$Id$"
 
 import sys
 import unittest
 from binascii import a2b_hex, b2a_hex
-from CryProAES.Util.py3compat import *
+from CryptoAES.Util.py3compat import *
 
 # For compatibility with Python 2.1 and Python 2.2
 if sys.hexversion < 0x02030000:
@@ -94,7 +94,7 @@ class CipherSelfTest(unittest.TestCase):
 
         # Handle CTR mode parameters.  By default, we use Counter.new(self.module.block_size)
         if hasattr(self.module, "MODE_CTR") and self.mode == self.module.MODE_CTR:
-            from CryProAES.Util import Counter
+            from CryptoAES.Util import Counter
             ctr_class = _extract(params, 'ctr_class', Counter.new)
             ctr_params = _extract(params, 'ctr_params', {}).copy()
             if 'prefix' in ctr_params: ctr_params['prefix'] = a2b_hex(b(ctr_params['prefix']))
@@ -198,7 +198,7 @@ class CTRWraparoundTest(unittest.TestCase):
         return """Regression test: %s with MODE_CTR should raise OverflowError on wraparound when shortcut used""" % (self.module_name,)
 
     def runTest(self):
-        from CryProAES.Util import Counter
+        from CryptoAES.Util import Counter
 
         for disable_shortcut in (0, 1): # (False, True) Test CTR-mode shortcut and PyObject_CallObject code paths
             for little_endian in (0, 1): # (False, True) Test both endiannesses
@@ -227,7 +227,7 @@ class CFBSegmentSizeTest(unittest.TestCase):
 
 class RoundtripTest(unittest.TestCase):
     def __init__(self, module, params):
-        from CryProAES import Random
+        from CryptoAES import Random
         unittest.TestCase.__init__(self)
         self.module = module
         self.iv = Random.get_random_bytes(module.block_size)

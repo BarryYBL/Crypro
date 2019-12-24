@@ -1,7 +1,7 @@
 #
 #   RSA.py : RSA encryption/decryption
 #
-#  Part of the Python CryProAESgraphy Toolkit
+#  Part of the Python CryptoAESgraphy Toolkit
 #
 #  Written by Andrew Kuchling, Paul Swartz, and others
 #
@@ -26,8 +26,8 @@
 
 __revision__ = "$Id$"
 
-from CryProAES.PublicKey import pubkey
-from CryProAES.Util import number
+from CryptoAES.PublicKey import pubkey
+from CryptoAES.Util import number
 
 def generate_py(bits, randfunc, progress_func=None, e=65537):
     """generate(bits:int, randfunc:callable, progress_func:callable, e:int)

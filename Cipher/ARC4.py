@@ -38,17 +38,17 @@ to encrypt multiple messages with the same long-term key, a distinct
 independent nonce must be created for each message, and a short-term key must
 be derived from the combination of the long-term key and the nonce.
 Due to the weak key scheduling algorithm of RC2, the combination must be carried
-out with a complex function (e.g. a CryProAESgraphic hash) and not by simply
+out with a complex function (e.g. a CryptoAESgraphic hash) and not by simply
 concatenating key and nonce.
 
 New designs should not use ARC4. A good alternative is AES
-(`CryProAES.Cipher.AES`) in any of the modes that turn it into a stream cipher (OFB, CFB, or CTR).
+(`CryptoAES.Cipher.AES`) in any of the modes that turn it into a stream cipher (OFB, CFB, or CTR).
 
 As an example, encryption can be done as follows:
 
-    >>> from CryProAES.Cipher import ARC4
-    >>> from CryProAES.Hash import SHA
-    >>> from CryProAES import Random
+    >>> from CryptoAES.Cipher import ARC4
+    >>> from CryptoAES.Hash import SHA
+    >>> from CryptoAES import Random
     >>>
     >>> key = b'Very long and confidential key'
     >>> nonce = Random.new().read(16)
@@ -63,7 +63,7 @@ As an example, encryption can be done as follows:
 
 __revision__ = "$Id$"
 
-from CryProAES.Cipher import _ARC4
+from CryptoAES.Cipher import _ARC4
 
 class ARC4Cipher:
     """ARC4 cipher object"""
@@ -107,7 +107,7 @@ def new(key, *args, **kwargs):
       key : byte string
         The secret key to use in the symmetric cipher.
         It can have any length, with a minimum of 40 bytes.
-        Its CryProAESgrapic strength is always capped to 2048 bits (256 bytes).
+        Its CryptoAESgrapic strength is always capped to 2048 bits (256 bytes).
 
     :Return: an `ARC4Cipher` object
     """

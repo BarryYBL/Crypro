@@ -22,7 +22,7 @@
 # SOFTWARE.
 # ===================================================================
 
-"""Self-test for the CryProAES.Util.randpool.RandomPool wrapper class"""
+"""Self-test for the CryptoAES.Util.randpool.RandomPool wrapper class"""
 
 __revision__ = "$Id$"
 
@@ -31,9 +31,9 @@ import unittest
 
 class SimpleTest(unittest.TestCase):
     def runTest(self):
-        """CryProAES.Util.randpool.RandomPool"""
+        """CryptoAES.Util.randpool.RandomPool"""
         # Import the winrandom module and try to use it
-        from CryProAES.Util.randpool import RandomPool
+        from CryptoAES.Util.randpool import RandomPool
         sys.stderr.write("SelfTest: You can ignore the RandomPool_DeprecationWarning that follows.\n")
         rpool = RandomPool()
         x = rpool.get_bytes(16)

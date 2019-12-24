@@ -1,7 +1,7 @@
 #
-#  randpool.py : CryProAESgraphically strong random number generation
+#  randpool.py : CryptoAESgraphically strong random number generation
 #
-# Part of the Python CryProAESgraphy Toolkit
+# Part of the Python CryptoAESgraphy Toolkit
 #
 # Written by Andrew M. Kuchling, Mark Moraes, and others
 #
@@ -26,19 +26,19 @@
 
 __revision__ = "$Id$"
 
-from CryProAES.pct_warnings import RandomPool_DeprecationWarning
-import CryProAES.Random
+from CryptoAES.pct_warnings import RandomPool_DeprecationWarning
+import CryptoAES.Random
 import warnings
 
 class RandomPool:
     """Deprecated.  Use Random.new() instead.
 
-    See http://www.pyCryProAES.org/randpool-broken
+    See http://www.pyCryptoAES.org/randpool-broken
     """
     def __init__(self, numbytes = 160, cipher=None, hash=None, file=None):
-        warnings.warn("This application uses RandomPool, which is BROKEN in older releases.  See http://www.pyCryProAES.org/randpool-broken",
+        warnings.warn("This application uses RandomPool, which is BROKEN in older releases.  See http://www.pyCryptoAES.org/randpool-broken",
             RandomPool_DeprecationWarning)
-        self.__rng = CryProAES.Random.new()
+        self.__rng = CryptoAES.Random.new()
         self.bytes = numbytes
         self.bits = self.bytes * 8
         self.entropy = self.bits

@@ -1,7 +1,7 @@
 #
-# Test script for CryProAES.Protocol.AllOrNothing
+# Test script for CryptoAES.Protocol.AllOrNothing
 #
-# Part of the Python CryProAESgraphy Toolkit
+# Part of the Python CryptoAESgraphy Toolkit
 #
 # Written by Andrew Kuchling and others
 #
@@ -26,8 +26,8 @@
 __revision__ = "$Id$"
 
 import unittest
-from CryProAES.Protocol import AllOrNothing
-from CryProAES.Util.py3compat import *
+from CryptoAES.Protocol import AllOrNothing
+from CryptoAES.Util.py3compat import *
 
 text = b("""\
 When in the Course of human events, it becomes necessary for one people to
@@ -53,7 +53,7 @@ class AllOrNothingTest (unittest.TestCase):
     def runTest(self):
         "Simple test of AllOrNothing"
 
-        from CryProAES.Cipher import AES
+        from CryptoAES.Cipher import AES
         import base64
 
         # The current AllOrNothing will fail

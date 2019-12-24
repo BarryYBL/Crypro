@@ -29,11 +29,11 @@ __revision__ = "$Id$"
 import os
 
 if os.name == 'posix':
-    from CryProAES.Random.OSRNG.posix import new
+    from CryptoAES.Random.OSRNG.posix import new
 elif os.name == 'nt':
-    from CryProAES.Random.OSRNG.nt import new
+    from CryptoAES.Random.OSRNG.nt import new
 elif hasattr(os, 'urandom'):
-    from CryProAES.Random.OSRNG.fallback import new
+    from CryptoAES.Random.OSRNG.fallback import new
 else:
     raise ImportError("Not implemented")
 

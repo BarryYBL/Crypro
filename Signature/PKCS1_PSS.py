@@ -29,10 +29,10 @@ This scheme is more properly called ``RSASSA-PSS``.
 For example, a sender may authenticate a message using SHA-1 and PSS like
 this:
 
-    >>> from CryProAES.Signature import PKCS1_PSS
-    >>> from CryProAES.Hash import SHA
-    >>> from CryProAES.PublicKey import RSA
-    >>> from CryProAES import Random
+    >>> from CryptoAES.Signature import PKCS1_PSS
+    >>> from CryptoAES.Hash import SHA
+    >>> from CryptoAES.PublicKey import RSA
+    >>> from CryptoAES import Random
     >>>
     >>> message = 'To be signed'
     >>> key = RSA.importKey(open('privkey.der').read())
@@ -66,12 +66,12 @@ the RSA key:
 __revision__ = "$Id$"
 __all__ = [ 'new', 'PSS_SigScheme' ]
 
-from CryProAES.Util.py3compat import *
+from CryptoAES.Util.py3compat import *
 if sys.version_info[0] == 2 and sys.version_info[1] == 1:
-    from CryProAES.Util.py21compat import *
-import CryProAES.Util.number
-from CryProAES.Util.number import ceil_shift, ceil_div, long_to_bytes
-from CryProAES.Util.strxor import strxor
+    from CryptoAES.Util.py21compat import *
+import CryptoAES.Util.number
+from CryptoAES.Util.number import ceil_shift, ceil_div, long_to_bytes
+from CryptoAES.Util.strxor import strxor
 
 class PSS_SigScheme:
     """This signature scheme can perform PKCS#1 PSS RSA signature or verification."""
@@ -106,7 +106,7 @@ class PSS_SigScheme:
         :Parameters:
          mhash : hash object
                 The hash that was carried out over the message. This is an object
-                belonging to the `CryProAES.Hash` module.
+                belonging to the `CryptoAES.Hash` module.
    
         :Return: The PSS signature encoded as a string.
         :Raise ValueError:
@@ -133,7 +133,7 @@ class PSS_SigScheme:
         else:
              mgf  = lambda x,y: MGF1(x,y,mhash)
  
-        modBits = CryProAES.Util.number.size(self._key.n)
+        modBits = CryptoAES.Util.number.size(self._key.n)
     
         # See 8.1.1 in RFC3447
         k = ceil_div(modBits,8) # Convert from bits to bytes
@@ -157,7 +157,7 @@ class PSS_SigScheme:
         :Parameters:
          mhash : hash object
                 The hash that was carried out over the message. This is an object
-                belonging to the `CryProAES.Hash` module.
+                belonging to the `CryptoAES.Hash` module.
          S : string
                 The signature that needs to be validated.
     
@@ -175,7 +175,7 @@ class PSS_SigScheme:
         else:
             mgf  = lambda x,y: MGF1(x,y,mhash)
 
-        modBits = CryProAES.Util.number.size(self._key.n)
+        modBits = CryptoAES.Util.number.size(self._key.n)
     
         # See 8.1.2 in RFC3447
         k = ceil_div(modBits,8) # Convert from bits to bytes
@@ -340,7 +340,7 @@ def new(key, mgfunc=None, saltLen=None):
 
     :Parameters:
      key : RSA key object
-        The key to use to sign or verify the message. This is a `CryProAES.PublicKey.RSA` object.
+        The key to use to sign or verify the message. This is a `CryptoAES.PublicKey.RSA` object.
         Signing is only possible if *key* is a private RSA key.
      mgfunc : callable
         A mask generation function that accepts two parameters: a string to
