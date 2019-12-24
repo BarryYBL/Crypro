@@ -1,7 +1,7 @@
 #
 #   ElGamal.py : ElGamal encryption/decryption and signatures
 #
-#  Part of the Python CryptoAESgraphy Toolkit
+#  Part of the Python Cryprography Toolkit
 #
 #  Originally written by: A.M. Kuchling
 #
@@ -66,7 +66,7 @@ Security
 Both DLP and CDH problem are believed to be difficult, and they have been proved
 such (and therefore secure) for more than 30 years.
 
-The CryptoAESgraphic strength is linked to the magnitude of *p*.
+The Cryprographic strength is linked to the magnitude of *p*.
 In 2012, a sufficient size for *p* is deemed to be 2048 bits.
 For more information, see the most recent ECRYPT_ report.
 
@@ -81,11 +81,11 @@ This module provides facilities for generating new ElGamal keys and for construc
 them from known components. ElGamal keys allows you to perform basic signing,
 verification, encryption, and decryption.
 
-    >>> from CryptoAES import Random
-    >>> from CryptoAES.Random import random
-    >>> from CryptoAES.PublicKey import ElGamal
-    >>> from CryptoAES.Util.number import GCD
-    >>> from CryptoAES.Hash import SHA
+    >>> from Crypro import Random
+    >>> from Crypro.Random import random
+    >>> from Crypro.PublicKey import ElGamal
+    >>> from Crypro.Util.number import GCD
+    >>> from Crypro.Hash import SHA
     >>>
     >>> message = "Hello"
     >>> key = ElGamal.generate(1024, Random.new().read)
@@ -109,8 +109,8 @@ __revision__ = "$Id$"
 
 __all__ = ['generate', 'construct', 'error', 'ElGamalobj']
 
-from CryptoAES.PublicKey.pubkey import *
-from CryptoAES.Util import number
+from Crypro.PublicKey.pubkey import *
+from Crypro.Util import number
 
 class error (Exception):
     pass
@@ -136,15 +136,15 @@ def generate(bits, randfunc, progress_func=None):
             it's useful for interactive applications where a user is
             waiting for a key to be generated.
 
-    :attention: You should always use a CryptoAESgraphically secure random number generator,
-        such as the one defined in the ``CryptoAES.Random`` module; **don't** just use the
+    :attention: You should always use a Cryprographically secure random number generator,
+        such as the one defined in the ``Crypro.Random`` module; **don't** just use the
         current time and the ``random`` module.
 
     :Return: An ElGamal key object (`ElGamalobj`).
     """
     obj=ElGamalobj()
     # Generate a safe prime p
-    # See Algorithm 4.86 in Handbook of Applied CryptoAESgraphy
+    # See Algorithm 4.86 in Handbook of Applied Cryprography
     if progress_func:
         progress_func('p\n')
     while 1:
@@ -153,7 +153,7 @@ def generate(bits, randfunc, progress_func=None):
         if number.isPrime(obj.p, randfunc=randfunc):
             break
     # Generate generator g
-    # See Algorithm 4.80 in Handbook of Applied CryptoAESgraphy
+    # See Algorithm 4.80 in Handbook of Applied Cryprography
     # Note that the order of the group is n=p-1=2q, where q is prime
     if progress_func:
         progress_func('g\n')
@@ -303,7 +303,7 @@ class ElGamalobj(pubkey):
         :attention: The number *K* shall not be reused for any other
          operation and shall be discarded immediately.
 
-        :attention: M must be be a CryptoAESgraphic hash, otherwise an
+        :attention: M must be be a Cryprographic hash, otherwise an
          attacker may mount an existential forgery attack.
 
         :Return: A tuple with 2 longs.

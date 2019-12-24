@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 #
-#  SelfTest/Util/test_Counter: Self-test for the CryptoAES.Util.Counter module
+#  SelfTest/Util/test_Counter: Self-test for the Crypro.Util.Counter module
 #
 # Written in 2009 by Dwayne C. Litzenberger <dlitz@dlitz.net>
 #
@@ -22,21 +22,21 @@
 # SOFTWARE.
 # ===================================================================
 
-"""Self-tests for CryptoAES.Util.Counter"""
+"""Self-tests for Crypro.Util.Counter"""
 
 __revision__ = "$Id$"
 
 import sys
 if sys.version_info[0] == 2 and sys.version_info[1] == 1:
-    from CryptoAES.Util.py21compat import *
-from CryptoAES.Util.py3compat import *
+    from Crypro.Util.py21compat import *
+from Crypro.Util.py3compat import *
 
 import unittest
 
 class CounterTests(unittest.TestCase):
     def setUp(self):
         global Counter
-        from CryptoAES.Util import Counter
+        from Crypro.Util import Counter
 
     def test_BE_shortcut(self):
         """Big endian, shortcut enabled"""
@@ -155,7 +155,7 @@ class CounterTests(unittest.TestCase):
         self.assertEqual(1, c.carry)
 
 def get_tests(config={}):
-    from CryptoAES.SelfTest.st_common import list_test_cases
+    from Crypro.SelfTest.st_common import list_test_cases
     return list_test_cases(CounterTests)
 
 if __name__ == '__main__':

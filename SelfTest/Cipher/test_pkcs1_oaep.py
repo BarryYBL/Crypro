@@ -26,13 +26,13 @@ __revision__ = "$Id$"
 
 import unittest
 
-from CryptoAES.SelfTest.st_common import list_test_cases, a2b_hex, b2a_hex
+from Crypro.SelfTest.st_common import list_test_cases, a2b_hex, b2a_hex
 
-from CryptoAES.Util.py3compat import *
-from CryptoAES.PublicKey import RSA
-from CryptoAES.Cipher import PKCS1_OAEP as PKCS
-from CryptoAES.Hash import MD2,MD5,SHA as SHA1,SHA256,RIPEMD
-from CryptoAES import Random
+from Crypro.Util.py3compat import *
+from Crypro.PublicKey import RSA
+from Crypro.Cipher import PKCS1_OAEP as PKCS
+from Crypro.Hash import MD2,MD5,SHA as SHA1,SHA256,RIPEMD
+from Crypro import Random
 
 def rws(t):
     """Remove white spaces, tabs, and new lines from a string"""

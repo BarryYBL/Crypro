@@ -39,14 +39,14 @@ The 128 bit key is split into *K1* and *K2*, whereas *K1=K3*.
 It is important that all subkeys are different, otherwise TDES would degrade to
 single `DES`.
 
-TDES is CryptoAESgraphically secure, even though it is neither as secure nor as fast
+TDES is Cryprographically secure, even though it is neither as secure nor as fast
 as `AES`.
 
 As an example, encryption can be done as follows:
 
-    >>> from CryptoAES.Cipher import DES
-    >>> from CryptoAES import Random
-    >>> from CryptoAES.Util import Counter
+    >>> from Crypro.Cipher import DES
+    >>> from Crypro import Random
+    >>> from Crypro.Util import Counter
     >>>
     >>> key = b'-8B key-'
     >>> nonce = Random.new().read(DES.block_size/2)
@@ -63,8 +63,8 @@ As an example, encryption can be done as follows:
 
 __revision__ = "$Id$"
 
-from CryptoAES.Cipher import blockalgo
-from CryptoAES.Cipher import _DES3
+from Crypro.Cipher import blockalgo
+from Crypro.Cipher import _DES3
 
 class DES3Cipher(blockalgo.BlockAlgo):
     """TDES cipher object"""
@@ -101,7 +101,7 @@ def new(key, *args, **kwargs):
       counter : callable
         (*Only* `MODE_CTR`). A stateful function that returns the next
         *counter block*, which is a byte string of `block_size` bytes.
-        For better performance, use `CryptoAES.Util.Counter`.
+        For better performance, use `Crypro.Util.Counter`.
       segment_size : integer
         (*Only* `MODE_CFB`).The number of bits the plaintext and ciphertext
         are segmented in.

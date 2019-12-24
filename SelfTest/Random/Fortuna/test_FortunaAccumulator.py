@@ -22,14 +22,14 @@
 # SOFTWARE.
 # ===================================================================
 
-"""Self-tests for CryptoAES.Random.Fortuna.FortunaAccumulator"""
+"""Self-tests for Crypro.Random.Fortuna.FortunaAccumulator"""
 
 __revision__ = "$Id$"
 
 import sys
 if sys.version_info[0] == 2 and sys.version_info[1] == 1:
-    from CryptoAES.Util.py21compat import *
-from CryptoAES.Util.py3compat import *
+    from Crypro.Util.py21compat import *
+from Crypro.Util.py3compat import *
 
 import unittest
 from binascii import b2a_hex
@@ -37,7 +37,7 @@ from binascii import b2a_hex
 class FortunaAccumulatorTests(unittest.TestCase):
     def setUp(self):
         global FortunaAccumulator
-        from CryptoAES.Random.Fortuna import FortunaAccumulator
+        from Crypro.Random.Fortuna import FortunaAccumulator
 
     def test_FortunaPool(self):
         """FortunaAccumulator.FortunaPool"""
@@ -179,7 +179,7 @@ class FortunaAccumulatorTests(unittest.TestCase):
         fa.random_data(1)
 
 def get_tests(config={}):
-    from CryptoAES.SelfTest.st_common import list_test_cases
+    from Crypro.SelfTest.st_common import list_test_cases
     return list_test_cases(FortunaAccumulatorTests)
 
 if __name__ == '__main__':

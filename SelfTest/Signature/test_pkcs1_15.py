@@ -24,12 +24,12 @@ __revision__ = "$Id$"
 
 import unittest
 
-from CryptoAES.PublicKey import RSA
-from CryptoAES.SelfTest.st_common import list_test_cases, a2b_hex, b2a_hex
-from CryptoAES.Hash import *
-from CryptoAES import Random
-from CryptoAES.Signature import PKCS1_v1_5 as PKCS
-from CryptoAES.Util.py3compat import *
+from Crypro.PublicKey import RSA
+from Crypro.SelfTest.st_common import list_test_cases, a2b_hex, b2a_hex
+from Crypro.Hash import *
+from Crypro import Random
+from Crypro.Signature import PKCS1_v1_5 as PKCS
+from Crypro.Util.py3compat import *
 
 def isStr(s):
         t = ''

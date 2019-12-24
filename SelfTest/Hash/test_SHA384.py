@@ -22,7 +22,7 @@
 # SOFTWARE.
 # ===================================================================
 
-"""Self-test suite for CryptoAES.Hash.SHA384"""
+"""Self-test suite for Crypro.Hash.SHA384"""
 
 __revision__ = "$Id$"
 
@@ -49,7 +49,7 @@ test_data = [
 ]
 
 def get_tests(config={}):
-    from CryptoAES.Hash import SHA384
+    from Crypro.Hash import SHA384
     from .common import make_hash_tests
     return make_hash_tests(SHA384, "SHA384", test_data,
         digest_size=48,

@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Self-tests for the user-friendly CryptoAES.Random interface
+# Self-tests for the user-friendly Crypro.Random interface
 #
 # Written in 2013 by Dwayne C. Litzenberger <dlitz@dlitz.net>
 #
@@ -21,7 +21,7 @@
 # SOFTWARE.
 # ===================================================================
 
-"""Self-test suite for generic CryptoAES.Random stuff """
+"""Self-test suite for generic Crypro.Random stuff """
 
 
 
@@ -34,16 +34,16 @@ import os
 import time
 import sys
 if sys.version_info[0] == 2 and sys.version_info[1] == 1:
-    from CryptoAES.Util.py21compat import *
-from CryptoAES.Util.py3compat import *
+    from Crypro.Util.py21compat import *
+from Crypro.Util.py3compat import *
 
 try:
     import multiprocessing
 except ImportError:
     multiprocessing = None
 
-import CryptoAES.Random._UserFriendlyRNG
-import CryptoAES.Random.random
+import Crypro.Random._UserFriendlyRNG
+import Crypro.Random.random
 
 class RNGForkTest(unittest.TestCase):
 
@@ -52,7 +52,7 @@ class RNGForkTest(unittest.TestCase):
         Get `FortunaAccumulator.reseed_count`, the global count of the
         number of times that the PRNG has been reseeded.
         """
-        rng_singleton = CryptoAES.Random._UserFriendlyRNG._get_singleton()
+        rng_singleton = Crypro.Random._UserFriendlyRNG._get_singleton()
         rng_singleton._lock.acquire()
         try:
             return rng_singleton._fa.reseed_count
@@ -73,8 +73,8 @@ class RNGForkTest(unittest.TestCase):
         reseed_count_before = self._get_reseed_count()
 
         # One or both of these calls together should trigger a reseed right here.
-        CryptoAES.Random._UserFriendlyRNG._get_singleton().reinit()
-        CryptoAES.Random.get_random_bytes(1)
+        Crypro.Random._UserFriendlyRNG._get_singleton().reinit()
+        Crypro.Random.get_random_bytes(1)
 
         reseed_count_after = self._get_reseed_count()
         self.assertNotEqual(reseed_count_before, reseed_count_after)  # sanity check: test should reseed parent before forking
@@ -87,9 +87,9 @@ class RNGForkTest(unittest.TestCase):
                 os.close(rfd)
                 f = os.fdopen(wfd, "wb")
 
-                CryptoAES.Random.atfork()
+                Crypro.Random.atfork()
 
-                data = CryptoAES.Random.get_random_bytes(16)
+                data = Crypro.Random.get_random_bytes(16)
 
                 f.write(data)
                 f.close()
@@ -113,9 +113,9 @@ class RNGForkTest(unittest.TestCase):
 
 # For RNGMultiprocessingForkTest
 def _task_main(q):
-    a = CryptoAES.Random.get_random_bytes(16)
+    a = Crypro.Random.get_random_bytes(16)
     time.sleep(0.1)     # wait 100 ms
-    b = CryptoAES.Random.get_random_bytes(16)
+    b = Crypro.Random.get_random_bytes(16)
     q.put(binascii.b2a_hex(a))
     q.put(binascii.b2a_hex(b))
     q.put(None)      # Wait for acknowledgment
@@ -134,11 +134,11 @@ class RNGMultiprocessingForkTest(unittest.TestCase):
 
         # Reseed the pool
         time.sleep(0.15)
-        CryptoAES.Random._UserFriendlyRNG._get_singleton().reinit()
-        CryptoAES.Random.get_random_bytes(1)
+        Crypro.Random._UserFriendlyRNG._get_singleton().reinit()
+        Crypro.Random.get_random_bytes(1)
 
         # Start the child processes
-        pool = multiprocessing.Pool(processes=n_procs, initializer=CryptoAES.Random.atfork)
+        pool = multiprocessing.Pool(processes=n_procs, initializer=Crypro.Random.atfork)
         map_result = pool.map_async(_task_main, queues)
 
         # Get the results, ensuring that no pool processes are reused.

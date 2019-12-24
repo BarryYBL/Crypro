@@ -1,6 +1,6 @@
 # -*- coding: ascii -*-
 #
-#  pct_warnings.py : PyCryptoAES warnings file
+#  pct_warnings.py : PyCrypro warnings file
 #
 # Written in 2008 by Dwayne C. Litzenberger <dlitz@dlitz.net>
 #
@@ -27,29 +27,29 @@
 # the user to specifically filter them.
 #
 
-class CryptoAESWarning(Warning):
-    """Base class for PyCryptoAES warnings"""
+class CryproWarning(Warning):
+    """Base class for PyCrypro warnings"""
 
-class CryptoAESDeprecationWarning(DeprecationWarning, CryptoAESWarning):
-    """Base PyCryptoAES DeprecationWarning class"""
+class CryproDeprecationWarning(DeprecationWarning, CryproWarning):
+    """Base PyCrypro DeprecationWarning class"""
 
-class CryptoAESRuntimeWarning(RuntimeWarning, CryptoAESWarning):
-    """Base PyCryptoAES RuntimeWarning class"""
+class CryproRuntimeWarning(RuntimeWarning, CryproWarning):
+    """Base PyCrypro RuntimeWarning class"""
 
 #
 # Warnings that we might actually use
 #
 
-class RandomPool_DeprecationWarning(CryptoAESDeprecationWarning):
-    """Issued when CryptoAES.Util.randpool.RandomPool is instantiated."""
+class RandomPool_DeprecationWarning(CryproDeprecationWarning):
+    """Issued when Crypro.Util.randpool.RandomPool is instantiated."""
 
-class ClockRewindWarning(CryptoAESRuntimeWarning):
+class ClockRewindWarning(CryproRuntimeWarning):
     """Warning for when the system clock moves backwards."""
 
-class GetRandomNumber_DeprecationWarning(CryptoAESDeprecationWarning):
-    """Issued when CryptoAES.Util.number.getRandomNumber is invoked."""
+class GetRandomNumber_DeprecationWarning(CryproDeprecationWarning):
+    """Issued when Crypro.Util.number.getRandomNumber is invoked."""
 
-class PowmInsecureWarning(CryptoAESRuntimeWarning):
+class PowmInsecureWarning(CryproRuntimeWarning):
     """Warning for when _fastmath is built without mpz_powm_sec"""
 
 # By default, we want this warning to be shown every time we compensate for

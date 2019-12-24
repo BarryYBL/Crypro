@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 #
-#  SelfTest/PublicKey/__init__.py: Self-test for public key CryptoAES
+#  SelfTest/PublicKey/__init__.py: Self-test for public key Crypro
 #
 # Written in 2008 by Dwayne C. Litzenberger <dlitz@dlitz.net>
 #
@@ -22,7 +22,7 @@
 # SOFTWARE.
 # ===================================================================
 
-"""Self-test for public-key CryptoAES"""
+"""Self-test for public-key Crypro"""
 
 __revision__ = "$Id$"
 
@@ -30,10 +30,10 @@ import os
 
 def get_tests(config={}):
     tests = []
-    from CryptoAES.SelfTest.PublicKey import test_DSA;       tests += test_DSA.get_tests(config=config)
-    from CryptoAES.SelfTest.PublicKey import test_RSA;       tests += test_RSA.get_tests(config=config)
-    from CryptoAES.SelfTest.PublicKey import test_importKey; tests += test_importKey.get_tests(config=config)
-    from CryptoAES.SelfTest.PublicKey import test_ElGamal;   tests += test_ElGamal.get_tests(config=config)
+    from Crypro.SelfTest.PublicKey import test_DSA;       tests += test_DSA.get_tests(config=config)
+    from Crypro.SelfTest.PublicKey import test_RSA;       tests += test_RSA.get_tests(config=config)
+    from Crypro.SelfTest.PublicKey import test_importKey; tests += test_importKey.get_tests(config=config)
+    from Crypro.SelfTest.PublicKey import test_ElGamal;   tests += test_ElGamal.get_tests(config=config)
     return tests
 
 if __name__ == '__main__':

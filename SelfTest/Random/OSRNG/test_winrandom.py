@@ -22,7 +22,7 @@
 # SOFTWARE.
 # ===================================================================
 
-"""Self-test suite for CryptoAES.Random.OSRNG.winrandom"""
+"""Self-test suite for Crypro.Random.OSRNG.winrandom"""
 
 __revision__ = "$Id$"
 
@@ -30,9 +30,9 @@ import unittest
 
 class SimpleTest(unittest.TestCase):
     def runTest(self):
-        """CryptoAES.Random.OSRNG.winrandom"""
+        """Crypro.Random.OSRNG.winrandom"""
         # Import the winrandom module and try to use it
-        from CryptoAES.Random.OSRNG import winrandom
+        from Crypro.Random.OSRNG import winrandom
         randobj = winrandom.new()
         x = randobj.get_bytes(16)
         y = randobj.get_bytes(16)

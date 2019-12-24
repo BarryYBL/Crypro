@@ -18,12 +18,12 @@
 # SOFTWARE.
 # ===================================================================
 
-"""SHA-224 CryptoAESgraphic hash algorithm.
+"""SHA-224 Cryprographic hash algorithm.
 
-SHA-224 belongs to the SHA-2_ family of CryptoAESgraphic hashes.
+SHA-224 belongs to the SHA-2_ family of Cryprographic hashes.
 It produces the 224 bit digest of a message.
 
-    >>> from CryptoAES.Hash import SHA224
+    >>> from Crypro.Hash import SHA224
     >>>
     >>> h = SHA224.new()
     >>> h.update(b'Hello')
@@ -38,15 +38,15 @@ _revision__ = "$Id$"
 
 __all__ = ['new', 'digest_size', 'SHA224Hash' ]
 
-from CryptoAES.Util.py3compat import *
-from CryptoAES.Hash.hashalgo import HashAlgo
+from Crypro.Util.py3compat import *
+from Crypro.Hash.hashalgo import HashAlgo
 
 try:
     import hashlib
     hashFactory = hashlib.sha224
 
 except ImportError:
-    from CryptoAES.Hash import _SHA224
+    from Crypro.Hash import _SHA224
     hashFactory = _SHA224
 
 class SHA224Hash(HashAlgo):

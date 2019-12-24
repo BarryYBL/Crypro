@@ -18,12 +18,12 @@
 # SOFTWARE.
 # ===================================================================
 
-"""SHA-384 CryptoAESgraphic hash algorithm.
+"""SHA-384 Cryprographic hash algorithm.
 
-SHA-384 belongs to the SHA-2_ family of CryptoAESgraphic hashes.
+SHA-384 belongs to the SHA-2_ family of Cryprographic hashes.
 It produces the 384 bit digest of a message.
 
-    >>> from CryptoAES.Hash import SHA384
+    >>> from Crypro.Hash import SHA384
     >>>
     >>> h = SHA384.new()
     >>> h.update(b'Hello')
@@ -38,15 +38,15 @@ _revision__ = "$Id$"
 
 __all__ = ['new', 'digest_size', 'SHA384Hash' ]
 
-from CryptoAES.Util.py3compat import *
-from CryptoAES.Hash.hashalgo import HashAlgo
+from Crypro.Util.py3compat import *
+from Crypro.Hash.hashalgo import HashAlgo
 
 try:
     import hashlib
     hashFactory = hashlib.sha384
 
 except ImportError:
-    from CryptoAES.Hash import _SHA384
+    from Crypro.Hash import _SHA384
     hashFactory = _SHA384
 
 class SHA384Hash(HashAlgo):

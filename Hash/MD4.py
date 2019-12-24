@@ -18,11 +18,11 @@
 # SOFTWARE.
 # ===================================================================
 
-"""MD4 CryptoAESgraphic hash algorithm.
+"""MD4 Cryprographic hash algorithm.
 
 MD4 is specified in RFC1320_ and produces the 128 bit digest of a message.
 
-    >>> from CryptoAES.Hash import MD4
+    >>> from Crypro.Hash import MD4
     >>>
     >>> h = MD4.new()
     >>> h.update(b'Hello')
@@ -39,10 +39,10 @@ _revision__ = "$Id$"
 
 __all__ = ['new', 'digest_size', 'MD4Hash' ]
 
-from CryptoAES.Util.py3compat import *
-from CryptoAES.Hash.hashalgo import HashAlgo
+from Crypro.Util.py3compat import *
+from Crypro.Hash.hashalgo import HashAlgo
 
-import CryptoAES.Hash._MD4 as _MD4
+import Crypro.Hash._MD4 as _MD4
 hashFactory = _MD4
 
 class MD4Hash(HashAlgo):

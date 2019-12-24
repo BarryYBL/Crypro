@@ -22,12 +22,12 @@
 # SOFTWARE.
 # ===================================================================
 
-"""Self-test suite for CryptoAES.Hash.HMAC"""
+"""Self-test suite for Crypro.Hash.HMAC"""
 
 __revision__ = "$Id$"
 
 from .common import dict     # For compatibility with Python 2.1 and 2.2
-from CryptoAES.Util.py3compat import *
+from Crypro.Util.py3compat import *
 
 # This is a list of (key, data, results, description) tuples.
 test_data = [
@@ -203,11 +203,11 @@ hashlib_test_data = [
 
 def get_tests(config={}):
     global test_data
-    from CryptoAES.Hash import HMAC, MD5, SHA as SHA1, SHA256
+    from Crypro.Hash import HMAC, MD5, SHA as SHA1, SHA256
     from .common import make_mac_tests
     hashmods = dict(MD5=MD5, SHA1=SHA1, SHA256=SHA256, default=None)
     try:
-        from CryptoAES.Hash import SHA224, SHA384, SHA512
+        from Crypro.Hash import SHA224, SHA384, SHA512
         hashmods.update(dict(SHA224=SHA224, SHA384=SHA384, SHA512=SHA512))
         test_data += hashlib_test_data
     except ImportError:

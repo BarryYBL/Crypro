@@ -1,7 +1,7 @@
 #
 #  KDF.py : a collection of Key Derivation Functions
 #
-# Part of the Python CryptoAESgraphy Toolkit
+# Part of the Python Cryprography Toolkit
 #
 # ===================================================================
 # The contents of this file are dedicated to the public domain.  To
@@ -38,9 +38,9 @@ __revision__ = "$Id$"
 import math
 import struct
 
-from CryptoAES.Util.py3compat import *
-from CryptoAES.Hash import SHA as SHA1, HMAC
-from CryptoAES.Util.strxor import strxor
+from Crypro.Util.py3compat import *
+from Crypro.Hash import SHA as SHA1, HMAC
+from Crypro.Util.strxor import strxor
 
 def PBKDF1(password, salt, dkLen, count=1000, hashAlgo=None):
     """Derive one key from a password (or passphrase).
@@ -60,11 +60,11 @@ def PBKDF1(password, salt, dkLen, count=1000, hashAlgo=None):
         This value does not need to be kept secret, but it should be randomly
         chosen for each derivation.
      dkLen : integer
-        The length of the desired key. Default is 16 bytes, suitable for instance for `CryptoAES.Cipher.AES`.
+        The length of the desired key. Default is 16 bytes, suitable for instance for `Crypro.Cipher.AES`.
      count : integer
         The number of iterations to carry out. It's recommended to use at least 1000.
      hashAlgo : module
-        The hash algorithm to use, as a module or an object from the `CryptoAES.Hash` package.
+        The hash algorithm to use, as a module or an object from the `Crypro.Hash` package.
         The digest length must be no shorter than ``dkLen``.
         The default algorithm is `SHA1`.
 
@@ -97,7 +97,7 @@ def PBKDF2(password, salt, dkLen=16, count=1000, prf=None):
         This value does not need to be kept secret, but it should be randomly
         chosen for each derivation. It is recommended to be at least 8 bytes long.
      dkLen : integer
-        The cumulative length of the desired keys. Default is 16 bytes, suitable for instance for `CryptoAES.Cipher.AES`.
+        The cumulative length of the desired keys. Default is 16 bytes, suitable for instance for `Crypro.Cipher.AES`.
      count : integer
         The number of iterations to carry out. It's recommended to use at least 1000.
      prf : callable

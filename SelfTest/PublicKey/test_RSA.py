@@ -22,18 +22,18 @@
 # SOFTWARE.
 # ===================================================================
 
-"""Self-test suite for CryptoAES.PublicKey.RSA"""
+"""Self-test suite for Crypro.PublicKey.RSA"""
 
 __revision__ = "$Id$"
 
 import sys
 import os
 if sys.version_info[0] == 2 and sys.version_info[1] == 1:
-    from CryptoAES.Util.py21compat import *
-from CryptoAES.Util.py3compat import *
+    from Crypro.Util.py21compat import *
+from Crypro.Util.py3compat import *
 
 import unittest
-from CryptoAES.SelfTest.st_common import list_test_cases, a2b_hex, b2a_hex
+from Crypro.SelfTest.st_common import list_test_cases, a2b_hex, b2a_hex
 
 class RSATest(unittest.TestCase):
     # Test vectors from "RSA-OAEP and RSA-PSS test vectors (.zip file)"
@@ -43,7 +43,7 @@ class RSATest(unittest.TestCase):
 
     # from oaep-int.txt
 
-    # TODO: PyCryptoAES treats the message as starting *after* the leading "00"
+    # TODO: PyCrypro treats the message as starting *after* the leading "00"
     # TODO: That behaviour should probably be changed in the future.
     plaintext = """
            eb 7a 19 ac e9 e3 00 63 50 e3 29 50 4b 45 e2
@@ -89,9 +89,9 @@ class RSATest(unittest.TestCase):
 
     def setUp(self):
         global RSA, Random, bytes_to_long
-        from CryptoAES.PublicKey import RSA
-        from CryptoAES import Random
-        from CryptoAES.Util.number import bytes_to_long, inverse
+        from Crypro.PublicKey import RSA
+        from Crypro import Random
+        from Crypro.Util.number import bytes_to_long, inverse
         self.n = bytes_to_long(a2b_hex(self.modulus))
         self.p = bytes_to_long(a2b_hex(self.prime_factor))
 
@@ -392,7 +392,7 @@ def get_tests(config={}):
     tests = []
     tests += list_test_cases(RSATest)
     try:
-        from CryptoAES.PublicKey import _fastmath
+        from Crypro.PublicKey import _fastmath
         tests += list_test_cases(RSAFastMathTest)
     except ImportError:
         from distutils.sysconfig import get_config_var

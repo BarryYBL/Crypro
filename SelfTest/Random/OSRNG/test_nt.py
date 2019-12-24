@@ -22,7 +22,7 @@
 # SOFTWARE.
 # ===================================================================
 
-"""Self-test suite for CryptoAES.Random.OSRNG.nt"""
+"""Self-test suite for Crypro.Random.OSRNG.nt"""
 
 __revision__ = "$Id$"
 
@@ -30,10 +30,10 @@ import unittest
 
 class SimpleTest(unittest.TestCase):
     def runTest(self):
-        """CryptoAES.Random.OSRNG.nt.new()"""
+        """Crypro.Random.OSRNG.nt.new()"""
         # Import the OSRNG.nt module and try to use it
-        import CryptoAES.Random.OSRNG.nt
-        randobj = CryptoAES.Random.OSRNG.nt.new()
+        import Crypro.Random.OSRNG.nt
+        randobj = Crypro.Random.OSRNG.nt.new()
         x = randobj.read(16)
         y = randobj.read(16)
         self.assertNotEqual(x, y)

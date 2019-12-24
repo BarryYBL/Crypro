@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 #
-#  Random/__init__.py : PyCryptoAES random number generation
+#  Random/__init__.py : PyCrypro random number generation
 #
 # Written in 2008 by Dwayne C. Litzenberger <dlitz@dlitz.net>
 #
@@ -25,11 +25,11 @@
 __revision__ = "$Id$"
 __all__ = ['new']
 
-from CryptoAES.Random import OSRNG
-from CryptoAES.Random import _UserFriendlyRNG
+from Crypro.Random import OSRNG
+from Crypro.Random import _UserFriendlyRNG
 
 def new(*args, **kwargs):
-    """Return a file-like object that outputs CryptoAESgraphically random bytes."""
+    """Return a file-like object that outputs Cryprographically random bytes."""
     return _UserFriendlyRNG.new(*args, **kwargs)
 
 def atfork():
@@ -37,7 +37,7 @@ def atfork():
     _UserFriendlyRNG.reinit()
 
 def get_random_bytes(n):
-    """Return the specified number of CryptoAESgraphically-strong random bytes."""
+    """Return the specified number of Cryprographically-strong random bytes."""
     return _UserFriendlyRNG.get_random_bytes(n)
 
 # vim:set ts=4 sw=4 sts=4 expandtab:

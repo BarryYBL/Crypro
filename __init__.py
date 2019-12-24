@@ -18,34 +18,34 @@
 # SOFTWARE.
 # ===================================================================
 
-"""Python CryptoAESgraphy Toolkit
+"""Python Cryprography Toolkit
 
-A collection of CryptoAESgraphic modules implementing various algorithms
+A collection of Cryprographic modules implementing various algorithms
 and protocols.
 
 Subpackages:
 
-CryptoAES.Cipher
+Crypro.Cipher
  Secret-key (AES, DES, ARC4) and public-key encryption (RSA PKCS#1) algorithms
-CryptoAES.Hash
+Crypro.Hash
  Hashing algorithms (MD5, SHA, HMAC)
-CryptoAES.Protocol
- CryptoAESgraphic protocols (Chaffing, all-or-nothing transform, key derivation
+Crypro.Protocol
+ Cryprographic protocols (Chaffing, all-or-nothing transform, key derivation
  functions). This package does not contain any network protocols.
-CryptoAES.PublicKey
+Crypro.PublicKey
  Public-key encryption and signature algorithms (RSA, DSA)
-CryptoAES.Signature
+Crypro.Signature
  Public-key signature algorithms (RSA PKCS#1) 
-CryptoAES.Util
+Crypro.Util
  Various useful modules and functions (long-to-string conversion, random number
  generation, number theoretic functions)
 """
 
 __all__ = ['Cipher', 'Hash', 'Protocol', 'PublicKey', 'Util', 'Signature']
 
-__version__ = '2.0.1'     # See also below and setup.py
+__version__ = '2.0.3'     # See also below and setup.py
 __revision__ = "$Id$"
 
 # New software should look at this instead of at __version__ above.
-version_info = (2, 0, 1, 'final', 0)    # See also above and setup.py
+version_info = (2, 0, 3, 'final', 0)    # See also above and setup.py
 

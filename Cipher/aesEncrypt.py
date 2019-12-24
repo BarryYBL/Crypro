@@ -1,4 +1,4 @@
-from CryptoAES.Cipher import AES
+from Crypro.Cipher import AES
 import base64
 
 class aesCrypt:

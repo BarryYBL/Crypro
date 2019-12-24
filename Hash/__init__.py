@@ -42,7 +42,7 @@ association with a public-key algorithm, can be used to implement
 digital signatures.
 
 The hashing modules here all support the interface described in `PEP
-247`_ , "API for CryptoAESgraphic Hash Functions". 
+247`_ , "API for Cryprographic Hash Functions". 
 
 .. _`PEP 247` : http://www.python.org/dev/peps/pep-0247/
 

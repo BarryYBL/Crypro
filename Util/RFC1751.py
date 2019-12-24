@@ -2,7 +2,7 @@
 # sequence of words, as defined in RFC1751: "A Convention for
 # Human-Readable 128-bit Keys", by Daniel L. McDonald.
 #
-# Part of the Python CryptoAESgraphy Toolkit
+# Part of the Python Cryprography Toolkit
 #
 # Written by Andrew M. Kuchling and others
 #
@@ -28,7 +28,7 @@ __revision__ = "$Id$"
 
 
 import binascii
-from CryptoAES.Util.py3compat import *
+from Crypro.Util.py3compat import *
 from functools import reduce
 
 binary={0:'0000', 1:'0001', 2:'0010', 3:'0011', 4:'0100', 5:'0101',

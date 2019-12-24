@@ -1,7 +1,7 @@
 #
 #   number.py : Number-theoretic functions
 #
-#  Part of the Python CryptoAESgraphy Toolkit
+#  Part of the Python Cryprography Toolkit
 #
 #  Written by Andrew M. Kuchling, Barry A. Warsaw, and others
 #
@@ -26,15 +26,15 @@
 
 __revision__ = "$Id$"
 
-from CryptoAES.pct_warnings import GetRandomNumber_DeprecationWarning, PowmInsecureWarning
+from Crypro.pct_warnings import GetRandomNumber_DeprecationWarning, PowmInsecureWarning
 from warnings import warn as _warn
 import math
 import sys
-from CryptoAES.Util.py3compat import *
+from Crypro.Util.py3compat import *
 
 bignum = int
 try:
-    from CryptoAES.PublicKey import _fastmath
+    from Crypro.PublicKey import _fastmath
 except ImportError:
     # For production, we are going to let import issues due to gmp/mpir shared
     # libraries not loading slide silently and use slowmath. If you'd rather
@@ -83,7 +83,7 @@ def size (N):
 
 def getRandomNumber(N, randfunc=None):
     """Deprecated.  Use getRandomInteger or getRandomNBitInteger instead."""
-    warnings.warn("CryptoAES.Util.number.getRandomNumber has confusing semantics"+
+    warnings.warn("Crypro.Util.number.getRandomNumber has confusing semantics"+
     "and has been deprecated.  Use getRandomInteger or getRandomNBitInteger instead.",
         GetRandomNumber_DeprecationWarning)
     return getRandomNBitInteger(N, randfunc)
@@ -444,8 +444,8 @@ def _import_Random():
     # This is called in a function instead of at the module level in order to
     # avoid problems with recursive imports
     global Random, StrongRandom
-    from CryptoAES import Random
-    from CryptoAES.Random.random import StrongRandom
+    from Crypro import Random
+    from Crypro.Random.random import StrongRandom
 
 
 

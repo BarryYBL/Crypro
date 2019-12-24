@@ -30,8 +30,8 @@ import unittest
 import binascii
 import sys
 if sys.version_info[0] == 2 and sys.version_info[1] == 1:
-    from CryptoAES.Util.py21compat import *
-from CryptoAES.Util.py3compat import *
+    from Crypro.Util.py21compat import *
+from Crypro.Util.py3compat import *
 
 class _list_testloader(unittest.TestLoader):
     suiteClass = list

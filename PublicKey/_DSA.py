@@ -2,7 +2,7 @@
 #
 #   DSA.py : Digital Signature Algorithm
 #
-#  Part of the Python CryptoAESgraphy Toolkit
+#  Part of the Python Cryprography Toolkit
 #
 #  Written by Andrew Kuchling, Paul Swartz, and others
 #
@@ -27,11 +27,11 @@
 
 __revision__ = "$Id$"
 
-from CryptoAES.PublicKey.pubkey import *
-from CryptoAES.Util import number
-from CryptoAES.Util.number import bytes_to_long, long_to_bytes
-from CryptoAES.Hash import SHA
-from CryptoAES.Util.py3compat import *
+from Crypro.PublicKey.pubkey import *
+from Crypro.Util import number
+from Crypro.Util.number import bytes_to_long, long_to_bytes
+from Crypro.Hash import SHA
+from Crypro.Util.py3compat import *
 
 class error (Exception):
     pass

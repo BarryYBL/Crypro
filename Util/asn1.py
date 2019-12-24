@@ -20,9 +20,9 @@
 # SOFTWARE.
 # ===================================================================
 
-from CryptoAES.Util.number import long_to_bytes, bytes_to_long
+from Crypro.Util.number import long_to_bytes, bytes_to_long
 import sys
-from CryptoAES.Util.py3compat import *
+from Crypro.Util.py3compat import *
 
 __all__ = [ 'DerObject', 'DerInteger', 'DerOctetString', 'DerNull', 'DerSequence', 'DerObjectId' ]
 
